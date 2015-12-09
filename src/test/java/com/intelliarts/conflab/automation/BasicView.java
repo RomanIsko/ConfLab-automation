@@ -7,22 +7,17 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
-import static com.intelliarts.conflab.automation.utils.ResourcesData.DEPLOYMENT_URL;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.isIn;
 import static org.hamcrest.Matchers.not;
 import static org.hamcrest.core.Is.is;
 
-public class BasicView {
-    private static FirefoxDriver driver;
-
+public class BasicView extends BasicTestCase {
     private final WebElement logo        = driver.findElement(By.xpath("html/body/nav/div/div[1]/a"));
     private final WebElement loginLogout = driver.findElement(By.xpath("html/body/nav/div/div[2]/ul/li/a"));
     private final WebElement navbar      = driver.findElement(By.xpath("html/body/div[1]/div/div[1]/ul"));
@@ -32,14 +27,12 @@ public class BasicView {
 
     @BeforeClass
     public static void setUp() throws Exception {
-        driver = new FirefoxDriver();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.get(DEPLOYMENT_URL);
+        basicSetUp();
     }
 
     @AfterClass
     public static void tearDown() throws Exception {
-        driver.quit();
+        basicTearDown();
     }
 
     @Test

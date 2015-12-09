@@ -7,17 +7,11 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
 
-import java.util.concurrent.TimeUnit;
-
-import static com.intelliarts.conflab.automation.utils.ResourcesData.DEPLOYMENT_URL;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
-public class LoginPageTest {
-
-    static FirefoxDriver driver;
+public class LoginPageTest extends BasicTestCase {
 
     private final WebElement loginField    = driver.findElement(By.id("username"));
     private final WebElement passwordField = driver.findElement(By.id("password"));
@@ -28,15 +22,13 @@ public class LoginPageTest {
 
     @BeforeClass
     public static void setUp() throws Exception {
-        driver = new FirefoxDriver();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.get(DEPLOYMENT_URL);
+        basicSetUp();
         driver.findElement(By.xpath("/html/body/nav/div/div[2]/ul/li/a")).click();
     }
 
     @AfterClass
     public static void tearDown() throws Exception {
-        driver.quit();
+        basicTearDown();
     }
 
     @Test

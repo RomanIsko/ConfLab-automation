@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
+import static com.intelliarts.conflab.automation.utils.ResourcesData.DEPLOYMENT_URL;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.isIn;
@@ -33,7 +34,7 @@ public class BasicView {
     public static void setUp() throws Exception {
         driver = new FirefoxDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.get("http://localhost:8080");
+        driver.get(DEPLOYMENT_URL);
     }
 
     @AfterClass

@@ -11,6 +11,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.util.concurrent.TimeUnit;
 
+import static com.intelliarts.conflab.automation.utils.ResourcesData.DEPLOYMENT_URL;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
@@ -29,7 +30,7 @@ public class LoginPageTest {
     public static void setUp() throws Exception {
         driver = new FirefoxDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.get("http://localhost:8080/");
+        driver.get(DEPLOYMENT_URL);
         driver.findElement(By.xpath("/html/body/nav/div/div[2]/ul/li/a")).click();
     }
 

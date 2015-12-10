@@ -8,16 +8,11 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-import java.util.List;
-import java.util.stream.Collectors;
-
 import static com.intelliarts.conflab.automation.utils.ElementLocatorData.LOGO;
 import static com.intelliarts.conflab.automation.utils.ElementLocatorData.NAV_BAR;
 import static com.intelliarts.conflab.automation.utils.ElementLocatorData.SIGN_IN_BUTTON;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
-import static org.hamcrest.Matchers.isIn;
-import static org.hamcrest.Matchers.not;
 import static org.hamcrest.core.Is.is;
 
 public class BasicView extends BasicTestCase {
@@ -58,26 +53,10 @@ public class BasicView extends BasicTestCase {
         assertThat(signInButton.isDisplayed(), is(true));
     }
 
+    //TODO fix timeout check child for navbar
     @Test
-    public void sidebarHasConferences() throws Exception {
-        assertThat("Conferences", isIn(getNavbarLinks()));
-    }
-
-    @Test
-    public void sidebarHasNotSpeakers() throws Exception {
-        assertThat("Speakers", not(isIn(getNavbarLinks())));
-    }
-
-    // If case this test failed, please specify correct expectedLinksCount for logged out user
-    // and add test to check if navbar has new link
-    @Test
-    public void navbarHasTwoLinks() throws Exception {
-        int expectedLinksCount = 1;
-        assertThat(getNavbarLinks().size(), equalTo(expectedLinksCount));
-    }
-
-    private List<String> getNavbarLinks() {
-        List<WebElement> navbarElements = navbar.findElements(By.xpath(".//li"));
-        return navbarElements.stream().map(WebElement::getText).collect(Collectors.toList());
+    public void navbarHasNotLinksForLoggedOutUser() throws Exception {
+        int expectedLinksCount = 0;
+        assertThat(navbar.findElements(By.xpath(".//li")).size(), equalTo(expectedLinksCount));
     }
 }

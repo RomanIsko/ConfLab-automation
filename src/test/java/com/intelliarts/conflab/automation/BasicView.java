@@ -11,6 +11,9 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static com.intelliarts.conflab.automation.utils.ElementLocatorData.LOGO;
+import static com.intelliarts.conflab.automation.utils.ElementLocatorData.NAV_BAR;
+import static com.intelliarts.conflab.automation.utils.ElementLocatorData.SIGN_IN_BUTTON;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.isIn;
@@ -18,9 +21,9 @@ import static org.hamcrest.Matchers.not;
 import static org.hamcrest.core.Is.is;
 
 public class BasicView extends BasicTestCase {
-    private final WebElement logo        = driver.findElement(By.xpath("html/body/nav/div/div[1]/a"));
-    private final WebElement loginLogout = driver.findElement(By.xpath("html/body/nav/div/div[2]/ul/li/a"));
-    private final WebElement navbar      = driver.findElement(By.xpath("html/body/div[1]/div/div[1]/ul"));
+    private final WebElement logo         = driver.findElement(LOGO);
+    private final WebElement signInButton = driver.findElement(SIGN_IN_BUTTON);
+    private final WebElement navbar       = driver.findElement(NAV_BAR);
 
     @Rule
     public ScreenShotOnFailure failure = new ScreenShotOnFailure(driver);
@@ -52,7 +55,7 @@ public class BasicView extends BasicTestCase {
 
     @Test
     public void loginLink() throws Exception {
-        assertThat(loginLogout.isDisplayed(), is(true));
+        assertThat(signInButton.isDisplayed(), is(true));
     }
 
     @Test

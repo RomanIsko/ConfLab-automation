@@ -5,17 +5,19 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+import static com.intelliarts.conflab.automation.utils.ElementLocatorData.PASSWORD_FIELD;
+import static com.intelliarts.conflab.automation.utils.ElementLocatorData.SIGN_IN_BUTTON;
+import static com.intelliarts.conflab.automation.utils.ElementLocatorData.USERNAME_FIELD;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
 public class LoginPageTest extends BasicTestCase {
 
-    private final WebElement loginField    = driver.findElement(By.id("username"));
-    private final WebElement passwordField = driver.findElement(By.id("password"));
-    private final WebElement signInButton  = driver.findElement(By.xpath("/html/body/nav/div/div[2]/ul/li/a"));
+    private final WebElement loginField    = driver.findElement(USERNAME_FIELD);
+    private final WebElement passwordField = driver.findElement(PASSWORD_FIELD);
+    private final WebElement signInButton  = driver.findElement(SIGN_IN_BUTTON);
 
     @Rule
     public ScreenShotOnFailure failure = new ScreenShotOnFailure(driver);
@@ -23,7 +25,7 @@ public class LoginPageTest extends BasicTestCase {
     @BeforeClass
     public static void setUp() throws Exception {
         basicSetUp();
-        driver.findElement(By.xpath("/html/body/nav/div/div[2]/ul/li/a")).click();
+        driver.findElement(SIGN_IN_BUTTON).click();
     }
 
     @AfterClass

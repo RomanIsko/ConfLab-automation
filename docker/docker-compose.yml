@@ -8,8 +8,6 @@ web:
    - db
 db:
   image: postgres
-  volumes:
-   - ./db_data:/var/lib/postgresql/data
   environment:
     POSTGRES_PASSWORD: Passw0rd
     POSTGRES_DB: conflab

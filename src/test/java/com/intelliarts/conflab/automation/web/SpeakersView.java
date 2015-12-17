@@ -1,12 +1,12 @@
-package com.intelliarts.conflab.automation;
+package com.intelliarts.conflab.automation.web;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import static com.intelliarts.conflab.automation.utils.ElementLocatorData.ADD_SPEAKER_BUTTON;
-import static com.intelliarts.conflab.automation.utils.ElementLocatorData.SPEAKERS_LINK;
-import static com.intelliarts.conflab.automation.utils.ElementLocatorData.SPEAKERS_PAGE_HEADER;
+import static com.intelliarts.conflab.utils.ElementLocatorData.ADD_SPEAKER_BUTTON;
+import static com.intelliarts.conflab.utils.ElementLocatorData.SPEAKERS_LINK;
+import static com.intelliarts.conflab.utils.ElementLocatorData.SPEAKERS_PAGE_HEADER;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 

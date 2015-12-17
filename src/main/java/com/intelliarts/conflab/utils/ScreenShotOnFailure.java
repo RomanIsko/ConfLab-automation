@@ -1,4 +1,4 @@
-package com.intelliarts.conflab.automation.utils;
+package com.intelliarts.conflab.utils;
 
 import org.apache.commons.io.FileUtils;
 import org.junit.rules.MethodRule;

@@ -1,6 +1,6 @@
-package com.intelliarts.conflab.automation;
+package com.intelliarts.conflab.automation.web;
 
-import com.intelliarts.conflab.automation.utils.ScreenShotOnFailure;
+import com.intelliarts.conflab.utils.ScreenShotOnFailure;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Rule;
@@ -8,9 +8,9 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-import static com.intelliarts.conflab.automation.utils.ElementLocatorData.LOGO;
-import static com.intelliarts.conflab.automation.utils.ElementLocatorData.NAV_BAR;
-import static com.intelliarts.conflab.automation.utils.ElementLocatorData.SIGN_IN_BUTTON;
+import static com.intelliarts.conflab.utils.ElementLocatorData.LOGO;
+import static com.intelliarts.conflab.utils.ElementLocatorData.NAV_BAR;
+import static com.intelliarts.conflab.utils.ElementLocatorData.SIGN_IN_BUTTON;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.core.Is.is;

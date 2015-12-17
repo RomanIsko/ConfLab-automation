@@ -1,17 +1,17 @@
-package com.intelliarts.conflab.automation;
+package com.intelliarts.conflab.automation.web;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.util.concurrent.TimeUnit;
 
-import static com.intelliarts.conflab.automation.utils.ElementLocatorData.LOGIN_BUTTON;
-import static com.intelliarts.conflab.automation.utils.ElementLocatorData.PASSWORD_FIELD;
-import static com.intelliarts.conflab.automation.utils.ElementLocatorData.SIGN_IN_BUTTON;
-import static com.intelliarts.conflab.automation.utils.ElementLocatorData.USERNAME_FIELD;
-import static com.intelliarts.conflab.automation.utils.ResourcesData.DEFAULT_PASSWORD;
-import static com.intelliarts.conflab.automation.utils.ResourcesData.DEFAULT_USERNAME;
-import static com.intelliarts.conflab.automation.utils.ResourcesData.DEPLOYMENT_URL;
+import static com.intelliarts.conflab.utils.ElementLocatorData.LOGIN_BUTTON;
+import static com.intelliarts.conflab.utils.ElementLocatorData.PASSWORD_FIELD;
+import static com.intelliarts.conflab.utils.ElementLocatorData.SIGN_IN_BUTTON;
+import static com.intelliarts.conflab.utils.ElementLocatorData.USERNAME_FIELD;
+import static com.intelliarts.conflab.utils.ResourcesData.DEFAULT_PASSWORD;
+import static com.intelliarts.conflab.utils.ResourcesData.DEFAULT_USERNAME;
+import static com.intelliarts.conflab.utils.ResourcesData.DEPLOYMENT_URL;
 
 public class BasicTestCase {
     protected static WebDriver driver;

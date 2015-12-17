@@ -1,4 +1,4 @@
-package com.intelliarts.conflab.automation.utils;
+package com.intelliarts.conflab.utils;
 
 import org.openqa.selenium.By;
 

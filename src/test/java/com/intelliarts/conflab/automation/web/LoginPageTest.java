@@ -1,9 +1,7 @@
 package com.intelliarts.conflab.automation.web;
 
-import com.intelliarts.conflab.utils.ScreenShotOnFailure;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
-import org.junit.Rule;
 import org.junit.Test;
 import org.openqa.selenium.WebElement;
 
@@ -22,9 +20,6 @@ public class LoginPageTest extends BasicTestCase {
     private final WebElement signInLink    = driver.findElement(SIGN_IN_LINK);
     private final WebElement loginButton   = driver.findElement(LOGIN_BUTTON);
     private final WebElement cancelButton  = driver.findElement(CANCEL_BUTTON);
-
-    @Rule
-    public ScreenShotOnFailure failure = new ScreenShotOnFailure(driver);
 
     @BeforeClass
     public static void setUp() throws Exception {

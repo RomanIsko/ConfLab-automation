@@ -1,5 +1,7 @@
 package com.intelliarts.conflab.automation.web;
 
+import com.intelliarts.conflab.utils.ScreenShotOnFailure;
+import org.junit.Rule;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
@@ -15,6 +17,9 @@ import static com.intelliarts.conflab.utils.ResourcesData.DEPLOYMENT_URL;
 
 public class BasicTestCase {
     protected static WebDriver driver;
+
+    @Rule
+    public ScreenShotOnFailure failure = new ScreenShotOnFailure(driver);
 
     protected static void basicSetUp() {
         driver = new FirefoxDriver();

@@ -17,8 +17,8 @@ public class ElementLocatorData {
 
     //Speakers view
     public static final By SPEAKERS_LINK        = By.xpath("html/body/div[1]/div/div[1]/ul/li[2]/a");
-    public static final By SPEAKERS_PAGE_HEADER = By.xpath("html/body/div[1]/div/div[2]/div/div[1]/h1");
-    public static final By ADD_SPEAKER_BUTTON   = By.xpath("html/body/div[1]/div/div[2]/div/div[1]/a");
+    public static final By SPEAKERS_PAGE_HEADER = By.id("table-title");
+    public static final By ADD_SPEAKER_BUTTON   = By.id("add-button");
     public static final By SPEAKER_NAME         = By.id("name");
     public static final By SPEAKER_EMAIL        = By.id("email");
     public static final By SPEAKER_POSITION     = By.id("position");

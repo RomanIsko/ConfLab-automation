@@ -13,7 +13,8 @@ public class ElementLocatorData {
 
     //Conferences view
     public static final By CONFERENCES_LINK        = By.xpath("html/body/div[1]/div/div[1]/ul/li[1]/a");
-    public static final By CONFERENCES_PAGE_HEADER = By.xpath("html/body/div[1]/div/div[2]/div/h1");
+    public static final By CONFERENCES_PAGE_HEADER = By.id("table-title");
+    public static final By ADD_CONFERENCE_BUTTON   = By.id("add-button");
 
     //Speakers view
     public static final By SPEAKERS_LINK        = By.xpath("html/body/div[1]/div/div[1]/ul/li[2]/a");

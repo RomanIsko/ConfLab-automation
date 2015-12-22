@@ -7,6 +7,8 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.openqa.selenium.WebElement;
 
+import static com.intelliarts.conflab.utils.ElementLocatorData.CANCEL_BUTTON;
+import static com.intelliarts.conflab.utils.ElementLocatorData.LOGIN_BUTTON;
 import static com.intelliarts.conflab.utils.ElementLocatorData.PASSWORD_FIELD;
 import static com.intelliarts.conflab.utils.ElementLocatorData.SIGN_IN_LINK;
 import static com.intelliarts.conflab.utils.ElementLocatorData.USERNAME_FIELD;
@@ -18,6 +20,8 @@ public class LoginPageTest extends BasicTestCase {
     private final WebElement loginField    = driver.findElement(USERNAME_FIELD);
     private final WebElement passwordField = driver.findElement(PASSWORD_FIELD);
     private final WebElement signInLink    = driver.findElement(SIGN_IN_LINK);
+    private final WebElement loginButton   = driver.findElement(LOGIN_BUTTON);
+    private final WebElement cancelButton  = driver.findElement(CANCEL_BUTTON);
 
     @Rule
     public ScreenShotOnFailure failure = new ScreenShotOnFailure(driver);
@@ -51,5 +55,15 @@ public class LoginPageTest extends BasicTestCase {
     @Test
     public void loginButtonVisible() throws Exception {
         assertThat(signInLink.isDisplayed(), is(true));
+    }
+
+    @Test
+    public void loginButtonHasTypeSubmit() throws Exception {
+        assertThat(loginButton.getAttribute("type"), is("submit"));
+    }
+
+    @Test
+    public void cancelButtonVisible() throws Exception {
+        assertThat(cancelButton.isDisplayed(), is(true));
     }
 }

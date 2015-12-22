@@ -7,7 +7,7 @@ import java.util.concurrent.TimeUnit;
 
 import static com.intelliarts.conflab.utils.ElementLocatorData.LOGIN_BUTTON;
 import static com.intelliarts.conflab.utils.ElementLocatorData.PASSWORD_FIELD;
-import static com.intelliarts.conflab.utils.ElementLocatorData.SIGN_IN_BUTTON;
+import static com.intelliarts.conflab.utils.ElementLocatorData.SIGN_IN_LINK;
 import static com.intelliarts.conflab.utils.ElementLocatorData.USERNAME_FIELD;
 import static com.intelliarts.conflab.utils.ResourcesData.DEFAULT_PASSWORD;
 import static com.intelliarts.conflab.utils.ResourcesData.DEFAULT_USERNAME;
@@ -27,7 +27,7 @@ public class BasicTestCase {
     }
 
     protected static void login() {
-        driver.findElement(SIGN_IN_BUTTON).click();
+        driver.findElement(SIGN_IN_LINK).click();
         driver.findElement(USERNAME_FIELD).sendKeys(DEFAULT_USERNAME);
         driver.findElement(PASSWORD_FIELD).sendKeys(DEFAULT_PASSWORD);
         driver.findElement(LOGIN_BUTTON).click();

@@ -8,7 +8,7 @@ import org.junit.Test;
 import org.openqa.selenium.WebElement;
 
 import static com.intelliarts.conflab.utils.ElementLocatorData.PASSWORD_FIELD;
-import static com.intelliarts.conflab.utils.ElementLocatorData.SIGN_IN_BUTTON;
+import static com.intelliarts.conflab.utils.ElementLocatorData.SIGN_IN_LINK;
 import static com.intelliarts.conflab.utils.ElementLocatorData.USERNAME_FIELD;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
@@ -17,7 +17,7 @@ public class LoginPageTest extends BasicTestCase {
 
     private final WebElement loginField    = driver.findElement(USERNAME_FIELD);
     private final WebElement passwordField = driver.findElement(PASSWORD_FIELD);
-    private final WebElement signInButton  = driver.findElement(SIGN_IN_BUTTON);
+    private final WebElement signInLink    = driver.findElement(SIGN_IN_LINK);
 
     @Rule
     public ScreenShotOnFailure failure = new ScreenShotOnFailure(driver);
@@ -25,7 +25,7 @@ public class LoginPageTest extends BasicTestCase {
     @BeforeClass
     public static void setUp() throws Exception {
         basicSetUp();
-        driver.findElement(SIGN_IN_BUTTON).click();
+        driver.findElement(SIGN_IN_LINK).click();
     }
 
     @AfterClass
@@ -50,6 +50,6 @@ public class LoginPageTest extends BasicTestCase {
 
     @Test
     public void loginButtonVisible() throws Exception {
-        assertThat(signInButton.isDisplayed(), is(true));
+        assertThat(signInLink.isDisplayed(), is(true));
     }
 }

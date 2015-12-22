@@ -19,4 +19,10 @@ public class ElementLocatorData {
     public static final By SPEAKERS_LINK        = By.xpath("html/body/div[1]/div/div[1]/ul/li[2]/a");
     public static final By SPEAKERS_PAGE_HEADER = By.xpath("html/body/div[1]/div/div[2]/div/div[1]/h1");
     public static final By ADD_SPEAKER_BUTTON   = By.xpath("html/body/div[1]/div/div[2]/div/div[1]/a");
+    public static final By SPEAKER_NAME         = By.id("name");
+    public static final By SPEAKER_EMAIL        = By.id("email");
+    public static final By SPEAKER_POSITION     = By.id("position");
+    public static final By SPEAKER_ABOUT        = By.id("about");
+    public static final By OK_BUTTON            = By.cssSelector(".btn.btn-success");
+    public static final By CANCEL_BUTTON        = By.cssSelector(".btn.btn-default");
 }

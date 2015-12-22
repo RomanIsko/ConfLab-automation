@@ -30,6 +30,6 @@ public class ElementLocatorData {
     public static final By SPEAKER_ABOUT        = By.id("about");
 
     // Common locators
-    public static final By OK_BUTTON            = By.cssSelector(".btn.btn-success");
-    public static final By CANCEL_BUTTON        = By.cssSelector(".btn.btn-default");
+    public static final By OK_BUTTON     = By.cssSelector(".btn.btn-success");
+    public static final By CANCEL_BUTTON = By.cssSelector(".btn.btn-default");
 }

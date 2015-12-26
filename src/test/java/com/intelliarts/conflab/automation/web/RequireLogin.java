@@ -5,6 +5,8 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.open;
 import static com.intelliarts.conflab.utils.ElementLocatorData.PASSWORD_FIELD;
 import static com.intelliarts.conflab.utils.ElementLocatorData.USERNAME_FIELD;
 import static com.intelliarts.conflab.utils.ResourcesData.DEPLOYMENT_URL;
@@ -29,46 +31,46 @@ public class RequireLogin extends BasicTestCase {
 
     @Before
     public void setUpTest() throws Exception {
-        driver.get(DEPLOYMENT_URL);
+        open(DEPLOYMENT_URL);
     }
 
     @Test
     public void conferencesLinkRequireLogin() throws Exception {
-        driver.get(EVENTS_URL);
+        open(EVENTS_URL);
         assertThat(loginRequired(), is(true));
     }
 
     @Test
     public void singleConferenceLinkRequireLogin() throws Exception {
-        driver.get(EVENTS_URL + singleEntityUrl);
+        open(EVENTS_URL + singleEntityUrl);
         assertThat(loginRequired(), is(true));
     }
 
     @Test
     public void speakersLinkRequireLogin() throws Exception {
-        driver.get(SPEAKERS_URL);
+        open(SPEAKERS_URL);
         assertThat(loginRequired(), is(true));
     }
 
     @Test
     public void singleSpeakerLinkRequireLogin() throws Exception {
-        driver.get(SPEAKERS_URL);
+        open(SPEAKERS_URL);
         assertThat(loginRequired(), is(true));
     }
 
     @Test
     public void speechesLinkRequireLogin() throws Exception {
-        driver.get(SPEECHES_URL);
+        open(SPEECHES_URL);
         assertThat(loginRequired(), is(true));
     }
 
     @Test
     public void singleSpeechLinkRequireLogin() throws Exception {
-        driver.get(SPEECHES_URL + singleEntityUrl);
+        open(SPEECHES_URL + singleEntityUrl);
         assertThat(loginRequired(), is(true));
     }
 
     private static boolean loginRequired() {
-        return (driver.findElement(USERNAME_FIELD).isDisplayed() && driver.findElement(PASSWORD_FIELD).isDisplayed());
+        return ($(USERNAME_FIELD).isDisplayed() && $(PASSWORD_FIELD).isDisplayed());
     }
 }

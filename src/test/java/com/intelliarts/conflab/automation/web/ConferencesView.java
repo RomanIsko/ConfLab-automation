@@ -4,11 +4,12 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Selenide.$;
 import static com.intelliarts.conflab.utils.ElementLocatorData.ADD_CONFERENCE_BUTTON;
 import static com.intelliarts.conflab.utils.ElementLocatorData.CONFERENCES_LINK;
 import static com.intelliarts.conflab.utils.ElementLocatorData.CONFERENCES_PAGE_HEADER;
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.core.Is.is;
 
 public class ConferencesView extends BasicTestCase {
 
@@ -16,7 +17,7 @@ public class ConferencesView extends BasicTestCase {
     public static void setUp() throws Exception {
         basicSetUp();
         login();
-        driver.findElement(CONFERENCES_LINK).click();
+        $(CONFERENCES_LINK).click();
     }
 
     @AfterClass
@@ -26,11 +27,11 @@ public class ConferencesView extends BasicTestCase {
 
     @Test
     public void conferencesHeader() throws Exception {
-        assertThat(driver.findElement(CONFERENCES_PAGE_HEADER).getText(), is("Conferences"));
+        $(CONFERENCES_PAGE_HEADER).shouldHave(text("Conferences"));
     }
 
     @Test
     public void addButtonVisible() throws Exception {
-        assertThat(driver.findElement(ADD_CONFERENCE_BUTTON).isDisplayed(), is(true));
+        $(ADD_CONFERENCE_BUTTON).shouldBe(visible);
     }
 }

@@ -44,6 +44,6 @@ public class BasicViewSelenide extends BasicTestCaseSelenide {
 
     @Test
     public void navbarHasNotLinksForLoggedOutUser() throws Exception {
-        $(NAV_BAR).$$(By.xpath(".//li")).shouldHaveSize(0);
+        $(NAV_BAR).findAll(By.xpath(".//li")).shouldHaveSize(0);
     }
 }

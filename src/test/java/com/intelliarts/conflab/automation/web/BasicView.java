@@ -5,7 +5,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.By;
 
-import static com.codeborne.selenide.Condition.attribute;
+import static com.codeborne.selenide.Condition.cssClass;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
@@ -35,7 +35,7 @@ public class BasicView extends BasicTestCase {
 
     @Test
     public void brandHasAppropriateCssStyle() throws Exception {
-        $(LOGO).shouldHave(attribute("class", "navbar-brand"));
+        $(LOGO).shouldHave(cssClass("navbar-brand"));
     }
 
     @Test

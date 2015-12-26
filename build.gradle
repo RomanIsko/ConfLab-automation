@@ -26,6 +26,7 @@ dependencies {
 }
 
 test {
+    systemProperties['BUILD_URL'] = System.getenv()['BUILD_URL']
     beforeTest { descriptor ->
         logger.lifecycle("Running test: " + descriptor)
     }

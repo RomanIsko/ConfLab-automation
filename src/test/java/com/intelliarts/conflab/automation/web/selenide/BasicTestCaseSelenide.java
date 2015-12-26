@@ -5,6 +5,7 @@ import com.codeborne.selenide.junit.ScreenShooter;
 import org.junit.Rule;
 
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.close;
 import static com.codeborne.selenide.Selenide.open;
 import static com.intelliarts.conflab.utils.ElementLocatorData.PASSWORD_FIELD;
 import static com.intelliarts.conflab.utils.ElementLocatorData.SIGN_IN_LINK;
@@ -21,6 +22,10 @@ public class BasicTestCaseSelenide {
     protected static void basicSetUp() {
         Configuration.baseUrl = DEPLOYMENT_URL;
         open("/");
+    }
+
+    protected static void basicTearDown() {
+        close();
     }
 
     protected static void login() {

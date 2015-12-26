@@ -1,5 +1,6 @@
 package com.intelliarts.conflab.automation.web.selenide;
 
+import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -27,6 +28,11 @@ public class AddConferenceViewSelenide extends BasicTestCaseSelenide {
         login();
         $(CONFERENCES_LINK).click();
         $(ADD_CONFERENCE_BUTTON).click();
+    }
+
+    @AfterClass
+    public static void tearDown() throws Exception {
+        basicTearDown();
     }
 
     @Test

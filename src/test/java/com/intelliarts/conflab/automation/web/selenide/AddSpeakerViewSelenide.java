@@ -1,5 +1,6 @@
 package com.intelliarts.conflab.automation.web.selenide;
 
+import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -23,6 +24,11 @@ public class AddSpeakerViewSelenide extends BasicTestCaseSelenide {
         login();
         $(SPEAKERS_LINK).click();
         $(ADD_SPEAKER_BUTTON).click();
+    }
+
+    @AfterClass
+    public static void tearDown() throws Exception {
+        basicTearDown();
     }
 
     @Test

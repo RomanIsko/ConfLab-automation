@@ -1,5 +1,6 @@
 package com.intelliarts.conflab.automation.web.selenide;
 
+import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -20,6 +21,11 @@ public class BasicViewSelenide extends BasicTestCaseSelenide {
     @BeforeClass
     public static void setUp() throws Exception {
         basicSetUp();
+    }
+
+    @AfterClass
+    public static void tearDown() throws Exception {
+        basicTearDown();
     }
 
     @Test

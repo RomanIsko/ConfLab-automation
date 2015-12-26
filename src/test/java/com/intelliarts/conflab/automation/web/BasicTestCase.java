@@ -1,13 +1,12 @@
 package com.intelliarts.conflab.automation.web;
 
-import com.intelliarts.conflab.utils.ScreenShotOnFailure;
+import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.junit.ScreenShooter;
 import org.junit.Rule;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 
-import java.util.concurrent.TimeUnit;
-
-import static com.intelliarts.conflab.utils.ElementLocatorData.LOGIN_BUTTON;
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.close;
+import static com.codeborne.selenide.Selenide.open;
 import static com.intelliarts.conflab.utils.ElementLocatorData.PASSWORD_FIELD;
 import static com.intelliarts.conflab.utils.ElementLocatorData.SIGN_IN_LINK;
 import static com.intelliarts.conflab.utils.ElementLocatorData.USERNAME_FIELD;
@@ -16,25 +15,22 @@ import static com.intelliarts.conflab.utils.ResourcesData.DEFAULT_USERNAME;
 import static com.intelliarts.conflab.utils.ResourcesData.DEPLOYMENT_URL;
 
 public class BasicTestCase {
-    protected static WebDriver driver;
 
     @Rule
-    public ScreenShotOnFailure failure = new ScreenShotOnFailure(driver);
+    public ScreenShooter makeScreenshotOnFailure = ScreenShooter.failedTests();
 
     protected static void basicSetUp() {
-        driver = new FirefoxDriver();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.get(DEPLOYMENT_URL);
+        Configuration.baseUrl = DEPLOYMENT_URL;
+        open("/");
     }
 
     protected static void basicTearDown() {
-        driver.quit();
+        close();
     }
 
     protected static void login() {
-        driver.findElement(SIGN_IN_LINK).click();
-        driver.findElement(USERNAME_FIELD).sendKeys(DEFAULT_USERNAME);
-        driver.findElement(PASSWORD_FIELD).sendKeys(DEFAULT_PASSWORD);
-        driver.findElement(LOGIN_BUTTON).click();
+        $(SIGN_IN_LINK).click();
+        $(USERNAME_FIELD).val(DEFAULT_USERNAME);
+        $(PASSWORD_FIELD).val(DEFAULT_PASSWORD).pressEnter();
     }
 }

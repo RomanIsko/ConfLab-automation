@@ -4,8 +4,11 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
-import org.openqa.selenium.JavascriptExecutor;
 
+import static com.codeborne.selenide.Condition.type;
+import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.executeJavaScript;
 import static com.intelliarts.conflab.utils.ElementLocatorData.ADD_CONFERENCE_BUTTON;
 import static com.intelliarts.conflab.utils.ElementLocatorData.CANCEL_BUTTON;
 import static com.intelliarts.conflab.utils.ElementLocatorData.CONFERENCES_LINK;
@@ -23,8 +26,8 @@ public class AddConferenceView extends BasicTestCase {
     public static void setUp() throws Exception {
         basicSetUp();
         login();
-        driver.findElement(CONFERENCES_LINK).click();
-        driver.findElement(ADD_CONFERENCE_BUTTON).click();
+        $(CONFERENCES_LINK).click();
+        $(ADD_CONFERENCE_BUTTON).click();
     }
 
     @AfterClass
@@ -34,66 +37,66 @@ public class AddConferenceView extends BasicTestCase {
 
     @Test
     public void nameFieldIsDisplayed() throws Exception {
-        assertThat(driver.findElement(CONFERENCE_NAME).isDisplayed(), is(true));
+        $(CONFERENCE_NAME).shouldBe(visible);
     }
 
     @Test
     public void conferenceDescriptionIsDisplayed() throws Exception {
-        assertThat(driver.findElement(CONFERENCE_DESCRIPTION).isDisplayed(), is(true));
+        $(CONFERENCE_DESCRIPTION).shouldBe(visible);
     }
 
     @Test
     public void startDateFieldIsDisplayed() throws Exception {
-        assertThat(driver.findElement(CONFERENCE_START_DATE).isDisplayed(), is(true));
+        $(CONFERENCE_START_DATE).shouldBe(visible);
     }
 
     // enable after https://code.google.com/p/selenium/issues/detail?id=7650 is fixed
     @Ignore
     @Test
     public void startDateFieldHasTypeDate() throws Exception {
-        assertThat(driver.findElement(CONFERENCE_START_DATE).getAttribute("type"), is("date"));
+        $(CONFERENCE_START_DATE).shouldHave(type("date"));
     }
 
-    // TODO: 22.12.15 Remove after https://code.google.com/p/selenium/issues/detail?id=7650 is fixed
+    // TODO: 26.12.15 Remove after https://code.google.com/p/selenium/issues/detail?id=7650 is fixed
     @Test
     public void startDateFieldHasTypeDateWithJs() throws Exception {
-        String elementType = ((JavascriptExecutor) driver).executeScript(
-                "return document.getElementById('event-start-date').getAttribute('type')").toString();
+        String elementType =
+                executeJavaScript("return document.getElementById('event-start-date').getAttribute('type')").toString();
         assertThat(elementType, is("date"));
     }
 
     @Test
     public void endDateFieldIsDisplayed() throws Exception {
-        assertThat(driver.findElement(CONFERENCE_END_DATE).isDisplayed(), is(true));
+        $(CONFERENCE_END_DATE).shouldBe(visible);
     }
 
     // enable after https://code.google.com/p/selenium/issues/detail?id=7650 is fixed
     @Ignore
     @Test
     public void endDateFieldHasTypeDate() throws Exception {
-        assertThat(driver.findElement(CONFERENCE_END_DATE).getAttribute("type"), is("date"));
+        $(CONFERENCE_END_DATE).shouldHave(type("date"));
     }
 
-    // TODO: 22.12.15 Remove after https://code.google.com/p/selenium/issues/detail?id=7650 is fixed
+    // TODO: 26.12.15 Remove after https://code.google.com/p/selenium/issues/detail?id=7650 is fixed
     @Test
-    public void endDateFieldIsDisplayedWithJs() throws Exception {
-        String elementType = ((JavascriptExecutor) driver).executeScript(
-                "return document.getElementById('event-end-date').getAttribute('type')").toString();
+    public void endDateFieldHasTypeDateWithJs() throws Exception {
+        String elementType =
+                executeJavaScript("return document.getElementById('event-end-date').getAttribute('type')").toString();
         assertThat(elementType, is("date"));
     }
 
     @Test
     public void okButtonIsDisplayed() throws Exception {
-        assertThat(driver.findElement(OK_BUTTON).isDisplayed(), is(true));
+        $(OK_BUTTON).shouldBe(visible);
     }
 
     @Test
     public void okButtonHasTypeSubmit() throws Exception {
-        assertThat(driver.findElement(OK_BUTTON).getAttribute("type"), is("submit"));
+        $(OK_BUTTON).shouldHave(type("submit"));
     }
 
     @Test
     public void cancelButtonIsDisplayed() throws Exception {
-        assertThat(driver.findElement(CANCEL_BUTTON).isDisplayed(), is(true));
+        $(CANCEL_BUTTON).shouldBe(visible);
     }
 }

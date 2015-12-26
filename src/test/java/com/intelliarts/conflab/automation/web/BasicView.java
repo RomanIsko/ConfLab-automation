@@ -4,19 +4,19 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 
+import static com.codeborne.selenide.Condition.attribute;
+import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.title;
 import static com.intelliarts.conflab.utils.ElementLocatorData.LOGO;
 import static com.intelliarts.conflab.utils.ElementLocatorData.NAV_BAR;
 import static com.intelliarts.conflab.utils.ElementLocatorData.SIGN_IN_LINK;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.core.Is.is;
 
 public class BasicView extends BasicTestCase {
-    private final WebElement logo       = driver.findElement(LOGO);
-    private final WebElement signInLink = driver.findElement(SIGN_IN_LINK);
-    private final WebElement navbar     = driver.findElement(NAV_BAR);
 
     @BeforeClass
     public static void setUp() throws Exception {
@@ -30,28 +30,26 @@ public class BasicView extends BasicTestCase {
 
     @Test
     public void pageTitle() throws Exception {
-        assertThat(driver.getTitle(), is("ConfLab main page"));
+        assertThat(title(), is("ConfLab main page"));
     }
 
     @Test
     public void brandHasAppropriateCssStyle() throws Exception {
-        assertThat(logo.getAttribute("class"), is("navbar-brand"));
+        $(LOGO).shouldHave(attribute("class", "navbar-brand"));
     }
 
     @Test
     public void brandIsCorrect() throws Exception {
-        assertThat(logo.getText(), is("ConfLabs"));
+        $(LOGO).shouldHave(text("ConfLabs"));
     }
 
     @Test
     public void loginLink() throws Exception {
-        assertThat(signInLink.isDisplayed(), is(true));
+        $(SIGN_IN_LINK).shouldBe(visible);
     }
 
-    //TODO fix timeout check child for navbar
     @Test
     public void navbarHasNotLinksForLoggedOutUser() throws Exception {
-        int expectedLinksCount = 0;
-        assertThat(navbar.findElements(By.xpath(".//li")).size(), equalTo(expectedLinksCount));
+        $(NAV_BAR).findAll(By.xpath(".//li")).shouldHaveSize(0);
     }
 }

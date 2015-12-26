@@ -1,30 +1,23 @@
 package com.intelliarts.conflab.automation.web;
 
+import com.codeborne.selenide.Condition;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.openqa.selenium.WebElement;
 
+import static com.codeborne.selenide.Selenide.$;
 import static com.intelliarts.conflab.utils.ElementLocatorData.CANCEL_BUTTON;
 import static com.intelliarts.conflab.utils.ElementLocatorData.LOGIN_BUTTON;
 import static com.intelliarts.conflab.utils.ElementLocatorData.PASSWORD_FIELD;
 import static com.intelliarts.conflab.utils.ElementLocatorData.SIGN_IN_LINK;
 import static com.intelliarts.conflab.utils.ElementLocatorData.USERNAME_FIELD;
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.core.Is.is;
 
 public class LoginPageTest extends BasicTestCase {
-
-    private final WebElement loginField    = driver.findElement(USERNAME_FIELD);
-    private final WebElement passwordField = driver.findElement(PASSWORD_FIELD);
-    private final WebElement signInLink    = driver.findElement(SIGN_IN_LINK);
-    private final WebElement loginButton   = driver.findElement(LOGIN_BUTTON);
-    private final WebElement cancelButton  = driver.findElement(CANCEL_BUTTON);
 
     @BeforeClass
     public static void setUp() throws Exception {
         basicSetUp();
-        driver.findElement(SIGN_IN_LINK).click();
+        $(SIGN_IN_LINK).click();
     }
 
     @AfterClass
@@ -33,32 +26,32 @@ public class LoginPageTest extends BasicTestCase {
     }
 
     @Test
-    public void loginFieldVisible() throws Exception {
-        assertThat(loginField.isDisplayed(), is(true));
+    public void usernameFieldVisible() throws Exception {
+        $(USERNAME_FIELD).shouldBe(Condition.visible);
     }
 
     @Test
     public void passwordFieldVisible() throws Exception {
-        assertThat(passwordField.isDisplayed(), is(true));
+        $(PASSWORD_FIELD).shouldBe(Condition.visible);
     }
 
     @Test
     public void passwordFieldHasPasswordType() throws Exception {
-        assertThat(passwordField.getAttribute("type"), is("password"));
+        $(PASSWORD_FIELD).shouldHave(Condition.type("password"));
     }
 
     @Test
     public void loginButtonVisible() throws Exception {
-        assertThat(signInLink.isDisplayed(), is(true));
+        $(SIGN_IN_LINK).shouldBe(Condition.visible);
     }
 
     @Test
     public void loginButtonHasTypeSubmit() throws Exception {
-        assertThat(loginButton.getAttribute("type"), is("submit"));
+        $(LOGIN_BUTTON).shouldHave(Condition.type("submit"));
     }
 
     @Test
     public void cancelButtonVisible() throws Exception {
-        assertThat(cancelButton.isDisplayed(), is(true));
+        $(CANCEL_BUTTON).shouldBe(Condition.visible);
     }
 }

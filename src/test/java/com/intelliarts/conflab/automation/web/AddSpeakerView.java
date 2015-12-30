@@ -54,11 +54,6 @@ public class AddSpeakerView extends BasicTestCase {
     }
 
     @Test
-    public void emailFieldHasEmailType() throws Exception {
-        $(SPEAKER_EMAIL).shouldHave(type("email"));
-    }
-
-    @Test
     public void emailLabelHasRequiredClass() throws Exception {
         $(SPEAKER_EMAIL_LABEL).shouldHave(cssClass(required));
     }

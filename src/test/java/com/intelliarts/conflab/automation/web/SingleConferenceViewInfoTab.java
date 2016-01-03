@@ -36,8 +36,7 @@ public class SingleConferenceViewInfoTab extends BasicTestCase {
         confLabEvent.setEndDate(eventEndDate);
         confLabEvent.addViaWeb();
         refresh();
-        ElementsCollection eventsList = $(EVENTS_LIST).findAll(Selectors.withText(randomEventName));
-        eventsList.last().click();
+        $(Selectors.withText(randomEventName)).click();
     }
 
     @AfterClass

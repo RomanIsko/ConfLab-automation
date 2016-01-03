@@ -50,6 +50,8 @@ public class ElementLocatorData {
     public static final By EVENT_END_DATE         = By.id("event-end-date");
     public static final By ADD_NEW_SPEAKER_BUTTON = By.id("new-button");
     public static final By ADD_FROM_LIST_DROPDOWN = By.id("select2-selected-item-container");
+    public static final By SPEECHES_TITLE         = By.id("table-title");
+    public static final By ADD_NEW_SPEECH_BUTTON  = By.id("add-button");
 
     // Common locators
     public static final By OK_BUTTON     = By.cssSelector(".btn.btn-success");

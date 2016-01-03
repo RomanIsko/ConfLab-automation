@@ -38,14 +38,19 @@ public class ElementLocatorData {
             By.xpath("html/body/div[1]/div/div[2]/div/div[2]/div/form/div[4]/label");
 
     //Single event view
-    public static final By EVENTS_LIST  = By.id("list-region");
-    public static final By EVENT_TITLE  = By.id("page-title");
-    public static final By EVENT_TABS   = By.cssSelector(".nav.nav-tabs");
-    public static final By INFO_TAB     = By.xpath("html/body/div[1]/div/div[2]/div/div[2]/ul/li[1]");
-    public static final By SPEAKERS_TAB = By.xpath("html/body/div[1]/div/div[2]/div/div[2]/ul/li[2]");
-    public static final By SPEECHES_TAB = By.xpath("html/body/div[1]/div/div[2]/div/div[2]/ul/li[3]");
+    public static final By EVENTS_LIST       = By.id("list-region");
+    public static final By EVENT_TITLE       = By.id("page-title");
+    public static final By EVENT_TABS        = By.cssSelector(".nav.nav-tabs");
+    public static final By INFO_TAB          = By.xpath("html/body/div[1]/div/div[2]/div/div[2]/ul/li[1]");
+    public static final By SPEAKERS_TAB      = By.xpath("html/body/div[1]/div/div[2]/div/div[2]/ul/li[2]");
+    public static final By SPEECHES_TAB      = By.xpath("html/body/div[1]/div/div[2]/div/div[2]/ul/li[3]");
+    public static final By EVENT_NAME        = By.id("event-name");
+    public static final By EVENT_DESCRIPTION = By.id("event-description");
+    public static final By EVENT_START_DATE  = By.id("event-start-date");
+    public static final By EVENT_END_DATE    = By.id("event-end-date");
 
     // Common locators
     public static final By OK_BUTTON     = By.cssSelector(".btn.btn-success");
     public static final By CANCEL_BUTTON = By.cssSelector(".btn.btn-default");
+    public static final By EDIT_BUTTON   = By.id("edit-button");
 }

@@ -4,7 +4,9 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static com.intelliarts.conflab.utils.ElementLocatorData.ADD_CONFERENCE_BUTTON;
 import static com.intelliarts.conflab.utils.ElementLocatorData.CONFERENCE_DESCRIPTION;
+import static com.intelliarts.conflab.utils.ElementLocatorData.CONFERENCE_END_DATE;
 import static com.intelliarts.conflab.utils.ElementLocatorData.CONFERENCE_NAME;
+import static com.intelliarts.conflab.utils.ElementLocatorData.CONFERENCE_START_DATE;
 import static com.intelliarts.conflab.utils.ElementLocatorData.OK_BUTTON;
 import static com.intelliarts.conflab.utils.ResourcesData.DEPLOYMENT_URL;
 import static com.intelliarts.conflab.utils.ResourcesData.EVENTS_URL;
@@ -12,6 +14,7 @@ import static com.intelliarts.conflab.utils.ResourcesData.EVENTS_URL;
 public class ConfLabEvent {
     private String name;
     private String description;
+    //TODO: convert to Date
     private String startDate;
     private String endDate;
 
@@ -52,8 +55,8 @@ public class ConfLabEvent {
         $(ADD_CONFERENCE_BUTTON).click();
         $(CONFERENCE_NAME).val(name);
         $(CONFERENCE_DESCRIPTION).val(description);
-        //        $(CONFERENCE_START_DATE).val(startDate);
-        //        $(CONFERENCE_END_DATE).val(endDate);
+        $(CONFERENCE_START_DATE).val(startDate);
+        $(CONFERENCE_END_DATE).val(endDate);
         $(OK_BUTTON).click();
     }
 }

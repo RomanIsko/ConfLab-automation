@@ -1,6 +1,5 @@
 package com.intelliarts.conflab.automation.web;
 
-import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.Selectors;
 import com.intelliarts.conflab.utils.ConfLabEvent;
 import org.junit.AfterClass;
@@ -14,7 +13,6 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.refresh;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EDIT_BUTTON;
-import static com.intelliarts.conflab.utils.ElementLocatorData.EVENTS_LIST;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_DESCRIPTION;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_END_DATE;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_NAME;

@@ -21,8 +21,8 @@ import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_START_DATE;
 public class SingleConferenceViewInfoTab extends BasicTestCase {
     protected static String randomEventName  = UUID.randomUUID().toString();
     protected static String eventDescription = "This is the description for \n";
-    protected static String eventStartDate   = "2016-01-08";
-    protected static String eventEndDate     = "2016-01-12";
+    protected static String eventStartDate   = "2016-01-03";
+    protected static String eventEndDate     = "2016-01-04";
 
     @BeforeClass
     public static void setUp() throws Exception {
@@ -34,6 +34,8 @@ public class SingleConferenceViewInfoTab extends BasicTestCase {
         confLabEvent.setEndDate(eventEndDate);
         confLabEvent.addViaWeb();
         ElementsCollection eventsList = $(EVENTS_LIST).findAll(".list-group-item");
+        //use check instead wait
+        eventsList.last().shouldHave(text(randomEventName));
         eventsList.last().click();
     }
 

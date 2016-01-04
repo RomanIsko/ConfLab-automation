@@ -37,6 +37,12 @@ public class ElementLocatorData {
     public static final By SPEAKER_ABOUT_LABEL    =
             By.xpath("html/body/div[1]/div/div[2]/div/div[2]/div/form/div[4]/label");
 
+    //Speeches view
+    public static final By SPEECHES_LINK         = By.xpath("html/body/div[1]/div/div[1]/ul/li[3]/a");
+    public static final By SPEECH_TITLE_FIELD    = By.id("speech-title");
+    public static final By SPEECH_DESCRIPTION    = By.id("speech-description");
+    public static final By SPEECH_LANGUAGE_FIELD = By.id("speech-lang");
+
     //Single event view
     public static final By EVENTS_LIST            = By.id("list-region");
     public static final By EVENT_TITLE            = By.id("page-title");

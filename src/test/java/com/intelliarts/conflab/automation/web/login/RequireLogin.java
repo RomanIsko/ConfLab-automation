@@ -1,5 +1,6 @@
-package com.intelliarts.conflab.automation.web;
+package com.intelliarts.conflab.automation.web.login;
 
+import com.intelliarts.conflab.automation.web.BasicTestCase;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;

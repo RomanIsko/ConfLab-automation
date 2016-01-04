@@ -1,6 +1,7 @@
-package com.intelliarts.conflab.automation.web;
+package com.intelliarts.conflab.automation.web.event;
 
 import com.codeborne.selenide.Selectors;
+import com.intelliarts.conflab.automation.web.BasicTestCase;
 import com.intelliarts.conflab.utils.ConfLabEvent;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;

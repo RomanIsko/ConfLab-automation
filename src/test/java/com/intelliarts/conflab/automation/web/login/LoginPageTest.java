@@ -1,6 +1,7 @@
-package com.intelliarts.conflab.automation.web;
+package com.intelliarts.conflab.automation.web.login;
 
 import com.codeborne.selenide.Condition;
+import com.intelliarts.conflab.automation.web.BasicTestCase;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;

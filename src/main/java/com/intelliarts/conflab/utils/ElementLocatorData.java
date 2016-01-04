@@ -15,10 +15,10 @@ public class ElementLocatorData {
     public static final By CONFERENCES_LINK        = By.xpath("html/body/div[1]/div/div[1]/ul/li[1]/a");
     public static final By CONFERENCES_PAGE_HEADER = By.id("table-title");
     public static final By ADD_CONFERENCE_BUTTON   = By.id("add-button");
-    public static final By CONFERENCE_NAME         = By.id("event-name");
-    public static final By CONFERENCE_DESCRIPTION  = By.id("event-description");
-    public static final By CONFERENCE_START_DATE   = By.id("event-start-date");
-    public static final By CONFERENCE_END_DATE     = By.id("event-end-date");
+    public static final By CONFERENCE_NAME         = By.id("name");
+    public static final By CONFERENCE_DESCRIPTION  = By.id("description");
+    public static final By CONFERENCE_START_DATE   = By.id("startDate");
+    public static final By CONFERENCE_END_DATE     = By.id("endDate");
 
     //Speakers view
     public static final By SPEAKERS_LINK          = By.xpath("html/body/div[1]/div/div[1]/ul/li[2]/a");
@@ -50,10 +50,10 @@ public class ElementLocatorData {
     public static final By INFO_TAB               = By.xpath("html/body/div[1]/div/div[2]/div/div[2]/ul/li[1]");
     public static final By SPEAKERS_TAB           = By.xpath("html/body/div[1]/div/div[2]/div/div[2]/ul/li[2]");
     public static final By SPEECHES_TAB           = By.xpath("html/body/div[1]/div/div[2]/div/div[2]/ul/li[3]");
-    public static final By EVENT_NAME             = By.id("event-name");
-    public static final By EVENT_DESCRIPTION      = By.id("event-description");
-    public static final By EVENT_START_DATE       = By.id("event-start-date");
-    public static final By EVENT_END_DATE         = By.id("event-end-date");
+    public static final By EVENT_NAME             = By.id("name");
+    public static final By EVENT_DESCRIPTION      = By.id("description");
+    public static final By EVENT_START_DATE       = By.id("startDate");
+    public static final By EVENT_END_DATE         = By.id("endDate");
     public static final By ADD_NEW_SPEAKER_BUTTON = By.id("new-button");
     public static final By ADD_FROM_LIST_DROPDOWN = By.id("select2-selected-item-container");
     public static final By SPEECHES_TITLE         = By.id("table-title");

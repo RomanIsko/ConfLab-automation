@@ -62,7 +62,7 @@ public class AddConferenceView extends BasicTestCase {
     @Test
     public void startDateFieldHasTypeDateWithJs() throws Exception {
         String elementType =
-                executeJavaScript("return document.getElementById('event-start-date').getAttribute('type')").toString();
+                executeJavaScript("return document.getElementById('startDate').getAttribute('type')").toString();
         assertThat(elementType, is("date"));
     }
 
@@ -82,7 +82,7 @@ public class AddConferenceView extends BasicTestCase {
     @Test
     public void endDateFieldHasTypeDateWithJs() throws Exception {
         String elementType =
-                executeJavaScript("return document.getElementById('event-end-date').getAttribute('type')").toString();
+                executeJavaScript("return document.getElementById('endDate').getAttribute('type')").toString();
         assertThat(elementType, is("date"));
     }
 

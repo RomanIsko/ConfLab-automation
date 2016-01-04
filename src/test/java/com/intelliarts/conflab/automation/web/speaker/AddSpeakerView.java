@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Condition.cssClass;
 import static com.codeborne.selenide.Condition.type;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
-import static com.intelliarts.conflab.utils.ElementLocatorData.ADD_SPEAKER_BUTTON;
+import static com.intelliarts.conflab.utils.ElementLocatorData.ADD_BUTTON;
 import static com.intelliarts.conflab.utils.ElementLocatorData.CANCEL_BUTTON;
 import static com.intelliarts.conflab.utils.ElementLocatorData.OK_BUTTON;
 import static com.intelliarts.conflab.utils.ElementLocatorData.SPEAKERS_LINK;
@@ -31,7 +31,7 @@ public class AddSpeakerView extends BasicTestCase {
         basicSetUp();
         login();
         $(SPEAKERS_LINK).click();
-        $(ADD_SPEAKER_BUTTON).click();
+        $(ADD_BUTTON).click();
     }
 
     @AfterClass

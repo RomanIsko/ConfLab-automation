@@ -7,7 +7,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import static com.codeborne.selenide.Selenide.$;
-import static com.intelliarts.conflab.utils.ElementLocatorData.ADD_SPEAKER_BUTTON;
+import static com.intelliarts.conflab.utils.ElementLocatorData.ADD_BUTTON;
 import static com.intelliarts.conflab.utils.ElementLocatorData.SPEAKERS_LINK;
 import static com.intelliarts.conflab.utils.ElementLocatorData.SPEAKERS_PAGE_HEADER;
 
@@ -32,6 +32,6 @@ public class SpeakersView extends BasicTestCase {
 
     @Test
     public void addButtonVisible() throws Exception {
-        $(ADD_SPEAKER_BUTTON).shouldBe(Condition.visible);
+        $(ADD_BUTTON).shouldBe(Condition.visible);
     }
 }

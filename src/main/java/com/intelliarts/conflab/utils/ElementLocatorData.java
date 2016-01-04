@@ -23,7 +23,6 @@ public class ElementLocatorData {
     //Speakers view
     public static final By SPEAKERS_LINK          = By.xpath("html/body/div[1]/div/div[1]/ul/li[2]/a");
     public static final By SPEAKERS_PAGE_HEADER   = By.id("table-title");
-    public static final By ADD_SPEAKER_BUTTON     = By.id("add-button");
     public static final By SPEAKER_NAME           = By.id("name");
     public static final By SPEAKER_NAME_LABEL     =
             By.xpath("html/body/div[1]/div/div[2]/div/div[2]/div/form/div[1]/label");
@@ -39,6 +38,7 @@ public class ElementLocatorData {
 
     //Speeches view
     public static final By SPEECHES_LINK         = By.xpath("html/body/div[1]/div/div[1]/ul/li[3]/a");
+    public static final By SPEECHES_PAGE_HEADER  = By.id("table-title");
     public static final By SPEECH_TITLE_FIELD    = By.id("speech-title");
     public static final By SPEECH_DESCRIPTION    = By.id("speech-description");
     public static final By SPEECH_LANGUAGE_FIELD = By.id("speech-lang");

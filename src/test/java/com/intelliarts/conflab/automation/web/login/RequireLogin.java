@@ -6,6 +6,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static com.intelliarts.conflab.utils.ElementLocatorData.PASSWORD_FIELD;
@@ -72,6 +73,6 @@ public class RequireLogin extends BasicTestCase {
     }
 
     private static boolean loginRequired() {
-        return ($(USERNAME_FIELD).isDisplayed() && $(PASSWORD_FIELD).isDisplayed());
+        return ($(USERNAME_FIELD).is(visible) && $(PASSWORD_FIELD).is(visible));
     }
 }

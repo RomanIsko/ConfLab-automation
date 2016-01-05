@@ -16,7 +16,7 @@ import static com.intelliarts.conflab.utils.ElementLocatorData.ADD_FROM_LIST_DRO
 import static com.intelliarts.conflab.utils.ElementLocatorData.ADD_NEW_SPEAKER_BUTTON;
 import static com.intelliarts.conflab.utils.ElementLocatorData.SPEAKERS_TAB;
 
-public class SingleConferenceViewSpeakersTab extends BasicTestCase {
+public class SingleEventViewSpeakersTab extends BasicTestCase {
     protected static String randomEventName  = UUID.randomUUID().toString();
     protected static String eventDescription = "This is the description for \n";
     protected static String eventStartDate   = "2016-01-08";

@@ -21,7 +21,7 @@ import static com.intelliarts.conflab.utils.ElementLocatorData.OK_BUTTON;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
-public class AddConferenceView extends BasicTestCase {
+public class AddEventView extends BasicTestCase {
 
     @BeforeClass
     public static void setUp() throws Exception {

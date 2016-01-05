@@ -19,7 +19,7 @@ import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_END_DATE;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_NAME;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_START_DATE;
 
-public class SingleConferenceViewInfoTab extends BasicTestCase {
+public class SingleEventViewInfoTab extends BasicTestCase {
     protected static String randomEventName  = UUID.randomUUID().toString();
     protected static String eventDescription = "This is the description for \n";
     protected static String eventStartDate   = "2016-01-03";

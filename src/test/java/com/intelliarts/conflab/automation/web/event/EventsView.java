@@ -12,7 +12,7 @@ import static com.intelliarts.conflab.utils.ElementLocatorData.ADD_BUTTON;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENTS_LINK;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENTS_PAGE_HEADER;
 
-public class ConferencesView extends BasicTestCase {
+public class EventsView extends BasicTestCase {
 
     @BeforeClass
     public static void setUp() throws Exception {

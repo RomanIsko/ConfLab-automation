@@ -16,7 +16,7 @@ import static com.intelliarts.conflab.utils.ElementLocatorData.ADD_BUTTON;
 import static com.intelliarts.conflab.utils.ElementLocatorData.SPEECHES_TAB;
 import static com.intelliarts.conflab.utils.ElementLocatorData.SPEECHES_TITLE;
 
-public class SingleConferenceViewSpeechesTab extends BasicTestCase {
+public class SingleEventViewSpeechesTab extends BasicTestCase {
     protected static String randomEventName  = UUID.randomUUID().toString();
     protected static String eventDescription = "This is the description for \n";
     protected static String eventStartDate   = "2016-01-08";

@@ -20,7 +20,7 @@ import static com.intelliarts.conflab.utils.ElementLocatorData.INFO_TAB;
 import static com.intelliarts.conflab.utils.ElementLocatorData.SPEAKERS_TAB;
 import static com.intelliarts.conflab.utils.ElementLocatorData.SPEECHES_TAB;
 
-public class SingleConferenceView extends BasicTestCase {
+public class SingleEventView extends BasicTestCase {
 
     @BeforeClass
     public static void setUp() throws Exception {

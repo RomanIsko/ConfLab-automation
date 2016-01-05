@@ -27,7 +27,7 @@ public class EventsView extends BasicTestCase {
     }
 
     @Test
-    public void conferencesHeader() throws Exception {
+    public void eventHeader() throws Exception {
         $(EVENTS_PAGE_HEADER).shouldHave(text("Conferences"));
     }
 

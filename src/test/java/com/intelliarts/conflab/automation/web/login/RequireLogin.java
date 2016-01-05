@@ -37,13 +37,13 @@ public class RequireLogin extends BasicTestCase {
     }
 
     @Test
-    public void conferencesLinkRequireLogin() throws Exception {
+    public void eventsLinkRequireLogin() throws Exception {
         open(EVENTS_URL);
         assertThat(loginRequired(), is(true));
     }
 
     @Test
-    public void singleConferenceLinkRequireLogin() throws Exception {
+    public void singleEventLinkRequireLogin() throws Exception {
         open(EVENTS_URL + singleEntityUrl);
         assertThat(loginRequired(), is(true));
     }

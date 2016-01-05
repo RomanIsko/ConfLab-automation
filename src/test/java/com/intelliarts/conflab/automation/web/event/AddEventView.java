@@ -42,7 +42,7 @@ public class AddEventView extends BasicTestCase {
     }
 
     @Test
-    public void conferenceDescriptionIsDisplayed() throws Exception {
+    public void eventDescriptionIsDisplayed() throws Exception {
         $(EVENT_DESCRIPTION).shouldBe(visible);
     }
 

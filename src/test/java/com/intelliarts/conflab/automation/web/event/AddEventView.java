@@ -6,6 +6,7 @@ import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
 
+import static com.codeborne.selenide.Condition.cssClass;
 import static com.codeborne.selenide.Condition.type;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
@@ -14,14 +15,20 @@ import static com.intelliarts.conflab.utils.ElementLocatorData.ADD_BUTTON;
 import static com.intelliarts.conflab.utils.ElementLocatorData.CANCEL_BUTTON;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENTS_LINK;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_DESCRIPTION;
+import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_DESCRIPTION_LABEL;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_END_DATE;
+import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_END_DATE_LABEL;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_NAME;
+import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_NAME_LABEL;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_START_DATE;
+import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_START_DATE_LABEL;
 import static com.intelliarts.conflab.utils.ElementLocatorData.OK_BUTTON;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
 public class AddEventView extends BasicTestCase {
+
+    private final String required = "required";
 
     @BeforeClass
     public static void setUp() throws Exception {
@@ -42,13 +49,28 @@ public class AddEventView extends BasicTestCase {
     }
 
     @Test
+    public void nameLabelHasRequiredClass() throws Exception {
+        $(EVENT_NAME_LABEL).shouldHave(cssClass(required));
+    }
+
+    @Test
     public void eventDescriptionIsDisplayed() throws Exception {
         $(EVENT_DESCRIPTION).shouldBe(visible);
     }
 
     @Test
+    public void eventDescriptionLabelHasNotRequiredClass() throws Exception {
+        $(EVENT_DESCRIPTION_LABEL).shouldNotHave(cssClass(required));
+    }
+
+    @Test
     public void startDateFieldIsDisplayed() throws Exception {
         $(EVENT_START_DATE).shouldBe(visible);
+    }
+
+    @Test
+    public void startDateLabelHasNotRequiredClass() throws Exception {
+        $(EVENT_START_DATE_LABEL).shouldNotHave(cssClass(required));
     }
 
     // enable after https://code.google.com/p/selenium/issues/detail?id=7650 is fixed
@@ -69,6 +91,11 @@ public class AddEventView extends BasicTestCase {
     @Test
     public void endDateFieldIsDisplayed() throws Exception {
         $(EVENT_END_DATE).shouldBe(visible);
+    }
+
+    @Test
+    public void endDateLabelHasNotRequiredClass() throws Exception {
+        $(EVENT_END_DATE_LABEL).shouldNotHave(cssClass(required));
     }
 
     // enable after https://code.google.com/p/selenium/issues/detail?id=7650 is fixed

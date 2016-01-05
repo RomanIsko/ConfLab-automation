@@ -15,6 +15,7 @@ public class ElementLocatorData {
     public static final By EVENTS_LINK             = By.xpath("html/body/div[1]/div/div[1]/ul/li[1]/a");
     public static final By EVENTS_PAGE_HEADER      = By.id("table-title");
     public static final By EVENTS_LIST             = By.id("list-region");
+    public static final By EVENT_EDIT_REGION       = By.id("edit-region");
     public static final By EVENT_TITLE             = By.id("page-title");
     public static final By EVENT_TABS              = By.cssSelector(".nav.nav-tabs");
     public static final By INFO_TAB                = By.xpath("html/body/div[1]/div/div[2]/div/div[2]/ul/li[1]");
@@ -35,6 +36,15 @@ public class ElementLocatorData {
     public static final By ADD_NEW_SPEAKER_BUTTON  = By.id("new-button");
     public static final By ADD_FROM_LIST_DROPDOWN  = By.id("select2-selected-item-container");
     public static final By SPEECHES_TITLE          = By.id("table-title");
+
+    public static final By NAME_FIELD_VALIDATION_MESSAGE  =
+            By.xpath("html/body/div[1]/div/div[2]/div/div[2]/div/form/div[1]/div/span");
+    public static final By DESCRIPTION_VALIDATION_MESSAGE =
+            By.xpath("html/body/div[1]/div/div[2]/div/div[2]/div/form/div[2]/div/span");
+    public static final By START_DATE_VALIDATION_MESSAGE  =
+            By.xpath("html/body/div[1]/div/div[2]/div/div[2]/div/form/div[3]/div/span");
+    public static final By END_DATE_VALIDATION_MESSAGE    =
+            By.xpath("html/body/div[1]/div/div[2]/div/div[2]/div/form/div[4]/div/span");
 
     //Speakers view
     public static final By SPEAKERS_LINK          = By.xpath("html/body/div[1]/div/div[1]/ul/li[2]/a");

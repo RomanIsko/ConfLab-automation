@@ -37,13 +37,13 @@ public class ElementLocatorData {
     public static final By ADD_FROM_LIST_DROPDOWN  = By.id("select2-selected-item-container");
     public static final By SPEECHES_TITLE          = By.id("table-title");
 
-    public static final By NAME_FIELD_VALIDATION_MESSAGE  =
+    public static final By EVENT_NAME_FIELD_VALIDATION_MESSAGE  =
             By.xpath("html/body/div[1]/div/div[2]/div/div[2]/div/form/div[1]/div/span");
-    public static final By DESCRIPTION_VALIDATION_MESSAGE =
+    public static final By EVENT_DESCRIPTION_VALIDATION_MESSAGE =
             By.xpath("html/body/div[1]/div/div[2]/div/div[2]/div/form/div[2]/div/span");
-    public static final By START_DATE_VALIDATION_MESSAGE  =
+    public static final By EVENT_START_DATE_VALIDATION_MESSAGE  =
             By.xpath("html/body/div[1]/div/div[2]/div/div[2]/div/form/div[3]/div/span");
-    public static final By END_DATE_VALIDATION_MESSAGE    =
+    public static final By EVENT_END_DATE_VALIDATION_MESSAGE    =
             By.xpath("html/body/div[1]/div/div[2]/div/div[2]/div/form/div[4]/div/span");
 
     //Speakers view

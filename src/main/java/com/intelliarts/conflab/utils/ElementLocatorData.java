@@ -22,45 +22,37 @@ public class ElementLocatorData {
     public static final By SPEAKERS_TAB            = By.xpath("html/body/div[1]/div/div[2]/div/div[2]/ul/li[2]");
     public static final By SPEECHES_TAB            = By.xpath("html/body/div[1]/div/div[2]/div/div[2]/ul/li[3]");
     public static final By EVENT_NAME              = By.id("name");
-    public static final By EVENT_NAME_LABEL        =
-            By.xpath("html/body/div[1]/div/div[2]/div/div[2]/div/form/div[1]/label");
+    public static final By EVENT_NAME_LABEL        = By.xpath("//label[@for='name']");
     public static final By EVENT_DESCRIPTION       = By.id("description");
-    public static final By EVENT_DESCRIPTION_LABEL =
-            By.xpath("html/body/div[1]/div/div[2]/div/div[2]/div/form/div[2]/label");
+    public static final By EVENT_DESCRIPTION_LABEL = By.xpath("//label[@for='description']");
     public static final By EVENT_START_DATE        = By.id("startDate");
-    public static final By EVENT_START_DATE_LABEL  =
-            By.xpath("html/body/div[1]/div/div[2]/div/div[2]/div/form/div[3]/label");
+    public static final By EVENT_START_DATE_LABEL  = By.xpath("//label[@for='startDate']");
     public static final By EVENT_END_DATE          = By.id("endDate");
-    public static final By EVENT_END_DATE_LABEL    =
-            By.xpath("html/body/div[1]/div/div[2]/div/div[2]/div/form/div[4]/label");
+    public static final By EVENT_END_DATE_LABEL    = By.xpath("//label[@for='endDate']");
     public static final By ADD_NEW_SPEAKER_BUTTON  = By.id("new-button");
     public static final By ADD_FROM_LIST_DROPDOWN  = By.id("select2-selected-item-container");
     public static final By SPEECHES_TITLE          = By.id("table-title");
 
     public static final By EVENT_NAME_FIELD_VALIDATION_MESSAGE  =
-            By.xpath("html/body/div[1]/div/div[2]/div/div[2]/div/form/div[1]/div/span");
+            By.xpath("//input[@id='name']/following-sibling::span");
     public static final By EVENT_DESCRIPTION_VALIDATION_MESSAGE =
-            By.xpath("html/body/div[1]/div/div[2]/div/div[2]/div/form/div[2]/div/span");
+            By.xpath("//textarea[@id='description']/following-sibling::span");
     public static final By EVENT_START_DATE_VALIDATION_MESSAGE  =
-            By.xpath("html/body/div[1]/div/div[2]/div/div[2]/div/form/div[3]/div/span");
+            By.xpath("//input[@id='startDate']/following-sibling::span");
     public static final By EVENT_END_DATE_VALIDATION_MESSAGE    =
-            By.xpath("html/body/div[1]/div/div[2]/div/div[2]/div/form/div[4]/div/span");
+            By.xpath("//input[@id='endDate']/following-sibling::span");
 
     //Speakers view
     public static final By SPEAKERS_LINK          = By.xpath("html/body/div[1]/div/div[1]/ul/li[2]/a");
     public static final By SPEAKERS_PAGE_HEADER   = By.id("table-title");
     public static final By SPEAKER_NAME           = By.id("name");
-    public static final By SPEAKER_NAME_LABEL     =
-            By.xpath("html/body/div[1]/div/div[2]/div/div[2]/div/form/div[1]/label");
+    public static final By SPEAKER_NAME_LABEL     = By.xpath("//label[@for='name']");
     public static final By SPEAKER_EMAIL          = By.id("email");
-    public static final By SPEAKER_EMAIL_LABEL    =
-            By.xpath("html/body/div[1]/div/div[2]/div/div[2]/div/form/div[2]/label");
+    public static final By SPEAKER_EMAIL_LABEL    = By.xpath("//label[@for='email']");
     public static final By SPEAKER_POSITION       = By.id("position");
-    public static final By SPEAKER_POSITION_LABEL =
-            By.xpath("html/body/div[1]/div/div[2]/div/div[2]/div/form/div[3]/label");
+    public static final By SPEAKER_POSITION_LABEL = By.xpath("//label[@for='position']");
     public static final By SPEAKER_ABOUT          = By.id("about");
-    public static final By SPEAKER_ABOUT_LABEL    =
-            By.xpath("html/body/div[1]/div/div[2]/div/div[2]/div/form/div[4]/label");
+    public static final By SPEAKER_ABOUT_LABEL    = By.xpath("//label[@for='about']");
 
     //Speeches view
     public static final By SPEECHES_LINK         = By.xpath("html/body/div[1]/div/div[1]/ul/li[3]/a");

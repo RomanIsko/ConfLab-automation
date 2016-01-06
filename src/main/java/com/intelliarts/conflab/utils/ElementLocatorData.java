@@ -45,6 +45,7 @@ public class ElementLocatorData {
     //Speakers view
     public static final By SPEAKERS_LINK          = By.xpath("html/body/div[1]/div/div[1]/ul/li[2]/a");
     public static final By SPEAKERS_PAGE_HEADER   = By.id("table-title");
+    public static final By SPEAKER_EDIT_REGION    = By.id("edit-region");
     public static final By SPEAKER_NAME           = By.id("name");
     public static final By SPEAKER_NAME_LABEL     = By.xpath("//label[@for='name']");
     public static final By SPEAKER_EMAIL          = By.id("email");
@@ -53,6 +54,15 @@ public class ElementLocatorData {
     public static final By SPEAKER_POSITION_LABEL = By.xpath("//label[@for='position']");
     public static final By SPEAKER_ABOUT          = By.id("about");
     public static final By SPEAKER_ABOUT_LABEL    = By.xpath("//label[@for='about']");
+
+    public static final By SPEAKER_NAME_FIELD_VALIDATION_MESSAGE =
+            By.xpath("//input[@id='name']/following-sibling::span");
+    public static final By SPEAKER_EMAIL_VALIDATION_MESSAGE      =
+            By.xpath("//input[@id='email']/following-sibling::span");
+    public static final By SPEAKER_POSITION_VALIDATION_MESSAGE   =
+            By.xpath("//input[@id='position']/following-sibling::span");
+    public static final By SPEAKER_ABOUT_VALIDATION_MESSAGE      =
+            By.xpath("//textarea[@id='about']/following-sibling::span");
 
     //Speeches view
     public static final By SPEECHES_LINK         = By.xpath("html/body/div[1]/div/div[1]/ul/li[3]/a");

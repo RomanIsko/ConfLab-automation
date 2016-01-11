@@ -13,11 +13,12 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.refresh;
-import static com.intelliarts.conflab.utils.ElementLocatorData.EDIT_BUTTON;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_DESCRIPTION;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_END_DATE;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_NAME;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_START_DATE;
+import static com.intelliarts.conflab.utils.ElementLocatorData.FORM_EDIT_BUTTON;
+import static com.intelliarts.conflab.utils.ElementLocatorData.INFO_FORM;
 
 public class SingleEventViewInfoTab extends BasicTestCase {
     protected static String randomEventName  = UUID.randomUUID().toString();
@@ -50,7 +51,8 @@ public class SingleEventViewInfoTab extends BasicTestCase {
 
     @Test
     public void editButtonVisible() throws Exception {
-        $(EDIT_BUTTON).shouldBe(visible);
+        $(INFO_FORM).hover();
+        $(FORM_EDIT_BUTTON).shouldBe(visible);
     }
 
     @Test

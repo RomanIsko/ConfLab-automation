@@ -12,7 +12,7 @@ import java.util.UUID;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.refresh;
-import static com.intelliarts.conflab.utils.ElementLocatorData.ADD_BUTTON;
+import static com.intelliarts.conflab.utils.ElementLocatorData.ADD_NEW_BUTTON;
 import static com.intelliarts.conflab.utils.ElementLocatorData.SPEECHES_TAB;
 import static com.intelliarts.conflab.utils.ElementLocatorData.SPEECHES_TITLE;
 
@@ -48,6 +48,6 @@ public class SingleEventViewSpeechesTab extends BasicTestCase {
 
     @Test
     public void addNewSpeechButtonVisible() throws Exception {
-        $(ADD_BUTTON).shouldBe(visible);
+        $(ADD_NEW_BUTTON).shouldBe(visible);
     }
 }

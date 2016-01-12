@@ -69,9 +69,9 @@ public class ElementLocatorData {
     //Speeches view
     public static final By SPEECHES_LINK         = By.xpath("html/body/div[1]/div/div[1]/ul/li[3]/a");
     public static final By SPEECHES_PAGE_HEADER  = By.id("table-title");
-    public static final By SPEECH_TITLE_FIELD    = By.id("speech-title");
-    public static final By SPEECH_DESCRIPTION    = By.id("speech-description");
-    public static final By SPEECH_LANGUAGE_FIELD = By.id("speech-lang");
+    public static final By SPEECH_TITLE_FIELD    = By.id("title");
+    public static final By SPEECH_DESCRIPTION    = By.id("description");
+    public static final By SPEECH_LANGUAGE_FIELD = By.id("lang");
 
     // Common locators
     public static final By OK_BUTTON     = By.cssSelector(".btn.btn-success");

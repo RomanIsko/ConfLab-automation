@@ -20,9 +20,9 @@ public class ElementLocatorData {
     public static final By EVENT_TABS              = By.cssSelector(".nav.nav-tabs");
     public static final By INFO_FORM               = By.cssSelector(".form-horizontal");
     public static final By FORM_EDIT_BUTTON        = By.cssSelector(".glyphicon.glyphicon-pencil.edit");
-    public static final By INFO_TAB                = By.xpath("html/body/div[1]/div/div[2]/div/div[2]/ul/li[1]");
-    public static final By SPEAKERS_TAB            = By.xpath("html/body/div[1]/div/div[2]/div/div[2]/ul/li[2]");
-    public static final By SPEECHES_TAB            = By.xpath("html/body/div[1]/div/div[2]/div/div[2]/ul/li[3]");
+    public static final By INFO_TAB                = By.xpath("html/body/div[1]/div/div[2]/div/div[1]/ul/li[1]");
+    public static final By SPEAKERS_TAB            = By.xpath("html/body/div[1]/div/div[2]/div/div[1]/ul/li[2]");
+    public static final By SPEECHES_TAB            = By.xpath("html/body/div[1]/div/div[2]/div/div[1]/ul/li[3]");
     public static final By EVENT_NAME              = By.id("name");
     public static final By EVENT_NAME_LABEL        = By.xpath("//label[@for='name']");
     public static final By EVENT_DESCRIPTION       = By.id("description");

@@ -67,11 +67,13 @@ public class ElementLocatorData {
             By.xpath("//textarea[@id='about']/following-sibling::span");
 
     //Speeches view
-    public static final By SPEECHES_LINK         = By.xpath("html/body/div[1]/div/div[1]/ul/li[3]/a");
-    public static final By SPEECHES_PAGE_HEADER  = By.id("table-title");
-    public static final By SPEECH_TITLE_FIELD    = By.id("title");
-    public static final By SPEECH_DESCRIPTION    = By.id("description");
-    public static final By SPEECH_LANGUAGE_FIELD = By.id("lang");
+    public static final By SPEECHES_LINK                   = By.xpath("html/body/div[1]/div/div[1]/ul/li[3]/a");
+    public static final By SPEECHES_PAGE_HEADER            = By.id("table-title");
+    public static final By SPEECH_EDIT_REGION              = By.id("edit-region");
+    public static final By SPEECH_TITLE_FIELD              = By.id("title");
+    public static final By SPEECH_DESCRIPTION              = By.id("description");
+    public static final By SPEECH_LANGUAGE_FIELD           = By.id("lang");
+    public static final By SPEECH_TITLE_VALIDATION_MESSAGE = By.xpath("//input[@id='title']/following-sibling::span");
 
     // Common locators
     public static final By OK_BUTTON     = By.cssSelector(".btn.btn-success");

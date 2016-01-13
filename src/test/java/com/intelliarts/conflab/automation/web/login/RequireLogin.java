@@ -10,9 +10,9 @@ import org.junit.Test;
 
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.$$;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.WebDriverRunner.url;
-import static com.intelliarts.conflab.utils.ElementLocatorData.EVENTS_LIST;
 import static com.intelliarts.conflab.utils.ElementLocatorData.PASSWORD_FIELD;
 import static com.intelliarts.conflab.utils.ElementLocatorData.USERNAME_FIELD;
 import static com.intelliarts.conflab.utils.ResourcesData.DEPLOYMENT_URL;
@@ -35,7 +35,7 @@ public class RequireLogin extends BasicTestCase {
         login();
         ConfLabEvent confLabEvent = new ConfLabEvent();
         confLabEvent.addViaWeb();
-        ElementsCollection eventsList = $(EVENTS_LIST).findAll(".list-group-item");
+        ElementsCollection eventsList = $$(".list-group-item");
         eventsList.last().click();
         eventUrl = url();
         logout();

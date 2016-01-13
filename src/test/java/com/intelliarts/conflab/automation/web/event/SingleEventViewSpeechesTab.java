@@ -10,9 +10,9 @@ import org.junit.Test;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.refresh;
+import static com.intelliarts.conflab.utils.ElementLocatorData.ADD_FROM_LIST_DROPDOWN;
 import static com.intelliarts.conflab.utils.ElementLocatorData.ADD_NEW_BUTTON;
 import static com.intelliarts.conflab.utils.ElementLocatorData.SPEECHES_TAB;
-import static com.intelliarts.conflab.utils.ElementLocatorData.SPEECHES_TITLE;
 
 public class SingleEventViewSpeechesTab extends BasicTestCase {
     protected static String eventDescription = "This is the description for \n";
@@ -39,12 +39,12 @@ public class SingleEventViewSpeechesTab extends BasicTestCase {
     }
 
     @Test
-    public void speechesTitleVisible() throws Exception {
-        $(SPEECHES_TITLE).shouldBe(visible);
+    public void addNewSpeechButtonVisible() throws Exception {
+        $(ADD_NEW_BUTTON).shouldBe(visible);
     }
 
     @Test
-    public void addNewSpeechButtonVisible() throws Exception {
-        $(ADD_NEW_BUTTON).shouldBe(visible);
+    public void addFromListDropdownVisible() throws Exception {
+        $(ADD_FROM_LIST_DROPDOWN).shouldBe(visible);
     }
 }

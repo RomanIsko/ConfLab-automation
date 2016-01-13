@@ -3,6 +3,7 @@ package com.intelliarts.conflab.automation.web;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.junit.ScreenShooter;
 import com.intelliarts.conflab.utils.ConfLabEvent;
+import com.intelliarts.conflab.utils.ConfLabSpeaker;
 import org.junit.Rule;
 import org.openqa.selenium.By;
 
@@ -40,6 +41,12 @@ public class BasicTestCase {
     protected static void addMultipleEvents(int count) {
         for (int i = 0; i < count; i++) {
             new ConfLabEvent().addViaWeb();
+        }
+    }
+
+    protected static void addMultipleSpeaekrs(int count) {
+        for (int i = 0; i < count; i++) {
+            new ConfLabSpeaker().addViaWeb();
         }
     }
 

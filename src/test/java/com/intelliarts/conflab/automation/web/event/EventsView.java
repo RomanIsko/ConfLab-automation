@@ -10,6 +10,7 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.intelliarts.conflab.utils.ElementLocatorData.ADD_BUTTON;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENTS_LINK;
+import static com.intelliarts.conflab.utils.ElementLocatorData.EVENTS_LIST;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENTS_PAGE_HEADER;
 
 public class EventsView extends BasicTestCase {
@@ -18,6 +19,7 @@ public class EventsView extends BasicTestCase {
     public static void setUp() throws Exception {
         basicSetUp();
         login();
+        addMultipleEvents(5);
         $(EVENTS_LINK).click();
     }
 
@@ -34,5 +36,10 @@ public class EventsView extends BasicTestCase {
     @Test
     public void addButtonVisible() throws Exception {
         $(ADD_BUTTON).shouldBe(visible);
+    }
+
+    @Test
+    public void eventsSectionVisible() throws Exception {
+        $(EVENTS_LIST).shouldBe(visible);
     }
 }

@@ -2,6 +2,7 @@ package com.intelliarts.conflab.automation.web;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.junit.ScreenShooter;
+import com.intelliarts.conflab.utils.ConfLabEvent;
 import org.junit.Rule;
 
 import static com.codeborne.selenide.Selenide.$;
@@ -32,5 +33,12 @@ public class BasicTestCase {
         $(SIGN_IN_LINK).click();
         $(USERNAME_FIELD).val(DEFAULT_USERNAME);
         $(PASSWORD_FIELD).val(DEFAULT_PASSWORD).pressEnter();
+    }
+
+    protected static void addMultipleEvents(int count) {
+        for (int i = 0; i < count; i++) {
+            ConfLabEvent confLabEvent = new ConfLabEvent();
+            confLabEvent.addViaWeb();
+        }
     }
 }

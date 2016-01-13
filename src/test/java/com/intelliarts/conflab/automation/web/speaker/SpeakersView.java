@@ -18,6 +18,7 @@ public class SpeakersView extends BasicTestCase {
     public static void setUp() throws Exception {
         basicSetUp();
         login();
+        addMultipleSpeaekrs(2);
         $(SPEAKERS_LINK).click();
     }
 
@@ -34,5 +35,10 @@ public class SpeakersView extends BasicTestCase {
     @Test
     public void addButtonVisible() throws Exception {
         $(ADD_BUTTON).shouldBe(visible);
+    }
+
+    @Test
+    public void speakerSectionVisible() throws Exception {
+        $(SPEAKERS_LINK).shouldBe(visible);
     }
 }

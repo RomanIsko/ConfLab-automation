@@ -48,6 +48,7 @@ public class ElementLocatorData {
     //Speakers view
     public static final By SPEAKERS_LINK          = By.xpath("html/body/div[1]/div/div[1]/ul/li[2]/a");
     public static final By SPEAKERS_PAGE_HEADER   = By.id("table-title");
+    public static final By SPEAKERS_LIST          = By.id("list-region");
     public static final By SPEAKER_EDIT_REGION    = By.id("edit-region");
     public static final By SPEAKER_NAME           = By.id("name");
     public static final By SPEAKER_NAME_LABEL     = By.xpath("//label[@for='name']");

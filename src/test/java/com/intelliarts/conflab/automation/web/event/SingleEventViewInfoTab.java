@@ -7,8 +7,6 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import java.util.UUID;
-
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
@@ -20,7 +18,6 @@ import static com.intelliarts.conflab.utils.ElementLocatorData.FORM_EDIT_BUTTON;
 import static com.intelliarts.conflab.utils.ElementLocatorData.INFO_FORM;
 
 public class SingleEventViewInfoTab extends BasicTestCase {
-    protected static String randomEventName  = UUID.randomUUID().toString();
     protected static String eventDescription = "This is the description for \n";
     protected static String eventStartDate   = "2016-01-03";
     protected static String eventEndDate     = "2016-01-04";
@@ -29,13 +26,13 @@ public class SingleEventViewInfoTab extends BasicTestCase {
     public static void setUp() throws Exception {
         basicSetUp();
         login();
-        ConfLabEvent confLabEvent = new ConfLabEvent(randomEventName);
+        ConfLabEvent confLabEvent = new ConfLabEvent();
         confLabEvent.setDescription(eventDescription);
         confLabEvent.setStartDate(eventStartDate);
         confLabEvent.setEndDate(eventEndDate);
         confLabEvent.addViaWeb();
         refresh();
-        $(Selectors.withText(randomEventName)).click();
+        $(Selectors.withText(confLabEvent.getName())).click();
     }
 
     @AfterClass

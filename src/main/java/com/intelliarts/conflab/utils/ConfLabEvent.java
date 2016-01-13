@@ -1,5 +1,7 @@
 package com.intelliarts.conflab.utils;
 
+import java.util.UUID;
+
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static com.intelliarts.conflab.utils.ElementLocatorData.ADD_BUTTON;
@@ -20,6 +22,10 @@ public class ConfLabEvent {
 
     public ConfLabEvent(String name) {
         this.name = name;
+    }
+
+    public ConfLabEvent() {
+        this.name = UUID.randomUUID().toString();
     }
 
     public String getDescription() {

@@ -7,8 +7,6 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import java.util.UUID;
-
 import static com.codeborne.selenide.Condition.cssClass;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
@@ -26,7 +24,7 @@ public class SingleEventView extends BasicTestCase {
     public static void setUp() throws Exception {
         basicSetUp();
         login();
-        ConfLabEvent confLabEvent = new ConfLabEvent(UUID.randomUUID().toString());
+        ConfLabEvent confLabEvent = new ConfLabEvent();
         confLabEvent.addViaWeb();
         ElementsCollection eventsList = $(EVENTS_LIST).findAll(".list-group-item");
         eventsList.last().click();

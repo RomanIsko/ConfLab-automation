@@ -24,6 +24,7 @@ import static com.intelliarts.conflab.utils.ElementLocatorData.SPEECH_TITLE_VALI
 
 public class SpeechValidation extends BasicTestCase {
 
+    public static final String POSSIBLE_LANGUAGE    = "English";
     private final       String TITLE_REQUIRED       = "Title is required";
     private final       String POSSIBLE_TITLE       = UUID.randomUUID().toString();
     private final       String POSSIBLE_DESCRIPTION =
@@ -42,7 +43,6 @@ public class SpeechValidation extends BasicTestCase {
             "imperdiet pharetra dui iaculis eget. Fusce in velit ac diam condimentum mattis laoreet feugiat magna. " +
             "Sed luctus, libero non vehicula auctor, lectus lorem vestibulum nisl, in mattis nisl augue nec augue. " +
             "Suspendisse vestibulum ante elit, nec pretium nibh malesuada vitae.";
-    public static final String POSSIBLE_LANGUAGE    = "English";
 
     @BeforeClass
     public static void setUp() throws Exception {

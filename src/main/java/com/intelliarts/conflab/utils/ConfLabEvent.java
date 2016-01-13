@@ -10,7 +10,6 @@ import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_END_DATE;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_NAME;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_START_DATE;
 import static com.intelliarts.conflab.utils.ElementLocatorData.OK_BUTTON;
-import static com.intelliarts.conflab.utils.ResourcesData.DEPLOYMENT_URL;
 import static com.intelliarts.conflab.utils.ResourcesData.EVENTS_URL;
 
 public class ConfLabEvent {
@@ -57,7 +56,7 @@ public class ConfLabEvent {
     }
 
     public void addViaWeb() {
-        open(DEPLOYMENT_URL + EVENTS_URL);
+        open(EVENTS_URL);
         $(ADD_BUTTON).click();
         $(EVENT_NAME).val(name);
         $(EVENT_DESCRIPTION).val(description);

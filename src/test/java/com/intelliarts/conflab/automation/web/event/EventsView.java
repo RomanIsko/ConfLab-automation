@@ -19,7 +19,7 @@ public class EventsView extends BasicTestCase {
     public static void setUp() throws Exception {
         basicSetUp();
         login();
-        addMultipleEvents(5);
+        addMultipleEvents(2);
         $(EVENTS_LINK).click();
     }
 

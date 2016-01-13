@@ -1,11 +1,12 @@
 package com.intelliarts.conflab.automation.web.login;
 
-import com.codeborne.selenide.Condition;
 import com.intelliarts.conflab.automation.web.BasicTestCase;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import static com.codeborne.selenide.Condition.type;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.intelliarts.conflab.utils.ElementLocatorData.CANCEL_BUTTON;
 import static com.intelliarts.conflab.utils.ElementLocatorData.LOGIN_BUTTON;
@@ -28,31 +29,31 @@ public class LoginPageTest extends BasicTestCase {
 
     @Test
     public void usernameFieldVisible() throws Exception {
-        $(USERNAME_FIELD).shouldBe(Condition.visible);
+        $(USERNAME_FIELD).shouldBe(visible);
     }
 
     @Test
     public void passwordFieldVisible() throws Exception {
-        $(PASSWORD_FIELD).shouldBe(Condition.visible);
+        $(PASSWORD_FIELD).shouldBe(visible);
     }
 
     @Test
     public void passwordFieldHasPasswordType() throws Exception {
-        $(PASSWORD_FIELD).shouldHave(Condition.type("password"));
+        $(PASSWORD_FIELD).shouldHave(type("password"));
     }
 
     @Test
     public void loginButtonVisible() throws Exception {
-        $(SIGN_IN_LINK).shouldBe(Condition.visible);
+        $(SIGN_IN_LINK).shouldBe(visible);
     }
 
     @Test
     public void loginButtonHasTypeSubmit() throws Exception {
-        $(LOGIN_BUTTON).shouldHave(Condition.type("submit"));
+        $(LOGIN_BUTTON).shouldHave(type("submit"));
     }
 
     @Test
     public void cancelButtonVisible() throws Exception {
-        $(CANCEL_BUTTON).shouldBe(Condition.visible);
+        $(CANCEL_BUTTON).shouldBe(visible);
     }
 }

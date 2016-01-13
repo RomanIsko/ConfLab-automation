@@ -4,6 +4,7 @@ import java.util.UUID;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.refresh;
 import static com.intelliarts.conflab.utils.ElementLocatorData.ADD_BUTTON;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_DESCRIPTION;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_END_DATE;
@@ -63,5 +64,7 @@ public class ConfLabEvent {
         $(EVENT_START_DATE).val(startDate);
         $(EVENT_END_DATE).val(endDate);
         $(OK_BUTTON).click();
+        // TODO: 13.01.16 do not refresh after bug CL-81 is fixed
+        refresh();
     }
 }

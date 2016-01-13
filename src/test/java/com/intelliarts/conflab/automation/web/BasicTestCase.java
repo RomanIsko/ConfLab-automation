@@ -44,7 +44,7 @@ public class BasicTestCase {
         }
     }
 
-    protected static void addMultipleSpeaekrs(int count) {
+    protected static void addMultipleSpeakers(int count) {
         for (int i = 0; i < count; i++) {
             new ConfLabSpeaker().addViaWeb();
         }

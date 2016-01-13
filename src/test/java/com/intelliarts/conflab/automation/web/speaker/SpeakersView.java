@@ -18,7 +18,7 @@ public class SpeakersView extends BasicTestCase {
     public static void setUp() throws Exception {
         basicSetUp();
         login();
-        addMultipleSpeaekrs(2);
+        addMultipleSpeakers(2);
         $(SPEAKERS_LINK).click();
     }
 

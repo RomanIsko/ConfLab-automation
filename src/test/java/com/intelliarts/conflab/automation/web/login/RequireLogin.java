@@ -12,6 +12,7 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.sleep;
 import static com.codeborne.selenide.WebDriverRunner.url;
 import static com.intelliarts.conflab.utils.ElementLocatorData.PASSWORD_FIELD;
 import static com.intelliarts.conflab.utils.ElementLocatorData.USERNAME_FIELD;
@@ -105,6 +106,7 @@ public class RequireLogin extends BasicTestCase {
     }
 
     private static boolean loginRequired() {
+        sleep(1000);
         return ($(USERNAME_FIELD).is(visible) && $(PASSWORD_FIELD).is(visible));
     }
 }

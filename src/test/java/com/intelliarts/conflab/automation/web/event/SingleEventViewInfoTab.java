@@ -18,7 +18,16 @@ import static com.intelliarts.conflab.utils.ElementLocatorData.FORM_EDIT_BUTTON;
 import static com.intelliarts.conflab.utils.ElementLocatorData.INFO_FORM;
 
 public class SingleEventViewInfoTab extends BasicTestCase {
-    protected static String eventDescription = "This is the description for \n";
+    protected static String eventDescription =
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam iaculis, massa ut viverra accumsan, nunc" +
+            " massa rutrum orci, eu pulvinar felis dui non purus. Etiam vel sem ac mi dapibus tempus a tempus erat. " +
+            "Sed ut diam iaculis, sodales ipsum et, vehicula tortor. Donec aliquam felis at lorem tincidunt malesuada" +
+            ". Ut sagittis justo turpis, sed laoreet libero mollis non. Vestibulum non malesuada eros. Duis lacinia " +
+            "ex et justo aliquam porta. In finibus nulla lorem, id vulputate lectus sodales id. Pellentesque " +
+            "ullamcorper massa nec maximus laoreet. Proin sit amet est neque. Etiam placerat massa vel porta pharetra" +
+            ". Aenean sollicitudin leo orci, vitae tristique mi commodo et. Nunc commodo, felis vel finibus " +
+            "ultricies, nisi lorem mollis lacus, eget dictum ligula tellus sit amet nisl. Quisque iaculis consequat " +
+            "augue, a ultricies quam viverra a. Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
     protected static String eventStartDate   = "2016-01-03";
     protected static String eventEndDate     = "2016-01-04";
 

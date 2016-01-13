@@ -33,8 +33,7 @@ public class RequireLogin extends BasicTestCase {
     public static void setUp() throws Exception {
         basicSetUp();
         login();
-        ConfLabEvent confLabEvent = new ConfLabEvent();
-        confLabEvent.addViaWeb();
+        addMultipleEvents(2);
         ElementsCollection eventsList = $$(".list-group-item");
         eventsList.last().click();
         eventUrl = url();

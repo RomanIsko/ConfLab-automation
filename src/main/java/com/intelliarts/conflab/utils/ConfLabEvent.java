@@ -5,6 +5,7 @@ import java.util.UUID;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.refresh;
+import static com.codeborne.selenide.Selenide.sleep;
 import static com.intelliarts.conflab.utils.ElementLocatorData.ADD_BUTTON;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_DESCRIPTION;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_END_DATE;
@@ -59,6 +60,7 @@ public class ConfLabEvent {
     public void addViaWeb() {
         open(EVENTS_URL);
         $(ADD_BUTTON).click();
+        sleep(1000);
         $(EVENT_NAME).val(name);
         $(EVENT_DESCRIPTION).val(description);
         $(EVENT_START_DATE).val(startDate);

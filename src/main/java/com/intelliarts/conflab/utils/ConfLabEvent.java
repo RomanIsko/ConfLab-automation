@@ -59,8 +59,8 @@ public class ConfLabEvent {
 
     public void addViaWeb() {
         open(EVENTS_URL);
-        $(ADD_BUTTON).click();
         sleep(1000);
+        $(ADD_BUTTON).click();
         $(EVENT_NAME).val(name);
         $(EVENT_DESCRIPTION).val(description);
         $(EVENT_START_DATE).val(startDate);

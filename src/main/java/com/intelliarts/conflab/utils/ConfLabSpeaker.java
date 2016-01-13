@@ -56,7 +56,6 @@ public class ConfLabSpeaker {
 
     public void addViaWeb() {
         open(SPEAKERS_URL);
-        $(ADD_BUTTON).click();
         sleep(1000);
         $(ADD_BUTTON).click();
         $(SPEAKER_NAME).val(name);

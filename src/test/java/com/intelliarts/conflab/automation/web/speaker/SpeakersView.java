@@ -10,6 +10,7 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.intelliarts.conflab.utils.ElementLocatorData.ADD_BUTTON;
 import static com.intelliarts.conflab.utils.ElementLocatorData.SPEAKERS_LINK;
+import static com.intelliarts.conflab.utils.ElementLocatorData.SPEAKERS_LIST;
 import static com.intelliarts.conflab.utils.ElementLocatorData.SPEAKERS_PAGE_HEADER;
 
 public class SpeakersView extends BasicTestCase {
@@ -38,7 +39,7 @@ public class SpeakersView extends BasicTestCase {
     }
 
     @Test
-    public void speakerSectionVisible() throws Exception {
-        $(SPEAKERS_LINK).shouldBe(visible);
+    public void speakersSectionVisible() throws Exception {
+        $(SPEAKERS_LIST).shouldBe(visible);
     }
 }

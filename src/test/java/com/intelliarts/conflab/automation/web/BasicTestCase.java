@@ -4,12 +4,14 @@ import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.junit.ScreenShooter;
 import com.intelliarts.conflab.utils.ConfLabEvent;
 import org.junit.Rule;
+import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.close;
 import static com.codeborne.selenide.Selenide.open;
 import static com.intelliarts.conflab.utils.ElementLocatorData.PASSWORD_FIELD;
 import static com.intelliarts.conflab.utils.ElementLocatorData.SIGN_IN_LINK;
+import static com.intelliarts.conflab.utils.ElementLocatorData.SIGN_OUT_REGION;
 import static com.intelliarts.conflab.utils.ElementLocatorData.USERNAME_FIELD;
 import static com.intelliarts.conflab.utils.ResourcesData.DEFAULT_PASSWORD;
 import static com.intelliarts.conflab.utils.ResourcesData.DEFAULT_USERNAME;
@@ -40,5 +42,10 @@ public class BasicTestCase {
             ConfLabEvent confLabEvent = new ConfLabEvent();
             confLabEvent.addViaWeb();
         }
+    }
+
+    protected static void logout() {
+        $(SIGN_OUT_REGION).click();
+        $(By.linkText("Sign Out")).click();
     }
 }

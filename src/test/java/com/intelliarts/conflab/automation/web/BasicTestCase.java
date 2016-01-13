@@ -39,8 +39,7 @@ public class BasicTestCase {
 
     protected static void addMultipleEvents(int count) {
         for (int i = 0; i < count; i++) {
-            ConfLabEvent confLabEvent = new ConfLabEvent();
-            confLabEvent.addViaWeb();
+            new ConfLabEvent().addViaWeb();
         }
     }
 

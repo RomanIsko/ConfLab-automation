@@ -16,8 +16,8 @@ import static com.intelliarts.conflab.utils.ElementLocatorData.SPEAKERS_TAB;
 
 public class SingleEventViewSpeakersTab extends BasicTestCase {
     protected static String eventDescription = "This is the description for \n";
-    protected static String eventStartDate   = "2016-01-08";
-    protected static String eventEndDate     = "2016-01-12";
+    protected static String eventStartDate   = "18-Jan-2016";
+    protected static String eventEndDate     = "20-Jan-2016";
 
     @BeforeClass
     public static void setUp() throws Exception {

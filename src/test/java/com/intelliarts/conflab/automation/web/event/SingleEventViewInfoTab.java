@@ -28,8 +28,8 @@ public class SingleEventViewInfoTab extends BasicTestCase {
             ". Aenean sollicitudin leo orci, vitae tristique mi commodo et. Nunc commodo, felis vel finibus " +
             "ultricies, nisi lorem mollis lacus, eget dictum ligula tellus sit amet nisl. Quisque iaculis consequat " +
             "augue, a ultricies quam viverra a. Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
-    protected static String eventStartDate   = "2016-01-03";
-    protected static String eventEndDate     = "2016-01-04";
+    protected static String eventStartDate   = "03-Jan-2016";
+    protected static String eventEndDate     = "05-Jan-2016";
 
     @BeforeClass
     public static void setUp() throws Exception {

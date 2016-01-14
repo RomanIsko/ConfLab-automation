@@ -1,9 +1,12 @@
 package com.intelliarts.conflab.automation.web.event;
 
+import com.codeborne.selenide.ElementsCollection;
 import com.intelliarts.conflab.automation.web.BasicTestCase;
+import com.intelliarts.conflab.utils.ConfLabEvent;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
@@ -41,5 +44,14 @@ public class EventsView extends BasicTestCase {
     @Test
     public void eventsSectionVisible() throws Exception {
         $(EVENTS_LIST).shouldBe(visible);
+    }
+
+    @Test
+    public void justAddedEventVisibleInList() throws Exception {
+        ConfLabEvent confLabEvent = new ConfLabEvent();
+        confLabEvent.addViaWeb();
+        String eventName = confLabEvent.getName();
+        ElementsCollection eventsList = $(EVENTS_LIST).findAll(".list-group-item");
+        eventsList.contains($(By.linkText(eventName)));
     }
 }

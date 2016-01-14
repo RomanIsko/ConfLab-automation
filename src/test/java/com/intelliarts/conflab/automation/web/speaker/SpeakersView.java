@@ -1,9 +1,12 @@
 package com.intelliarts.conflab.automation.web.speaker;
 
+import com.codeborne.selenide.ElementsCollection;
 import com.intelliarts.conflab.automation.web.BasicTestCase;
+import com.intelliarts.conflab.utils.ConfLabSpeaker;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
@@ -41,5 +44,14 @@ public class SpeakersView extends BasicTestCase {
     @Test
     public void speakersSectionVisible() throws Exception {
         $(SPEAKERS_LIST).shouldBe(visible);
+    }
+
+    @Test
+    public void justAddedSpeakerVisibleInList() throws Exception {
+        ConfLabSpeaker confLabSpeaker = new ConfLabSpeaker();
+        confLabSpeaker.addViaWeb();
+        String speakerName = confLabSpeaker.getName();
+        ElementsCollection speakersList = $(SPEAKERS_LIST).findAll(".list-group-item");
+        speakersList.contains($(By.partialLinkText(speakerName)));
     }
 }

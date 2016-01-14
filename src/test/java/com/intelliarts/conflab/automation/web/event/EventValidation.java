@@ -17,7 +17,7 @@ import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_DESCRIPTION
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_EDIT_REGION;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_END_DATE_VALIDATION_MESSAGE;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_NAME;
-import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_NAME_FIELD_VALIDATION_MESSAGE;
+import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_NAME_VALIDATION_MESSAGE;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_START_DATE_VALIDATION_MESSAGE;
 import static com.intelliarts.conflab.utils.ElementLocatorData.OK_BUTTON;
 
@@ -55,33 +55,33 @@ public class EventValidation extends BasicTestCase {
 
     @Test
     public void validationMessageIsNotShownOnPageOpen() throws Exception {
-        $(EVENT_NAME_FIELD_VALIDATION_MESSAGE).shouldBe(hidden);
+        $(EVENT_NAME_VALIDATION_MESSAGE).shouldBe(hidden);
     }
 
     @Test
     public void submitEmptyNameField() throws Exception {
         $(OK_BUTTON).click();
-        $(EVENT_NAME_FIELD_VALIDATION_MESSAGE).shouldBe(visible);
+        $(EVENT_NAME_VALIDATION_MESSAGE).shouldBe(visible);
     }
 
     @Test
     public void correctValidationMessageOnEmptyNameSubmit() throws Exception {
         $(OK_BUTTON).click();
-        $(EVENT_NAME_FIELD_VALIDATION_MESSAGE).shouldHave(text(NAME_REQUIRED));
+        $(EVENT_NAME_VALIDATION_MESSAGE).shouldHave(text(NAME_REQUIRED));
     }
 
     @Test
     public void correctValidationMessageOnShortNameSubmit() throws Exception {
         $(EVENT_NAME).val(SHORT_NAME);
         $(OK_BUTTON).click();
-        $(EVENT_NAME_FIELD_VALIDATION_MESSAGE).shouldHave(text(LONGER_NAME_REQUIRED));
+        $(EVENT_NAME_VALIDATION_MESSAGE).shouldHave(text(LONGER_NAME_REQUIRED));
     }
 
     @Test
     public void noValidationMessageOnThreeCharNameSubmit() throws Exception {
         $(EVENT_NAME).val(THREE_CHAR_NAME);
         $(OK_BUTTON).click();
-        $(EVENT_NAME_FIELD_VALIDATION_MESSAGE).shouldBe(hidden);
+        $(EVENT_NAME_VALIDATION_MESSAGE).shouldBe(hidden);
         $(EVENT_EDIT_REGION).shouldBe(hidden);
     }
 
@@ -89,7 +89,7 @@ public class EventValidation extends BasicTestCase {
     public void noValidationMessageOnPossibleNameSubmit() throws Exception {
         $(EVENT_NAME).val(POSSIBLE_NAME);
         $(OK_BUTTON).click();
-        $(EVENT_NAME_FIELD_VALIDATION_MESSAGE).shouldBe(hidden);
+        $(EVENT_NAME_VALIDATION_MESSAGE).shouldBe(hidden);
         $(EVENT_EDIT_REGION).shouldBe(hidden);
     }
 
@@ -97,14 +97,14 @@ public class EventValidation extends BasicTestCase {
     public void correctValidationMessageOnLongNameSubmit() throws Exception {
         $(EVENT_NAME).val(LONG_NAME);
         $(OK_BUTTON).click();
-        $(EVENT_NAME_FIELD_VALIDATION_MESSAGE).shouldHave(text(SHORTER_NAME_REQUIRED));
+        $(EVENT_NAME_VALIDATION_MESSAGE).shouldHave(text(SHORTER_NAME_REQUIRED));
     }
 
     @Test
     public void noValidationMessageOnFortyCharsNameSubmit() throws Exception {
         $(EVENT_NAME).val(FORTY_CHARS_NAME);
         $(OK_BUTTON).click();
-        $(EVENT_NAME_FIELD_VALIDATION_MESSAGE).shouldBe(hidden);
+        $(EVENT_NAME_VALIDATION_MESSAGE).shouldBe(hidden);
         $(EVENT_EDIT_REGION).shouldBe(hidden);
     }
 

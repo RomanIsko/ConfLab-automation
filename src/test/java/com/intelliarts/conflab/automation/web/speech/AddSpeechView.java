@@ -14,8 +14,8 @@ import static com.intelliarts.conflab.utils.ElementLocatorData.CANCEL_BUTTON;
 import static com.intelliarts.conflab.utils.ElementLocatorData.OK_BUTTON;
 import static com.intelliarts.conflab.utils.ElementLocatorData.SPEECHES_LINK;
 import static com.intelliarts.conflab.utils.ElementLocatorData.SPEECH_DESCRIPTION;
-import static com.intelliarts.conflab.utils.ElementLocatorData.SPEECH_LANGUAGE_FIELD;
-import static com.intelliarts.conflab.utils.ElementLocatorData.SPEECH_TITLE_FIELD;
+import static com.intelliarts.conflab.utils.ElementLocatorData.SPEECH_LANGUAGE;
+import static com.intelliarts.conflab.utils.ElementLocatorData.SPEECH_TITLE;
 
 public class AddSpeechView extends BasicTestCase {
 
@@ -36,7 +36,7 @@ public class AddSpeechView extends BasicTestCase {
 
     @Test
     public void titleFieldIsDisplayed() throws Exception {
-        $(SPEECH_TITLE_FIELD).shouldBe(visible);
+        $(SPEECH_TITLE).shouldBe(visible);
     }
 
     @Test
@@ -51,12 +51,12 @@ public class AddSpeechView extends BasicTestCase {
 
     @Test
     public void languageFieldIsDisplayed() throws Exception {
-        $(SPEECH_LANGUAGE_FIELD).shouldBe(visible);
+        $(SPEECH_LANGUAGE).shouldBe(visible);
     }
 
     @Test
     public void languageFieldHasNotRequiredClass() throws Exception {
-        $(SPEECH_LANGUAGE_FIELD).shouldNotHave(cssClass(required));
+        $(SPEECH_LANGUAGE).shouldNotHave(cssClass(required));
     }
 
     @Test

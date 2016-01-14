@@ -36,7 +36,7 @@ public class ElementLocatorData {
     public static final By ADD_FROM_LIST_DROPDOWN  = By.id("select2-selected-item-container");
     public static final By SPEECHES_TITLE          = By.id("page-title");
 
-    public static final By EVENT_NAME_FIELD_VALIDATION_MESSAGE  =
+    public static final By EVENT_NAME_VALIDATION_MESSAGE        =
             By.xpath("//input[@id='name']/following-sibling::span");
     public static final By EVENT_DESCRIPTION_VALIDATION_MESSAGE =
             By.xpath("//textarea[@id='description']/following-sibling::span");
@@ -59,22 +59,22 @@ public class ElementLocatorData {
     public static final By SPEAKER_ABOUT          = By.id("about");
     public static final By SPEAKER_ABOUT_LABEL    = By.xpath("//label[@for='about']");
 
-    public static final By SPEAKER_NAME_FIELD_VALIDATION_MESSAGE =
+    public static final By SPEAKER_NAME_VALIDATION_MESSAGE     =
             By.xpath("//input[@id='name']/following-sibling::span");
-    public static final By SPEAKER_EMAIL_VALIDATION_MESSAGE      =
+    public static final By SPEAKER_EMAIL_VALIDATION_MESSAGE    =
             By.xpath("//input[@id='email']/following-sibling::span");
-    public static final By SPEAKER_POSITION_VALIDATION_MESSAGE   =
+    public static final By SPEAKER_POSITION_VALIDATION_MESSAGE =
             By.xpath("//input[@id='position']/following-sibling::span");
-    public static final By SPEAKER_ABOUT_VALIDATION_MESSAGE      =
+    public static final By SPEAKER_ABOUT_VALIDATION_MESSAGE    =
             By.xpath("//textarea[@id='about']/following-sibling::span");
 
     //Speeches view
     public static final By SPEECHES_LINK                   = By.xpath("html/body/div[1]/div/div[1]/ul/li[3]/a");
     public static final By SPEECHES_PAGE_HEADER            = By.id("table-title");
     public static final By SPEECH_EDIT_REGION              = By.id("edit-region");
-    public static final By SPEECH_TITLE_FIELD              = By.id("title");
+    public static final By SPEECH_TITLE                    = By.id("title");
     public static final By SPEECH_DESCRIPTION              = By.id("description");
-    public static final By SPEECH_LANGUAGE_FIELD           = By.id("lang");
+    public static final By SPEECH_LANGUAGE                 = By.id("lang");
     public static final By SPEECH_TITLE_VALIDATION_MESSAGE = By.xpath("//input[@id='title']/following-sibling::span");
 
     public static final String ENGLISH   = "English";

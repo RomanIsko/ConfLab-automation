@@ -19,8 +19,8 @@ import static com.intelliarts.conflab.utils.ElementLocatorData.OK_BUTTON;
 import static com.intelliarts.conflab.utils.ElementLocatorData.SPEECHES_LINK;
 import static com.intelliarts.conflab.utils.ElementLocatorData.SPEECH_DESCRIPTION;
 import static com.intelliarts.conflab.utils.ElementLocatorData.SPEECH_EDIT_REGION;
-import static com.intelliarts.conflab.utils.ElementLocatorData.SPEECH_LANGUAGE_FIELD;
-import static com.intelliarts.conflab.utils.ElementLocatorData.SPEECH_TITLE_FIELD;
+import static com.intelliarts.conflab.utils.ElementLocatorData.SPEECH_LANGUAGE;
+import static com.intelliarts.conflab.utils.ElementLocatorData.SPEECH_TITLE;
 import static com.intelliarts.conflab.utils.ElementLocatorData.SPEECH_TITLE_VALIDATION_MESSAGE;
 
 public class SpeechValidation extends BasicTestCase {
@@ -82,9 +82,9 @@ public class SpeechValidation extends BasicTestCase {
 
     @Test
     public void noValidationMessageOnCorrectDataSubmit() throws Exception {
-        $(SPEECH_TITLE_FIELD).val(POSSIBLE_TITLE);
+        $(SPEECH_TITLE).val(POSSIBLE_TITLE);
         $(SPEECH_DESCRIPTION).val(POSSIBLE_DESCRIPTION);
-        $(SPEECH_LANGUAGE_FIELD).selectOption(ENGLISH);
+        $(SPEECH_LANGUAGE).selectOption(ENGLISH);
         $(OK_BUTTON).click();
         $(SPEECH_TITLE_VALIDATION_MESSAGE).shouldBe(hidden);
         $(SPEECH_EDIT_REGION).shouldBe(hidden);

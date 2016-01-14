@@ -4,7 +4,6 @@ import java.util.UUID;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
-import static com.codeborne.selenide.Selenide.refresh;
 import static com.codeborne.selenide.Selenide.sleep;
 import static com.intelliarts.conflab.utils.ElementLocatorData.ADD_BUTTON;
 import static com.intelliarts.conflab.utils.ElementLocatorData.OK_BUTTON;
@@ -63,6 +62,5 @@ public class ConfLabSpeaker {
         $(SPEAKER_POSITION).val(position);
         $(SPEAKER_ABOUT).val(about);
         $(OK_BUTTON).click();
-        refresh();
     }
 }

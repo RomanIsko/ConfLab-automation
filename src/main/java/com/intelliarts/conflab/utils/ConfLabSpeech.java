@@ -8,13 +8,14 @@ import static com.codeborne.selenide.Selenide.sleep;
 import static com.intelliarts.conflab.utils.ElementLocatorData.ADD_BUTTON;
 import static com.intelliarts.conflab.utils.ElementLocatorData.OK_BUTTON;
 import static com.intelliarts.conflab.utils.ElementLocatorData.SPEECH_DESCRIPTION;
+import static com.intelliarts.conflab.utils.ElementLocatorData.SPEECH_LANGUAGE;
 import static com.intelliarts.conflab.utils.ElementLocatorData.SPEECH_TITLE;
 import static com.intelliarts.conflab.utils.ResourcesData.SPEECHES_URL;
 
 public class ConfLabSpeech {
-    private String title;
-    private String description;
-    private String language;
+    private String                title;
+    private String                description;
+    private ConfLabSpeechLanguage language;
 
     public ConfLabSpeech(String title) {
         this.title = title;
@@ -36,11 +37,11 @@ public class ConfLabSpeech {
         this.description = description;
     }
 
-    public String getLanguage() {
+    public ConfLabSpeechLanguage getLanguage() {
         return language;
     }
 
-    public void setLanguage(String language) {
+    public void setLanguage(ConfLabSpeechLanguage language) {
         this.language = language;
     }
 
@@ -50,7 +51,9 @@ public class ConfLabSpeech {
         $(ADD_BUTTON).click();
         $(SPEECH_TITLE).val(title);
         $(SPEECH_DESCRIPTION).val(description);
-        $(SPEECH_DESCRIPTION).val(language);
+        if (language != null) {
+            $(SPEECH_LANGUAGE).val(language.getValue());
+        }
         $(OK_BUTTON).click();
     }
 }

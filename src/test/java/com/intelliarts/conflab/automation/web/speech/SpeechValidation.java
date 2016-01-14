@@ -14,6 +14,7 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.refresh;
 import static com.intelliarts.conflab.utils.ElementLocatorData.ADD_BUTTON;
+import static com.intelliarts.conflab.utils.ElementLocatorData.ENGLISH;
 import static com.intelliarts.conflab.utils.ElementLocatorData.OK_BUTTON;
 import static com.intelliarts.conflab.utils.ElementLocatorData.SPEECHES_LINK;
 import static com.intelliarts.conflab.utils.ElementLocatorData.SPEECH_DESCRIPTION;
@@ -83,7 +84,7 @@ public class SpeechValidation extends BasicTestCase {
     public void noValidationMessageOnCorrectDataSubmit() throws Exception {
         $(SPEECH_TITLE_FIELD).val(POSSIBLE_TITLE);
         $(SPEECH_DESCRIPTION).val(POSSIBLE_DESCRIPTION);
-        $(SPEECH_LANGUAGE_FIELD).val(POSSIBLE_LANGUAGE);
+        $(SPEECH_LANGUAGE_FIELD).selectOption(ENGLISH);
         $(OK_BUTTON).click();
         $(SPEECH_TITLE_VALIDATION_MESSAGE).shouldBe(hidden);
         $(SPEECH_EDIT_REGION).shouldBe(hidden);

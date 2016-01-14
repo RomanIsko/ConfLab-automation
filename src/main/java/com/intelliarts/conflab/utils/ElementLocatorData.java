@@ -77,6 +77,10 @@ public class ElementLocatorData {
     public static final By SPEECH_LANGUAGE_FIELD           = By.id("lang");
     public static final By SPEECH_TITLE_VALIDATION_MESSAGE = By.xpath("//input[@id='title']/following-sibling::span");
 
+    public static final String ENGLISH   = "English";
+    public static final String UKRAINIAN = "Ukrainian";
+    public static final String RUSSIAN   = "Russian";
+
     // Common locators
     public static final By OK_BUTTON     = By.cssSelector(".btn.btn-success");
     public static final By CANCEL_BUTTON = By.cssSelector(".btn.btn-default");

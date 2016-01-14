@@ -1,9 +1,12 @@
 package com.intelliarts.conflab.automation.web.speech;
 
+import com.codeborne.selenide.ElementsCollection;
 import com.intelliarts.conflab.automation.web.BasicTestCase;
+import com.intelliarts.conflab.utils.ConfLabSpeech;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
@@ -41,5 +44,14 @@ public class SpeechesView extends BasicTestCase {
     @Test
     public void speechesSectionVisible() throws Exception {
         $(SPEECHES_LIST).shouldBe(visible);
+    }
+
+    @Test
+    public void justAddedSpeechVisibleInList() throws Exception {
+        ConfLabSpeech confLabSpeech = new ConfLabSpeech();
+        confLabSpeech.addViaWeb();
+        String confLabSpeechTitle = confLabSpeech.getTitle();
+        ElementsCollection speechesList = $(SPEECHES_LIST).findAll(".list-group-item");
+        speechesList.contains($(By.partialLinkText(confLabSpeechTitle)));
     }
 }

@@ -71,6 +71,7 @@ public class ElementLocatorData {
     //Speeches view
     public static final By SPEECHES_LINK                   = By.xpath("html/body/div[1]/div/div[1]/ul/li[3]/a");
     public static final By SPEECHES_PAGE_HEADER            = By.id("table-title");
+    public static final By SPEECHES_LIST                   = By.id("list-region");
     public static final By SPEECH_EDIT_REGION              = By.id("edit-region");
     public static final By SPEECH_TITLE                    = By.id("title");
     public static final By SPEECH_DESCRIPTION              = By.id("description");

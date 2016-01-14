@@ -4,6 +4,7 @@ import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.junit.ScreenShooter;
 import com.intelliarts.conflab.utils.ConfLabEvent;
 import com.intelliarts.conflab.utils.ConfLabSpeaker;
+import com.intelliarts.conflab.utils.ConfLabSpeech;
 import org.junit.Rule;
 import org.openqa.selenium.By;
 
@@ -47,6 +48,12 @@ public class BasicTestCase {
     protected static void addMultipleSpeakers(int count) {
         for (int i = 0; i < count; i++) {
             new ConfLabSpeaker().addViaWeb();
+        }
+    }
+
+    protected static void addMultipleSpeeches(int count) {
+        for (int i = 0; i < count; i++) {
+            new ConfLabSpeech().addViaWeb();
         }
     }
 

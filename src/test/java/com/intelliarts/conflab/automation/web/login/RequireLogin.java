@@ -2,7 +2,6 @@ package com.intelliarts.conflab.automation.web.login;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.intelliarts.conflab.automation.web.BasicTestCase;
-import com.intelliarts.conflab.utils.ConfLabEvent;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -27,8 +26,8 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
 public class RequireLogin extends BasicTestCase {
-    private final String singleEntityUrl = "/100500";
     private static String eventUrl;
+    private final String singleEntityUrl = "/100500";
 
     @BeforeClass
     public static void setUp() throws Exception {

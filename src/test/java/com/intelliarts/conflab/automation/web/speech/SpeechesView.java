@@ -10,6 +10,7 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.intelliarts.conflab.utils.ElementLocatorData.ADD_BUTTON;
 import static com.intelliarts.conflab.utils.ElementLocatorData.SPEECHES_LINK;
+import static com.intelliarts.conflab.utils.ElementLocatorData.SPEECHES_LIST;
 import static com.intelliarts.conflab.utils.ElementLocatorData.SPEECHES_PAGE_HEADER;
 
 public class SpeechesView extends BasicTestCase {
@@ -18,6 +19,7 @@ public class SpeechesView extends BasicTestCase {
     public static void setUp() throws Exception {
         basicSetUp();
         login();
+        addMultipleSpeeches(2);
         $(SPEECHES_LINK).click();
     }
 
@@ -34,5 +36,10 @@ public class SpeechesView extends BasicTestCase {
     @Test
     public void addButtonVisible() throws Exception {
         $(ADD_BUTTON).shouldBe(visible);
+    }
+
+    @Test
+    public void speechesSectionVisible() throws Exception {
+        $(SPEECHES_LIST).shouldBe(visible);
     }
 }

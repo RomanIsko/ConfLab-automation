@@ -62,8 +62,10 @@ public class ConfLabEvent {
         $(ADD_BUTTON).click();
         $(EVENT_NAME).val(name);
         $(EVENT_DESCRIPTION).val(description);
-        $(EVENT_START_DATE).val(startDate);
-        $(EVENT_END_DATE).val(endDate);
+        if (startDate != null && endDate != null) {
+            $(EVENT_START_DATE).val(startDate);
+            $(EVENT_END_DATE).val(endDate);
+        }
         $(OK_BUTTON).click();
     }
 }

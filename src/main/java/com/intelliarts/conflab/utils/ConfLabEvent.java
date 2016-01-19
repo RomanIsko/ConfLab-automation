@@ -7,9 +7,9 @@ import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.sleep;
 import static com.intelliarts.conflab.utils.ElementLocatorData.ADD_BUTTON;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_DESCRIPTION;
-import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_EDIT_REGION;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_END_DATE;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_NAME;
+import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_NAME_LABEL;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_START_DATE;
 import static com.intelliarts.conflab.utils.ElementLocatorData.OK_BUTTON;
 import static com.intelliarts.conflab.utils.ResourcesData.EVENTS_URL;
@@ -67,7 +67,7 @@ public class ConfLabEvent {
             $(EVENT_START_DATE).val(startDate);
             $(EVENT_END_DATE).val(endDate);
         }
-        $(EVENT_EDIT_REGION).click();
+        $(EVENT_NAME_LABEL).click();
         $(OK_BUTTON).click();
     }
 }

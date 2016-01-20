@@ -1,5 +1,6 @@
 package com.intelliarts.conflab.automation.web.event;
 
+import com.codeborne.selenide.Configuration;
 import com.intelliarts.conflab.automation.web.BasicTestCase;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -11,7 +12,6 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.refresh;
-import static com.codeborne.selenide.Selenide.sleep;
 import static com.intelliarts.conflab.utils.ElementLocatorData.ADD_BUTTON;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENTS_LINK;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_DESCRIPTION_VALIDATION_MESSAGE;
@@ -38,6 +38,7 @@ public class EventValidation extends BasicTestCase {
 
     @BeforeClass
     public static void setUp() throws Exception {
+        Configuration.clickViaJs = true;
         basicSetUp();
         login();
         $(EVENTS_LINK).click();
@@ -51,7 +52,6 @@ public class EventValidation extends BasicTestCase {
     @Before
     public void setUpTest() throws Exception {
         refresh();
-        sleep(1000);
         $(ADD_BUTTON).click();
     }
 

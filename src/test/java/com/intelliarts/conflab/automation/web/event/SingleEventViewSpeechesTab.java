@@ -12,7 +12,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.refresh;
 import static com.intelliarts.conflab.utils.ElementLocatorData.ADD_FROM_LIST_DROPDOWN;
 import static com.intelliarts.conflab.utils.ElementLocatorData.ADD_NEW_BUTTON;
-import static com.intelliarts.conflab.utils.ElementLocatorData.SPEECHES_TAB;
+import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_TABS;
 
 public class SingleEventViewSpeechesTab extends BasicTestCase {
     protected static String eventDescription = "This is the description for \n";
@@ -30,7 +30,7 @@ public class SingleEventViewSpeechesTab extends BasicTestCase {
         confLabEvent.addViaWeb();
         refresh();
         $(Selectors.withText(confLabEvent.getName())).click();
-        $(SPEECHES_TAB).click();
+        $(EVENT_TABS).find(Selectors.byText("Speeches")).click();
     }
 
     @AfterClass

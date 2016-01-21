@@ -1,5 +1,6 @@
 package com.intelliarts.conflab.automation.web.event;
 
+import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selectors;
 import com.intelliarts.conflab.automation.web.BasicTestCase;
 import com.intelliarts.conflab.utils.ConfLabEvent;
@@ -31,6 +32,7 @@ public class SingleEventViewSpeakersTab extends BasicTestCase {
         refresh();
         $(Selectors.withText(confLabEvent.getName())).click();
         $(SPEAKERS_TAB).click();
+        Configuration.timeout = 10000;
     }
 
     @AfterClass

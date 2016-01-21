@@ -1,6 +1,5 @@
 package com.intelliarts.conflab.automation.web.event;
 
-import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selectors;
 import com.intelliarts.conflab.automation.web.BasicTestCase;
 import com.intelliarts.conflab.utils.ConfLabEvent;
@@ -13,7 +12,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.refresh;
 import static com.intelliarts.conflab.utils.ElementLocatorData.ADD_FROM_LIST_DROPDOWN;
 import static com.intelliarts.conflab.utils.ElementLocatorData.ADD_NEW_BUTTON;
-import static com.intelliarts.conflab.utils.ElementLocatorData.SPEAKERS_TAB;
+import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_TABS;
 
 public class SingleEventViewSpeakersTab extends BasicTestCase {
     protected static String eventDescription = "This is the description for \n";
@@ -31,8 +30,7 @@ public class SingleEventViewSpeakersTab extends BasicTestCase {
         confLabEvent.addViaWeb();
         refresh();
         $(Selectors.withText(confLabEvent.getName())).click();
-        $(SPEAKERS_TAB).click();
-        Configuration.timeout = 10000;
+        $(EVENT_TABS).find(Selectors.byText("Speakers")).click();
     }
 
     @AfterClass

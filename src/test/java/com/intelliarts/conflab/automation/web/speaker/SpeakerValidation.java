@@ -1,5 +1,6 @@
 package com.intelliarts.conflab.automation.web.speaker;
 
+import com.codeborne.selenide.Configuration;
 import com.intelliarts.conflab.automation.web.BasicTestCase;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -42,6 +43,7 @@ public class SpeakerValidation extends BasicTestCase {
 
     @BeforeClass
     public static void setUp() throws Exception {
+        Configuration.clickViaJs = true;
         basicSetUp();
         login();
         $(SPEAKERS_LINK).click();

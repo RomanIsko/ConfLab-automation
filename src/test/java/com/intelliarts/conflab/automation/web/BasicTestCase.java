@@ -6,13 +6,13 @@ import com.intelliarts.conflab.utils.ConfLabEvent;
 import com.intelliarts.conflab.utils.ConfLabSpeaker;
 import com.intelliarts.conflab.utils.ConfLabSpeech;
 import org.junit.Rule;
-import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.close;
 import static com.codeborne.selenide.Selenide.open;
 import static com.intelliarts.conflab.utils.ElementLocatorData.PASSWORD_FIELD;
 import static com.intelliarts.conflab.utils.ElementLocatorData.SIGN_IN_LINK;
+import static com.intelliarts.conflab.utils.ElementLocatorData.SIGN_OUT_LINK;
 import static com.intelliarts.conflab.utils.ElementLocatorData.SIGN_OUT_REGION;
 import static com.intelliarts.conflab.utils.ElementLocatorData.USERNAME_FIELD;
 import static com.intelliarts.conflab.utils.ResourcesData.DEFAULT_PASSWORD;
@@ -59,6 +59,6 @@ public class BasicTestCase {
 
     protected static void logout() {
         $(SIGN_OUT_REGION).click();
-        $(By.linkText("Sign Out")).click();
+        $(SIGN_OUT_LINK).click();
     }
 }

@@ -6,6 +6,7 @@ public class ElementLocatorData {
 
     public static final By SIGN_IN_LINK    = By.xpath("/html/body/nav/div/div[2]/ul/li/a");
     public static final By SIGN_OUT_REGION = By.id("account-menu-region");
+    public static final By SIGN_OUT_LINK   = By.xpath("html/body/nav/div/div[2]/ul/li/ul/li[3]");
     public static final By USERNAME_FIELD  = By.id("username");
     public static final By PASSWORD_FIELD  = By.id("password");
     public static final By LOGIN_BUTTON    = By.id("login");

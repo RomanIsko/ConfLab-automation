@@ -15,6 +15,7 @@ import static com.intelliarts.conflab.utils.ElementLocatorData.EVENTS_LIST;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_TABS;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_TITLE;
 import static com.intelliarts.conflab.utils.ElementLocatorData.INFO_TAB;
+import static com.intelliarts.conflab.utils.ElementLocatorData.PARTNERS_TAB;
 import static com.intelliarts.conflab.utils.ElementLocatorData.SPEAKERS_TAB;
 import static com.intelliarts.conflab.utils.ElementLocatorData.SPEECHES_TAB;
 
@@ -63,5 +64,10 @@ public class SingleEventView extends BasicTestCase {
     @Test
     public void speechesTabInactive() throws Exception {
         $(SPEECHES_TAB).shouldHave(text("Speeches"));
+    }
+
+    @Test
+    public void partnersTabInactive() throws Exception {
+        $(PARTNERS_TAB).shouldHave(text("Partners"));
     }
 }

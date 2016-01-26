@@ -11,6 +11,10 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.refresh;
+import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_ADDRESS;
+import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_CITY;
+import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_CONTACTS;
+import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_COUNTRY;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_DESCRIPTION;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_END_DATE;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_START_DATE;
@@ -30,6 +34,13 @@ public class SingleEventViewInfoTab extends BasicTestCase {
             "augue, a ultricies quam viverra a. Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
     protected static String eventStartDate   = "03-Jan-2016";
     protected static String eventEndDate     = "05-Jan-2016";
+    protected static String eventCountry     = "Switzerland";
+    protected static String eventCity        = "Zürich";
+    protected static String eventAddress     = "Neugasse 57-63, 8005";
+    protected static String eventContacts    = "+41 44 444 44 44\n" +
+                                               "John Smith\n" +
+                                               "skype:  john.smith\n" +
+                                               "mailto: john-100.smith-500@email.com";
 
     @BeforeClass
     public static void setUp() throws Exception {
@@ -39,6 +50,10 @@ public class SingleEventViewInfoTab extends BasicTestCase {
         confLabEvent.setDescription(eventDescription);
         confLabEvent.setStartDate(eventStartDate);
         confLabEvent.setEndDate(eventEndDate);
+        confLabEvent.setCountry(eventCountry);
+        confLabEvent.setCity(eventCity);
+        confLabEvent.setAddress(eventAddress);
+        confLabEvent.setContacts(eventContacts);
         confLabEvent.addViaWeb();
         refresh();
         $(Selectors.withText(confLabEvent.getName())).click();
@@ -83,5 +98,45 @@ public class SingleEventViewInfoTab extends BasicTestCase {
     @Test
     public void eventEndDateCorrect() throws Exception {
         $(EVENT_END_DATE).shouldHave(text(eventEndDate));
+    }
+
+    @Test
+    public void eventCountryVisible() throws Exception {
+        $(EVENT_COUNTRY).shouldBe(visible);
+    }
+
+    @Test
+    public void eventCountryCorrect() throws Exception {
+        $(EVENT_COUNTRY).shouldHave(text(eventCountry));
+    }
+
+    @Test
+    public void eventCityVisible() throws Exception {
+        $(EVENT_CITY).shouldBe(visible);
+    }
+
+    @Test
+    public void eventCityCorrect() throws Exception {
+        $(EVENT_CITY).shouldHave(text(eventCity));
+    }
+
+    @Test
+    public void eventAddressVisible() throws Exception {
+        $(EVENT_ADDRESS).shouldBe(visible);
+    }
+
+    @Test
+    public void eventAddressCorrect() throws Exception {
+        $(EVENT_ADDRESS).shouldHave(text(eventAddress));
+    }
+
+    @Test
+    public void eventContactsVisible() throws Exception {
+        $(EVENT_CONTACTS).shouldBe(visible);
+    }
+
+    @Test
+    public void eventContactsCorrect() throws Exception {
+        $(EVENT_CONTACTS).shouldHave(text(eventContacts));
     }
 }

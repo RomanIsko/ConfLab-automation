@@ -12,6 +12,8 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.intelliarts.conflab.utils.ElementLocatorData.ADD_BUTTON;
 import static com.intelliarts.conflab.utils.ElementLocatorData.CANCEL_BUTTON;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENTS_LINK;
+import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_ADDRESS;
+import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_ADDRESS_LABEL;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_CITY;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_CITY_LABEL;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_COUNTRY;
@@ -101,6 +103,16 @@ public class AddEventView extends BasicTestCase {
     @Test
     public void cityLabelHasNotRequiredClass() throws Exception {
         $(EVENT_CITY_LABEL).shouldNotHave(cssClass(required));
+    }
+
+    @Test
+    public void addressFieldIsDisplayed() throws Exception {
+        $(EVENT_ADDRESS).shouldBe(visible);
+    }
+
+    @Test
+    public void addressLabelHasNotRequiredClass() throws Exception {
+        $(EVENT_ADDRESS_LABEL).shouldNotHave(cssClass(required));
     }
 
     @Test

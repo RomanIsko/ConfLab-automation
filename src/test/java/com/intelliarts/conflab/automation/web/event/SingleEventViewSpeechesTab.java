@@ -18,6 +18,14 @@ public class SingleEventViewSpeechesTab extends BasicTestCase {
     protected static String eventDescription = "This is the description for \n";
     protected static String eventStartDate   = "23-Jan-2016";
     protected static String eventEndDate     = "25-Jan-2016";
+    protected static String eventCountry     = "Switzerland";
+    protected static String eventCity        = "Zürich";
+    protected static String eventAddress     = "Neugasse 57-63, 8005";
+    protected static String eventContacts    = "+41 44 444 44 44\n" +
+                                               "John Smith\n" +
+                                               "skype:  john.smith\n" +
+                                               "mailto: john-100.smith-500@email.com";
+
 
     @BeforeClass
     public static void setUp() throws Exception {
@@ -27,6 +35,10 @@ public class SingleEventViewSpeechesTab extends BasicTestCase {
         confLabEvent.setDescription(eventDescription);
         confLabEvent.setStartDate(eventStartDate);
         confLabEvent.setEndDate(eventEndDate);
+        confLabEvent.setCountry(eventCountry);
+        confLabEvent.setCity(eventCity);
+        confLabEvent.setAddress(eventAddress);
+        confLabEvent.setContacts(eventContacts);
         confLabEvent.addViaWeb();
         refresh();
         $(Selectors.withText(confLabEvent.getName())).click();

@@ -16,6 +16,8 @@ import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_ADDRESS;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_ADDRESS_LABEL;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_CITY;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_CITY_LABEL;
+import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_CONTACTS;
+import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_CONTACTS_LABEL;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_COUNTRY;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_COUNTRY_LABEL;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_DESCRIPTION;
@@ -113,6 +115,16 @@ public class AddEventView extends BasicTestCase {
     @Test
     public void addressLabelHasNotRequiredClass() throws Exception {
         $(EVENT_ADDRESS_LABEL).shouldNotHave(cssClass(required));
+    }
+
+    @Test
+    public void contactsTextAreaIsDisplayed() throws Exception {
+        $(EVENT_CONTACTS).shouldBe(visible);
+    }
+
+    @Test
+    public void contactsTextAreaLabelHasNotRequiredClass() throws Exception {
+        $(EVENT_CONTACTS_LABEL).shouldNotHave(cssClass(required));
     }
 
     @Test

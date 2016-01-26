@@ -35,6 +35,8 @@ public class ElementLocatorData {
     public static final By EVENT_END_DATE_LABEL    = By.xpath("//label[@for='endDate']");
     public static final By EVENT_COUNTRY           = By.id("eventCountry");
     public static final By EVENT_COUNTRY_LABEL     = By.xpath("//label[@for='eventCountry']");
+    public static final By EVENT_CITY              = By.id("eventCity");
+    public static final By EVENT_CITY_LABEL        = By.xpath("//label[@for='eventCity']");
     public static final By ADD_NEW_BUTTON          = By.id("new-button");
     public static final By ADD_FROM_LIST_DROPDOWN  = By.id("select2-selected-item-container");
     public static final By SPEECHES_TITLE          = By.id("page-title");

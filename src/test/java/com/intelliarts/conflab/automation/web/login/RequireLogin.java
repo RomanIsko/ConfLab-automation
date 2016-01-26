@@ -16,6 +16,7 @@ import static com.codeborne.selenide.Selenide.sleep;
 import static com.codeborne.selenide.WebDriverRunner.url;
 import static com.intelliarts.conflab.utils.ElementLocatorData.PASSWORD_FIELD;
 import static com.intelliarts.conflab.utils.ElementLocatorData.USERNAME_FIELD;
+import static com.intelliarts.conflab.utils.ResourcesData.COMPANIES_URL;
 import static com.intelliarts.conflab.utils.ResourcesData.DEPLOYMENT_URL;
 import static com.intelliarts.conflab.utils.ResourcesData.EVENTS_URL;
 import static com.intelliarts.conflab.utils.ResourcesData.EVENT_INFO_URL;
@@ -84,6 +85,18 @@ public class RequireLogin extends BasicTestCase {
     @Test
     public void singleSpeechLinkRequireLogin() throws Exception {
         open(SPEECHES_URL + singleEntityUrl);
+        assertThat(loginRequired(), is(true));
+    }
+
+    @Test
+    public void companiesLinkRequireLogin() throws Exception {
+        open(COMPANIES_URL);
+        assertThat(loginRequired(), is(true));
+    }
+
+    @Test
+    public void singleCompanyLinkRequireLogin() throws Exception {
+        open(COMPANIES_URL + singleEntityUrl);
         assertThat(loginRequired(), is(true));
     }
 

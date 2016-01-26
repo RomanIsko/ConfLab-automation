@@ -53,6 +53,14 @@ public class ElementLocatorData {
             By.xpath("//input[@id='startDate']/following-sibling::span");
     public static final By EVENT_END_DATE_VALIDATION_MESSAGE    =
             By.xpath("//input[@id='endDate']/following-sibling::span");
+    public static final By EVENT_COUNTRY_VALIDATION_MESSAGE     =
+            By.xpath("//input[@id='eventCountry']/following-sibling::span");
+    public static final By EVENT_CITY_VALIDATION_MESSAGE        =
+            By.xpath("//input[@id='eventCity']/following-sibling::span");
+    public static final By EVENT_ADDRESS_VALIDATION_MESSAGE     =
+            By.xpath("//input[@id='eventAddress']/following-sibling::span");
+    public static final By EVENT_CONTACTS_VALIDATION_MESSAGE    =
+            By.xpath("//input[@id='eventContacts']/following-sibling::span");
 
     //Speakers view
     public static final By SPEAKERS_LINK          = By.xpath("html/body/div[1]/div/div[1]/ul/li[2]/a");

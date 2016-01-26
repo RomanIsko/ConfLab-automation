@@ -14,6 +14,10 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.refresh;
 import static com.intelliarts.conflab.utils.ElementLocatorData.ADD_BUTTON;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENTS_LINK;
+import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_ADDRESS_VALIDATION_MESSAGE;
+import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_CITY_VALIDATION_MESSAGE;
+import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_CONTACTS_VALIDATION_MESSAGE;
+import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_COUNTRY_VALIDATION_MESSAGE;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_DESCRIPTION_VALIDATION_MESSAGE;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_EDIT_REGION;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_END_DATE_VALIDATION_MESSAGE;
@@ -126,5 +130,29 @@ public class EventValidation extends BasicTestCase {
     public void validationMessageHiddenForEndDateOnEmptyNameSubmit() throws Exception {
         $(OK_BUTTON).click();
         $(EVENT_END_DATE_VALIDATION_MESSAGE).shouldBe(hidden);
+    }
+
+    @Test
+    public void validationMessageHiddenForCountryOnEmptyNameSubmit() throws Exception {
+        $(OK_BUTTON).click();
+        $(EVENT_COUNTRY_VALIDATION_MESSAGE).shouldBe(hidden);
+    }
+
+    @Test
+    public void validationMessageHiddenForCityOnEmptyNameSubmit() throws Exception {
+        $(OK_BUTTON).click();
+        $(EVENT_CITY_VALIDATION_MESSAGE).shouldBe(hidden);
+    }
+
+    @Test
+    public void validationMessageHiddenForAddressOnEmptyNameSubmit() throws Exception {
+        $(OK_BUTTON).click();
+        $(EVENT_ADDRESS_VALIDATION_MESSAGE).shouldBe(hidden);
+    }
+
+    @Test
+    public void validationMessageHiddenForContactsOnEmptyNameSubmit() throws Exception {
+        $(OK_BUTTON).click();
+        $(EVENT_CONTACTS_VALIDATION_MESSAGE).shouldBe(hidden);
     }
 }

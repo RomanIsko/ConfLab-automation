@@ -12,6 +12,8 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.intelliarts.conflab.utils.ElementLocatorData.ADD_BUTTON;
 import static com.intelliarts.conflab.utils.ElementLocatorData.CANCEL_BUTTON;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENTS_LINK;
+import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_COUNTRY;
+import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_COUNTRY_LABEL;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_DESCRIPTION;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_DESCRIPTION_LABEL;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_END_DATE;
@@ -77,6 +79,16 @@ public class AddEventView extends BasicTestCase {
     @Test
     public void endDateLabelHasNotRequiredClass() throws Exception {
         $(EVENT_END_DATE_LABEL).shouldNotHave(cssClass(required));
+    }
+
+    @Test
+    public void countryFieldIsDisplayed() throws Exception {
+        $(EVENT_COUNTRY).shouldBe(visible);
+    }
+
+    @Test
+    public void countryLabelHasNotRequiredClass() throws Exception {
+        $(EVENT_COUNTRY_LABEL).shouldNotHave(cssClass(required));
     }
 
     @Test

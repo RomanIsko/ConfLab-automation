@@ -53,21 +53,21 @@ public class SingleEventView extends BasicTestCase {
 
     @Test
     public void infoTabHasCorrectName() throws Exception {
-        $(INFO_TAB).shouldHave(text("INFO"));
+        $(INFO_TAB).shouldHave(text("Info"));
     }
 
     @Test
-    public void speakersTabInactive() throws Exception {
+    public void speakersTabHasCorrectName() throws Exception {
         $(SPEAKERS_TAB).shouldHave(text("Speakers"));
     }
 
     @Test
-    public void speechesTabInactive() throws Exception {
+    public void speechesTabHasCorrectName() throws Exception {
         $(SPEECHES_TAB).shouldHave(text("Speeches"));
     }
 
     @Test
-    public void partnersTabInactive() throws Exception {
+    public void partnersTabHasCorrectName() throws Exception {
         $(PARTNERS_TAB).shouldHave(text("Partners"));
     }
 }

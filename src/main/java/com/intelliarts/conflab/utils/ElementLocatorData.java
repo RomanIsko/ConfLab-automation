@@ -11,7 +11,7 @@ public class ElementLocatorData {
     public static final By PASSWORD_FIELD  = By.id("password");
     public static final By LOGIN_BUTTON    = By.id("login");
     public static final By LOGO            = By.xpath("html/body/nav/div/div[1]/a");
-    public static final By NAV_BAR         = By.xpath("html/body/div[1]/div/div[1]/ul");
+    public static final By NAV_BAR         = By.id("app-manu-region");
 
     //Events view
     public static final By EVENTS_LINK             = By.xpath("html/body/div[1]/div/div[1]/ul/li[1]/a");

@@ -14,7 +14,7 @@ public class ElementLocatorData {
     public static final By NAV_BAR         = By.id("app-manu-region");
 
     //Events view
-    public static final By EVENTS_LINK             = By.xpath("html/body/div[1]/div/div[1]/ul/li[1]/a");
+    public static final By EVENTS_LINK             = By.xpath("(//*[@id='app-manu-region']/ul/li//a)[1]");
     public static final By EVENTS_PAGE_HEADER      = By.id("table-title");
     public static final By EVENTS_LIST             = By.id("list-region");
     public static final By EVENT_EDIT_REGION       = By.id("edit-region");
@@ -64,7 +64,7 @@ public class ElementLocatorData {
             By.xpath("//input[@id='eventContacts']/following-sibling::span");
 
     //Speakers view
-    public static final By SPEAKERS_LINK          = By.xpath("html/body/div[1]/div/div[1]/ul/li[2]/a");
+    public static final By SPEAKERS_LINK          = By.xpath("(//*[@id='app-manu-region']/ul/li//a)[2]");
     public static final By SPEAKERS_PAGE_HEADER   = By.id("table-title");
     public static final By SPEAKERS_LIST          = By.id("list-region");
     public static final By SPEAKER_EDIT_REGION    = By.id("edit-region");
@@ -87,7 +87,7 @@ public class ElementLocatorData {
             By.xpath("//textarea[@id='about']/following-sibling::span");
 
     //Speeches view
-    public static final By SPEECHES_LINK                   = By.xpath("html/body/div[1]/div/div[1]/ul/li[3]/a");
+    public static final By SPEECHES_LINK                   = By.xpath("(//*[@id='app-manu-region']/ul/li//a)[3]");
     public static final By SPEECHES_PAGE_HEADER            = By.id("table-title");
     public static final By SPEECHES_LIST                   = By.id("list-region");
     public static final By SPEECH_EDIT_REGION              = By.id("edit-region");

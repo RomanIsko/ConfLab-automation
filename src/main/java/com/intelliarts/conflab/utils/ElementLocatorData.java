@@ -72,6 +72,8 @@ public class ElementLocatorData {
     public static final By SPEAKER_NAME_LABEL     = By.xpath("//label[@for='name']");
     public static final By SPEAKER_EMAIL          = By.id("email");
     public static final By SPEAKER_EMAIL_LABEL    = By.xpath("//label[@for='email']");
+    public static final By SPEAKER_COMPANY        = By.id("select2-company-container");
+    public static final By SPEAKER_COMPANY_LABEL  = By.xpath("//label[@for='select2-company-container']");
     public static final By SPEAKER_POSITION       = By.id("position");
     public static final By SPEAKER_POSITION_LABEL = By.xpath("//label[@for='position']");
     public static final By SPEAKER_ABOUT          = By.id("about");

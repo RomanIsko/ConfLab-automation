@@ -15,6 +15,8 @@ import static com.intelliarts.conflab.utils.ElementLocatorData.OK_BUTTON;
 import static com.intelliarts.conflab.utils.ElementLocatorData.SPEAKERS_LINK;
 import static com.intelliarts.conflab.utils.ElementLocatorData.SPEAKER_ABOUT;
 import static com.intelliarts.conflab.utils.ElementLocatorData.SPEAKER_ABOUT_LABEL;
+import static com.intelliarts.conflab.utils.ElementLocatorData.SPEAKER_COMPANY;
+import static com.intelliarts.conflab.utils.ElementLocatorData.SPEAKER_COMPANY_LABEL;
 import static com.intelliarts.conflab.utils.ElementLocatorData.SPEAKER_EMAIL;
 import static com.intelliarts.conflab.utils.ElementLocatorData.SPEAKER_EMAIL_LABEL;
 import static com.intelliarts.conflab.utils.ElementLocatorData.SPEAKER_NAME;
@@ -57,6 +59,16 @@ public class AddSpeakerView extends BasicTestCase {
     @Test
     public void emailLabelHasRequiredClass() throws Exception {
         $(SPEAKER_EMAIL_LABEL).shouldHave(cssClass(required));
+    }
+
+    @Test
+    public void companyFieldIsDisplayed() throws Exception {
+        $(SPEAKER_COMPANY).shouldBe(visible);
+    }
+
+    @Test
+    public void companyLabelHasRequiredClass() throws Exception {
+        $(SPEAKER_COMPANY_LABEL).shouldNotHave(cssClass(required));
     }
 
     @Test

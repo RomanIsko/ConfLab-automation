@@ -2,6 +2,7 @@ package com.intelliarts.conflab.automation.web.speaker;
 
 import com.codeborne.selenide.Configuration;
 import com.intelliarts.conflab.automation.web.BasicTestCase;
+import com.intelliarts.conflab.utils.ConfLabSpeaker;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -40,6 +41,19 @@ public class SpeakerValidation extends BasicTestCase {
     private final String SHORT_INVALID_EMAIL = SHORT_NAME;
     private final String INVALID_EMAIL       = "some@invalid@email@address";
     private final String VALID_EMAIL         = "valid.email-100500@address.com";
+    private final String POSSIBLE_COMPANY    = "Super Awesome inc.";
+    private final String POSSIBLE_POSITION   = "Chief Executive Officer";
+    private final String POSSIBLE_ABOUT      =
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget pretium nulla. Etiam eu risus ut " +
+            "felis laoreet fermentum id a arcu. Donec lectus ex, gravida eget luctus non, molestie et nisi. Fusce " +
+            "faucibus sodales nisl lobortis facilisis. Etiam ut diam a nibh tempus ultricies. Donec nec velit non " +
+            "justo blandit imperdiet. Aenean consectetur, est id vestibulum luctus, lorem felis tristique sapien, id " +
+            "maximus felis nibh eu orci. Praesent rutrum leo at facilisis laoreet. Sed sed ligula vitae dolor " +
+            "fermentum tempus. Phasellus mattis, sem a rutrum dignissim, magna libero consectetur turpis, non " +
+            "facilisis metus enim quis odio. Nulla nunc libero, dignissim placerat commodo eget, accumsan ac est. " +
+            "Nullam ac feugiat lectus, vitae tempor quam. Sed non diam sodales, pretium est at, efficitur diam. Fusce" +
+            " cursus tortor sed venenatis cursus. Nullam ullamcorper nunc porttitor, eleifend tortor eu, sagittis " +
+            "sapien.";
 
     @BeforeClass
     public static void setUp() throws Exception {
@@ -162,9 +176,12 @@ public class SpeakerValidation extends BasicTestCase {
 
     @Test
     public void noValidationMessageOnCorrectDataSubmit() throws Exception {
-        $(SPEAKER_NAME).val(POSSIBLE_NAME);
-        $(SPEAKER_EMAIL).val(VALID_EMAIL);
-        $(OK_BUTTON).click();
+        Configuration.clickViaJs = false;
+        ConfLabSpeaker speaker = new ConfLabSpeaker();
+        speaker.setCompany(POSSIBLE_COMPANY);
+        speaker.setPosition(POSSIBLE_POSITION);
+        speaker.setAbout(POSSIBLE_ABOUT);
+        speaker.addViaWeb();
         $(SPEAKER_NAME_VALIDATION_MESSAGE).shouldBe(hidden);
         $(SPEAKER_EMAIL_VALIDATION_MESSAGE).shouldBe(hidden);
         $(SPEAKER_EDIT_REGION).shouldBe(hidden);

@@ -8,6 +8,9 @@ import static com.codeborne.selenide.Selenide.sleep;
 import static com.intelliarts.conflab.utils.ElementLocatorData.ADD_BUTTON;
 import static com.intelliarts.conflab.utils.ElementLocatorData.OK_BUTTON;
 import static com.intelliarts.conflab.utils.ElementLocatorData.SPEAKER_ABOUT;
+import static com.intelliarts.conflab.utils.ElementLocatorData.SPEAKER_COMPANY_CONTAINER;
+import static com.intelliarts.conflab.utils.ElementLocatorData.SPEAKER_COMPANY_OPTION;
+import static com.intelliarts.conflab.utils.ElementLocatorData.SPEAKER_COMPANY_SEARCH;
 import static com.intelliarts.conflab.utils.ElementLocatorData.SPEAKER_EMAIL;
 import static com.intelliarts.conflab.utils.ElementLocatorData.SPEAKER_NAME;
 import static com.intelliarts.conflab.utils.ElementLocatorData.SPEAKER_POSITION;
@@ -16,6 +19,7 @@ import static com.intelliarts.conflab.utils.ResourcesData.SPEAKERS_URL;
 public class ConfLabSpeaker {
     private String name;
     private String email;
+    private String company;
     private String position;
     private String about;
 
@@ -35,6 +39,10 @@ public class ConfLabSpeaker {
 
     public String getName() {
         return name;
+    }
+
+    public void setCompany(String company) {
+        this.company = company;
     }
 
     public String getPosition() {
@@ -59,8 +67,15 @@ public class ConfLabSpeaker {
         $(ADD_BUTTON).click();
         $(SPEAKER_NAME).val(name);
         $(SPEAKER_EMAIL).val(email);
+        setCompanyOnPage(company);
         $(SPEAKER_POSITION).val(position);
         $(SPEAKER_ABOUT).val(about);
         $(OK_BUTTON).click();
+    }
+
+    private void setCompanyOnPage(String company) {
+        $(SPEAKER_COMPANY_CONTAINER).click();
+        $(SPEAKER_COMPANY_SEARCH).val(company);
+        $(SPEAKER_COMPANY_OPTION).click();
     }
 }

@@ -1,6 +1,6 @@
 *.iml
 .idea/
-.gradle
+.gradle/
 build/
 screenshots/
 gradle-app.setting

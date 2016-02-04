@@ -12,6 +12,7 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.refresh;
+import static com.codeborne.selenide.Selenide.sleep;
 import static com.intelliarts.conflab.utils.ElementLocatorData.ADD_BUTTON;
 import static com.intelliarts.conflab.utils.ElementLocatorData.OK_BUTTON;
 import static com.intelliarts.conflab.utils.ElementLocatorData.SPEAKERS_LINK;
@@ -69,6 +70,7 @@ public class SpeakerValidation extends BasicTestCase {
     @Before
     public void setUpTest() throws Exception {
         refresh();
+        sleep(500);
         $(ADD_BUTTON).click();
     }
 

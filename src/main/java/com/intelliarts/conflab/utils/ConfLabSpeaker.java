@@ -67,7 +67,9 @@ public class ConfLabSpeaker {
         $(ADD_BUTTON).click();
         $(SPEAKER_NAME).val(name);
         $(SPEAKER_EMAIL).val(email);
-        setCompanyOnPage(company);
+        if (company != null) {
+            setCompanyOnPage(company);
+        }
         $(SPEAKER_POSITION).val(position);
         $(SPEAKER_ABOUT).val(about);
         $(OK_BUTTON).click();

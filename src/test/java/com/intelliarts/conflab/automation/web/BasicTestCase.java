@@ -27,6 +27,7 @@ public class BasicTestCase {
     protected static void basicSetUp() {
         Configuration.baseUrl = DEPLOYMENT_URL;
         Configuration.clickViaJs = true;
+        Configuration.browserSize = "1920x1080";
         open("/");
     }
 

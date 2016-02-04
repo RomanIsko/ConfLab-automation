@@ -85,16 +85,16 @@ public class ConfLabEvent {
         return address;
     }
 
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
     public String getContacts() {
         return contacts;
     }
 
     public void setContacts(String contacts) {
         this.contacts = contacts;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
     }
 
     public void addViaWeb() {

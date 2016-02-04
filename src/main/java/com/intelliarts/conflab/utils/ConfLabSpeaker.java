@@ -1,5 +1,7 @@
 package com.intelliarts.conflab.utils;
 
+import com.codeborne.selenide.Configuration;
+
 import java.util.UUID;
 
 import static com.codeborne.selenide.Selenide.$;
@@ -76,6 +78,7 @@ public class ConfLabSpeaker {
     }
 
     private void setCompanyOnPage(String company) {
+        Configuration.clickViaJs = false;
         $(SPEAKER_COMPANY_CONTAINER).click();
         $(SPEAKER_COMPANY_SEARCH).val(company);
         $(SPEAKER_COMPANY_OPTION).click();

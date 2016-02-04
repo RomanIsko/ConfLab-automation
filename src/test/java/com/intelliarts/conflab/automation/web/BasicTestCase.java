@@ -26,6 +26,7 @@ public class BasicTestCase {
 
     protected static void basicSetUp() {
         Configuration.baseUrl = DEPLOYMENT_URL;
+        Configuration.clickViaJs = true;
         open("/");
     }
 

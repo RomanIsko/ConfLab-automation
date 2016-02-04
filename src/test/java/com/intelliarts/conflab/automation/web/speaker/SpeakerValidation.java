@@ -1,6 +1,5 @@
 package com.intelliarts.conflab.automation.web.speaker;
 
-import com.codeborne.selenide.Configuration;
 import com.intelliarts.conflab.automation.web.BasicTestCase;
 import com.intelliarts.conflab.utils.ConfLabSpeaker;
 import org.junit.AfterClass;
@@ -57,7 +56,6 @@ public class SpeakerValidation extends BasicTestCase {
 
     @BeforeClass
     public static void setUp() throws Exception {
-        Configuration.clickViaJs = true;
         basicSetUp();
         login();
         $(SPEAKERS_LINK).click();
@@ -176,7 +174,6 @@ public class SpeakerValidation extends BasicTestCase {
 
     @Test
     public void noValidationMessageOnCorrectDataSubmit() throws Exception {
-        Configuration.clickViaJs = false;
         ConfLabSpeaker speaker = new ConfLabSpeaker();
         speaker.setCompany(POSSIBLE_COMPANY);
         speaker.setPosition(POSSIBLE_POSITION);

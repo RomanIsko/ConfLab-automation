@@ -1,8 +1,8 @@
 package com.intelliarts.conflab.utils;
 
 import com.codeborne.selenide.Configuration;
-
-import java.util.UUID;
+import io.codearte.jfairy.Fairy;
+import io.codearte.jfairy.producer.person.Person;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
@@ -31,8 +31,10 @@ public class ConfLabSpeaker {
     }
 
     public ConfLabSpeaker() {
-        this.name = UUID.randomUUID().toString();
-        this.email = this.name + "@email.com";
+        Fairy fairy = Fairy.create();
+        Person person = fairy.person();
+        this.name = person.fullName();
+        this.email = person.email();
     }
 
     public String getEmail() {

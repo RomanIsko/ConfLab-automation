@@ -1,6 +1,7 @@
 package com.intelliarts.conflab.utils;
 
-import java.util.UUID;
+import io.codearte.jfairy.Fairy;
+import io.codearte.jfairy.producer.text.TextProducer;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
@@ -34,7 +35,9 @@ public class ConfLabEvent {
     }
 
     public ConfLabEvent() {
-        this.name = UUID.randomUUID().toString();
+        Fairy fairy = Fairy.create();
+        TextProducer textProducer = fairy.textProducer();
+        this.name = textProducer.randomString(24);
     }
 
     public String getDescription() {

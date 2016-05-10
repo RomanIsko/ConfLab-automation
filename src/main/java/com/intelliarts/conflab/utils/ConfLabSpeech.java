@@ -1,6 +1,6 @@
 package com.intelliarts.conflab.utils;
 
-import java.util.UUID;
+import io.codearte.jfairy.Fairy;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
@@ -22,7 +22,8 @@ public class ConfLabSpeech {
     }
 
     public ConfLabSpeech() {
-        this.title = UUID.randomUUID().toString();
+        Fairy fairy = Fairy.create();
+        this.title = fairy.textProducer().latinSentence(4);
     }
 
     public String getTitle() {

@@ -12,7 +12,6 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 import static com.codeborne.selenide.Selenide.close;
 import static com.codeborne.selenide.Selenide.open;
-import static com.codeborne.selenide.Selenide.sleep;
 import static com.codeborne.selenide.WebDriverRunner.url;
 import static com.intelliarts.conflab.utils.ElementLocatorData.PASSWORD_FIELD;
 import static com.intelliarts.conflab.utils.ElementLocatorData.USERNAME_FIELD;
@@ -24,8 +23,6 @@ import static com.intelliarts.conflab.utils.ResourcesData.EVENT_SPEAKERS_URL;
 import static com.intelliarts.conflab.utils.ResourcesData.EVENT_SPEECHES_URL;
 import static com.intelliarts.conflab.utils.ResourcesData.SPEAKERS_URL;
 import static com.intelliarts.conflab.utils.ResourcesData.SPEECHES_URL;
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.core.Is.is;
 
 public class RequireLogin extends BasicTestCase {
     private static String eventUrl;
@@ -55,71 +52,71 @@ public class RequireLogin extends BasicTestCase {
     @Test
     public void eventsLinkRequireLogin() throws Exception {
         open(EVENTS_URL);
-        assertThat(loginRequired(), is(true));
+        loginRequired();
     }
 
     @Test
     public void singleEventLinkRequireLogin() throws Exception {
         open(EVENTS_URL + singleEntityUrl);
-        assertThat(loginRequired(), is(true));
+        loginRequired();
     }
 
     @Test
     public void speakersLinkRequireLogin() throws Exception {
         open(SPEAKERS_URL);
-        assertThat(loginRequired(), is(true));
+        loginRequired();
     }
 
     @Test
     public void singleSpeakerLinkRequireLogin() throws Exception {
         open(SPEAKERS_URL);
-        assertThat(loginRequired(), is(true));
+        loginRequired();
     }
 
     @Test
     public void speechesLinkRequireLogin() throws Exception {
         open(SPEECHES_URL);
-        assertThat(loginRequired(), is(true));
+        loginRequired();
     }
 
     @Test
     public void singleSpeechLinkRequireLogin() throws Exception {
         open(SPEECHES_URL + singleEntityUrl);
-        assertThat(loginRequired(), is(true));
+        loginRequired();
     }
 
     @Test
     public void companiesLinkRequireLogin() throws Exception {
         open(COMPANIES_URL);
-        assertThat(loginRequired(), is(true));
+        loginRequired();
     }
 
     @Test
     public void singleCompanyLinkRequireLogin() throws Exception {
         open(COMPANIES_URL + singleEntityUrl);
-        assertThat(loginRequired(), is(true));
+        loginRequired();
     }
 
     @Test
     public void eventInfoRequireLogin() throws Exception {
         open(eventUrl + EVENT_INFO_URL);
-        assertThat(loginRequired(), is(true));
+        loginRequired();
     }
 
     @Test
     public void eventSpeakersRequireLogin() throws Exception {
         open(eventUrl + EVENT_SPEAKERS_URL);
-        assertThat(loginRequired(), is(true));
+        loginRequired();
     }
 
     @Test
     public void eventSpeechesRequireLogin() throws Exception {
         open(eventUrl + EVENT_SPEECHES_URL);
-        assertThat(loginRequired(), is(true));
+        loginRequired();
     }
 
-    private static boolean loginRequired() {
-        sleep(1000);
-        return ($(USERNAME_FIELD).is(visible) && $(PASSWORD_FIELD).is(visible));
+    private void loginRequired() {
+        $(USERNAME_FIELD).shouldBe(visible);
+        $(PASSWORD_FIELD).shouldBe(visible);
     }
 }

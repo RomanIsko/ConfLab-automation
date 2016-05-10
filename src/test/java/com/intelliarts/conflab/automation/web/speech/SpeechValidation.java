@@ -1,12 +1,12 @@
 package com.intelliarts.conflab.automation.web.speech;
 
 import com.intelliarts.conflab.automation.web.BasicTestCase;
+import io.codearte.jfairy.Fairy;
+import io.codearte.jfairy.producer.text.TextProducer;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-
-import java.util.UUID;
 
 import static com.codeborne.selenide.Condition.hidden;
 import static com.codeborne.selenide.Condition.text;
@@ -24,26 +24,12 @@ import static com.intelliarts.conflab.utils.ElementLocatorData.SPEECH_TITLE;
 import static com.intelliarts.conflab.utils.ElementLocatorData.SPEECH_TITLE_VALIDATION_MESSAGE;
 
 public class SpeechValidation extends BasicTestCase {
+    private static final TextProducer textProducer = Fairy.create().textProducer();
 
     public static final String POSSIBLE_LANGUAGE    = "English";
     private final       String TITLE_REQUIRED       = "Title is required";
-    private final       String POSSIBLE_TITLE       = UUID.randomUUID().toString();
-    private final       String POSSIBLE_DESCRIPTION =
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur mauris odio, suscipit vitae faucibus " +
-            "sed, efficitur ut magna. Vestibulum vestibulum felis ac magna mattis aliquet. Nam sed mauris tempor " +
-            "sapien ullamcorper posuere. Donec sodales magna rutrum felis hendrerit placerat. Etiam viverra ultricies" +
-            " mi id tempor. Donec dapibus lectus lectus, in volutpat ex eleifend maximus. Suspendisse sagittis magna " +
-            "turpis, in dignissim nunc placerat vitae. Donec ultrices non tortor eu sodales. Praesent fermentum odio " +
-            "ut mauris scelerisque, at egestas ex pulvinar. Donec gravida, mauris vel gravida cursus, massa quam " +
-            "congue tortor, id egestas purus magna ut nibh.\n" +
-            "\n" +
-            "Aenean molestie feugiat elit in fringilla. Cras eget mauris vel libero consectetur pulvinar. Aenean " +
-            "euismod nulla ut quam vehicula, eget mollis mi tristique. In hac habitasse platea dictumst. Fusce " +
-            "convallis ut mauris ut venenatis. Cras urna nisl, facilisis quis sem at, pellentesque bibendum dui. " +
-            "Suspendisse fringilla mi vitae quam sodales, non commodo ex pellentesque. Duis maximus augue sem, " +
-            "imperdiet pharetra dui iaculis eget. Fusce in velit ac diam condimentum mattis laoreet feugiat magna. " +
-            "Sed luctus, libero non vehicula auctor, lectus lorem vestibulum nisl, in mattis nisl augue nec augue. " +
-            "Suspendisse vestibulum ante elit, nec pretium nibh malesuada vitae.";
+    private final       String POSSIBLE_TITLE       = textProducer.sentence(4);
+    private final       String POSSIBLE_DESCRIPTION = textProducer.paragraph(10);
 
     @BeforeClass
     public static void setUp() throws Exception {

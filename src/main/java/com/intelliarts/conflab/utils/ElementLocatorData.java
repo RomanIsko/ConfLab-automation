@@ -102,11 +102,13 @@ public class ElementLocatorData {
     public static final By SPEECH_TITLE_VALIDATION_MESSAGE = By.xpath("//input[@id='title']/following-sibling::span");
 
     //Companies view
-    public static final By COMPANIES_LINK     = By.xpath("(//*[@id='app-manu-region']/ul/li//a)[4]");
-    public static final By COMPANY_NAME       = By.id("name");
-    public static final By COMPANY_NAME_LABEL = By.xpath("//label[@for='name']");
-    public static final By COMPANY_URL        = By.id("url");
-    public static final By COMPANY_URL_LABEL  = By.xpath("//label[@for='url']");
+    public static final By COMPANIES_LINK        = By.xpath("(//*[@id='app-manu-region']/ul/li//a)[4]");
+    public static final By COMPANY_NAME          = By.id("name");
+    public static final By COMPANY_NAME_LABEL    = By.xpath("//label[@for='name']");
+    public static final By COMPANY_URL           = By.id("url");
+    public static final By COMPANY_URL_LABEL     = By.xpath("//label[@for='url']");
+    public static final By COMPANIES_PAGE_HEADER = By.id("table-title");
+    public static final By COMPANIES_LIST        = By.id("list-region");
 
     public static final String ENGLISH   = "English";
     public static final String UKRAINIAN = "Ukrainian";

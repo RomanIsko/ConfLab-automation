@@ -2,6 +2,7 @@ package com.intelliarts.conflab.automation.web;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.junit.ScreenShooter;
+import com.intelliarts.conflab.utils.ConfLabCompany;
 import com.intelliarts.conflab.utils.ConfLabEvent;
 import com.intelliarts.conflab.utils.ConfLabSpeaker;
 import com.intelliarts.conflab.utils.ConfLabSpeech;
@@ -56,6 +57,12 @@ public class BasicTestCase {
     protected static void addMultipleSpeeches(int count) {
         for (int i = 0; i < count; i++) {
             new ConfLabSpeech().addViaWeb();
+        }
+    }
+
+    protected static void addMultipleCompanies(int count) {
+        for (int i = 0; i < count; i++) {
+            new ConfLabCompany().addViaWeb();
         }
     }
 

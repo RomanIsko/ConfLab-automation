@@ -1,5 +1,9 @@
 package com.intelliarts.conflab.utils;
 
+import io.codearte.jfairy.Fairy;
+import io.codearte.jfairy.producer.company.Company;
+import io.codearte.jfairy.producer.person.Person;
+
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.sleep;
@@ -14,6 +18,10 @@ public class ConfLabCompany {
     private String url;
 
     public ConfLabCompany() {
+        Person person = Fairy.create().person();
+        Company company = person.getCompany();
+        this.name = company.name();
+        this.url = company.url();
     }
 
     public ConfLabCompany(String name) {

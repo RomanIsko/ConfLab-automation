@@ -7,6 +7,7 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import static com.codeborne.selenide.Condition.attribute;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
@@ -50,5 +51,16 @@ public class SingleCompanyView extends BasicTestCase {
     @Test
     public void companyUrlIsCorrect() throws Exception {
         $(COMPANY_URL).shouldHave(text(confLabCompany.getUrl()));
+    }
+
+    @Test
+    public void companyUrlNewTab() throws Exception {
+        $(COMPANY_URL).shouldHave(attribute("target", "_blank"));
+    }
+
+    @Test
+    public void companyUrlIsLink() throws Exception {
+        $(COMPANY_URL).has(attribute("a"));
+        $(COMPANY_URL).has(attribute("href"));
     }
 }

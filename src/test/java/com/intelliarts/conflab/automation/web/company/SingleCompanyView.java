@@ -12,8 +12,10 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.intelliarts.conflab.utils.ElementLocatorData.COMPANIES_LIST;
+import static com.intelliarts.conflab.utils.ElementLocatorData.COMPANY_INFO_FORM;
 import static com.intelliarts.conflab.utils.ElementLocatorData.COMPANY_NAME;
 import static com.intelliarts.conflab.utils.ElementLocatorData.COMPANY_URL;
+import static com.intelliarts.conflab.utils.ElementLocatorData.FORM_EDIT_BUTTON;
 
 public class SingleCompanyView extends BasicTestCase {
 
@@ -62,5 +64,11 @@ public class SingleCompanyView extends BasicTestCase {
     public void companyUrlIsLink() throws Exception {
         $(COMPANY_URL).has(attribute("a"));
         $(COMPANY_URL).has(attribute("href"));
+    }
+
+    @Test
+    public void editButtonVisible() throws Exception {
+        $(COMPANY_INFO_FORM).hover();
+        $(FORM_EDIT_BUTTON).shouldBe(visible);
     }
 }

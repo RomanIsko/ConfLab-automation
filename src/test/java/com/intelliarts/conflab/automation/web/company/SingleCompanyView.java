@@ -11,6 +11,7 @@ import static com.codeborne.selenide.Condition.attribute;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.sleep;
 import static com.intelliarts.conflab.utils.ElementLocatorData.COMPANIES_LIST;
 import static com.intelliarts.conflab.utils.ElementLocatorData.COMPANY_INFO_FORM;
 import static com.intelliarts.conflab.utils.ElementLocatorData.COMPANY_NAME;
@@ -27,6 +28,7 @@ public class SingleCompanyView extends BasicTestCase {
         login();
         confLabCompany.addViaWeb();
         ElementsCollection companiesList = $(COMPANIES_LIST).findAll(".list-group-item");
+        sleep(500);
         companiesList.last().click();
     }
 

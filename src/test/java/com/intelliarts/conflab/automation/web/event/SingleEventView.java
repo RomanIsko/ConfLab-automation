@@ -42,8 +42,8 @@ public class SingleEventView extends BasicTestCase {
     }
 
     @Test
-    public void eventHasFourTabs() throws Exception {
-        $(EVENT_TABS).findAll("li").shouldHaveSize(4);
+    public void eventHasFiveTabs() throws Exception {
+        $(EVENT_TABS).findAll("li").shouldHaveSize(5);
     }
 
     @Test

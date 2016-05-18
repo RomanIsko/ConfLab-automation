@@ -18,6 +18,7 @@ import static com.intelliarts.conflab.utils.ElementLocatorData.INFO_TAB;
 import static com.intelliarts.conflab.utils.ElementLocatorData.PARTNERS_TAB;
 import static com.intelliarts.conflab.utils.ElementLocatorData.SPEAKERS_TAB;
 import static com.intelliarts.conflab.utils.ElementLocatorData.SPEECHES_TAB;
+import static com.intelliarts.conflab.utils.ElementLocatorData.TRACKS_TAB;
 
 public class SingleEventView extends BasicTestCase {
 
@@ -69,5 +70,10 @@ public class SingleEventView extends BasicTestCase {
     @Test
     public void partnersTabHasCorrectName() throws Exception {
         $(PARTNERS_TAB).shouldHave(text("Partners"));
+    }
+
+    @Test
+    public void tracksTabHasCorrectName() throws Exception {
+        $(TRACKS_TAB).shouldHave(text("Tracks"));
     }
 }

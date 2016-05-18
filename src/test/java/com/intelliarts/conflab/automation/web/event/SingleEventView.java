@@ -76,4 +76,9 @@ public class SingleEventView extends BasicTestCase {
     public void tracksTabHasCorrectName() throws Exception {
         $(TRACKS_TAB).shouldHave(text("Tracks"));
     }
+
+    @Test
+    public void scheduleTabHasCorrectName() throws Exception {
+        $(TRACKS_TAB).shouldHave(text("Schedule"));
+    }
 }

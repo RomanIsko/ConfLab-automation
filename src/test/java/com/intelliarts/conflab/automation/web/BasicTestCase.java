@@ -2,6 +2,9 @@ package com.intelliarts.conflab.automation.web;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.junit.ScreenShooter;
+import com.github.javafaker.Company;
+import com.github.javafaker.Faker;
+import com.github.javafaker.Lorem;
 import com.intelliarts.conflab.utils.ConfLabCompany;
 import com.intelliarts.conflab.utils.ConfLabEvent;
 import com.intelliarts.conflab.utils.ConfLabSpeaker;
@@ -24,6 +27,10 @@ public class BasicTestCase {
 
     @Rule
     public ScreenShooter makeScreenshotOnFailure = ScreenShooter.failedTests();
+
+    private Faker faker       = new Faker();
+    protected Lorem lorem     = faker.lorem();
+    protected Company company = faker.company();
 
     protected static void basicSetUp() {
         Configuration.baseUrl = DEPLOYMENT_URL;

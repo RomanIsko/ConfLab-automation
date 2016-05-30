@@ -23,12 +23,9 @@ import static com.intelliarts.conflab.utils.ElementLocatorData.OK_BUTTON;
 
 public class CompanyValidation extends BasicTestCase {
 
-    private final TextProducer textProducer = Fairy.create().textProducer();
-    private final Person       person       = Fairy.create().person();
-
-    private final String SHORT_NAME      = textProducer.randomString(2);
-    private final String THREE_CHAR_NAME = textProducer.randomString(3);
-    private final String POSSIBLE_NAME   = person.getCompany().name();
+    private final String SHORT_NAME      = lorem.characters(2);
+    private final String THREE_CHAR_NAME = lorem.characters(3);
+    private final String POSSIBLE_NAME   = company.name();
 
     private final String NAME_REQUIRED = "Name is required";
 

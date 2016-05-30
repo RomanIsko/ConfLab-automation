@@ -4,9 +4,13 @@ import com.codeborne.selenide.Selectors;
 import com.intelliarts.conflab.automation.web.BasicTestCase;
 import com.intelliarts.conflab.utils.ConfLabEvent;
 import io.codearte.jfairy.Fairy;
+import io.codearte.jfairy.producer.DateProducer;
 import io.codearte.jfairy.producer.person.Address;
 import io.codearte.jfairy.producer.person.Person;
 import io.codearte.jfairy.producer.text.TextProducer;
+import org.joda.time.DateTime;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -27,12 +31,18 @@ import static com.intelliarts.conflab.utils.ElementLocatorData.INFO_FORM;
 
 public class SingleEventViewInfoTab extends BasicTestCase {
     private static final TextProducer textProducer = Fairy.create().textProducer();
-    private static final Person       person       = Fairy.create().person();
-    private static final Address      address      = person.getAddress();
+
+    private static final DateProducer      dateProducer          = Fairy.create().dateProducer();
+    private static final DateTimeFormatter formatter             = DateTimeFormat.forPattern("dd-MMM-yyyy");
+    private static       DateTime          randomDateInThePast   = dateProducer.randomDateInThePast(1);
+    private static       DateTime          randomDateInTheFuture = dateProducer.randomDateInTheFuture(1);
+
+    private static final Person  person  = Fairy.create().person();
+    private static final Address address = person.getAddress();
 
     private static final String eventDescription = textProducer.paragraph(3);
-    private static final String eventStartDate   = "03-Jan-2016";
-    private static final String eventEndDate     = "05-Jan-2016";
+    private static final String eventStartDate   = randomDateInThePast.toString(formatter);
+    private static final String eventEndDate     = randomDateInTheFuture.toString(formatter);
     private static final String eventCountry     = "Switzerland";
     private static final String eventCity        = address.getCity();
     private static final String eventAddress     = address.street() + " " + address.streetNumber();

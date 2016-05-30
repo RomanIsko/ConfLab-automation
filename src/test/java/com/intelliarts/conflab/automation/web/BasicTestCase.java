@@ -28,13 +28,13 @@ public class BasicTestCase {
     @Rule
     public ScreenShooter makeScreenshotOnFailure = ScreenShooter.failedTests();
 
-    private Faker faker       = new Faker();
-    protected Lorem lorem     = faker.lorem();
+    private   Faker   faker   = new Faker();
+    protected Lorem   lorem   = faker.lorem();
     protected Company company = faker.company();
 
     protected static void basicSetUp() {
         Configuration.baseUrl = DEPLOYMENT_URL;
-//        Configuration.clickViaJs = true;
+        //        Configuration.clickViaJs = true;
         Configuration.browserSize = "1920x1080";
         open("/");
     }

@@ -3,6 +3,11 @@ package com.intelliarts.conflab.automation.web.event;
 import com.codeborne.selenide.Selectors;
 import com.intelliarts.conflab.automation.web.BasicTestCase;
 import com.intelliarts.conflab.utils.ConfLabEvent;
+import io.codearte.jfairy.Fairy;
+import io.codearte.jfairy.producer.DateProducer;
+import org.joda.time.DateTime;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -15,9 +20,14 @@ import static com.intelliarts.conflab.utils.ElementLocatorData.ADD_NEW_BUTTON;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_TABS;
 
 public class SingleEventViewSpeakersTab extends BasicTestCase {
+    private static final DateProducer      dateProducer          = Fairy.create().dateProducer();
+    private static final DateTimeFormatter formatter             = DateTimeFormat.forPattern("dd-MMM-yyyy");
+    private static       DateTime          randomDateInThePast   = dateProducer.randomDateInThePast(1);
+    private static       DateTime          randomDateInTheFuture = dateProducer.randomDateInTheFuture(1);
+
     protected static String eventDescription = "This is the description for \n";
-    protected static String eventStartDate   = "18-Jan-2016";
-    protected static String eventEndDate     = "20-Jan-2016";
+    protected static String eventStartDate   = randomDateInThePast.toString(formatter);
+    protected static String eventEndDate     = randomDateInTheFuture.toString(formatter);
     protected static String eventCountry     = "Switzerland";
     protected static String eventCity        = "Zürich";
     protected static String eventAddress     = "Neugasse 57-63, 8005";

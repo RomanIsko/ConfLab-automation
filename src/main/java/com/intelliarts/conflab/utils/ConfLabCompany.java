@@ -18,7 +18,8 @@ public class ConfLabCompany {
     public ConfLabCompany() {
         Faker faker = new Faker();
         this.name = faker.company().name();
-        this.url = faker.internet().url();
+        //// TODO: 30.05.2016 implement method that returns with protocol
+        this.url = "http://" + faker.internet().url();
     }
 
     public ConfLabCompany(String name) {

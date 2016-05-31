@@ -23,14 +23,14 @@ public class SingleEventViewSpeechesTab extends BasicTestCase {
     private static       Date             randomDateInThePast   = dateAndTime.future(100, TimeUnit.DAYS);
     private static       Date             randomDateInTheFuture = dateAndTime.past(100, TimeUnit.DAYS);
 
-    protected static String eventDescription = lorem.paragraph(1);
+    protected static String eventDescription = lorem.paragraph(3);
     protected static String eventStartDate   = dateFormat.format(randomDateInThePast);
     protected static String eventEndDate     = dateFormat.format(randomDateInTheFuture);
     protected static String eventCountry     = address.country();
     protected static String eventCity        = address.city();
     protected static String eventAddress     = address.streetAddress();
     protected static String eventContacts    = "+41 44 444 44 44\n" +
-                                               "John Smith\n" +
+                                               name.fullName() + "\n" +
                                                "skype:  john.smith\n" +
                                                "mailto: john-100.smith-500@email.com";
 

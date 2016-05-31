@@ -25,14 +25,14 @@ public class SingleEventViewPartnersTab extends BasicTestCase {
     private static       DateTime          randomDateInThePast   = dateProducer.randomDateInThePast(1);
     private static       DateTime          randomDateInTheFuture = dateProducer.randomDateInTheFuture(1);
 
-    protected static String eventDescription = "This is the description for \n";
+    protected static String eventDescription = lorem.paragraph(3);
     protected static String eventStartDate   = randomDateInThePast.toString(formatter);
     protected static String eventEndDate     = randomDateInTheFuture.toString(formatter);
-    protected static String eventCountry     = "Switzerland";
-    protected static String eventCity        = "Zürich";
-    protected static String eventAddress     = "Neugasse 57-63, 8005";
+    protected static String eventCountry     = address.country();
+    protected static String eventCity        = address.city();
+    protected static String eventAddress     = address.streetAddress();
     protected static String eventContacts    = "+41 44 444 44 44\n" +
-                                               "John Smith\n" +
+                                               name.fullName() + "\n" +
                                                "skype:  john.smith\n" +
                                                "mailto: john-100.smith-500@email.com";
 

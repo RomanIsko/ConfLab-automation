@@ -3,8 +3,7 @@ package com.intelliarts.conflab.automation.web.event;
 import com.codeborne.selenide.Selectors;
 import com.intelliarts.conflab.automation.web.BasicTestCase;
 import com.intelliarts.conflab.utils.ConfLabEvent;
-import io.codearte.jfairy.Fairy;
-import io.codearte.jfairy.producer.person.Person;
+import org.apache.commons.lang.StringUtils;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -32,17 +31,18 @@ public class SingleEventViewInfoTab extends BasicTestCase {
     private static       Date             randomDateInThePast   = dateAndTime.future(100, TimeUnit.DAYS);
     private static       Date             randomDateInTheFuture = dateAndTime.past(100, TimeUnit.DAYS);
 
-    private static final Person person = Fairy.create().person();
-
     private static final String eventDescription = lorem.paragraph(3);
     private static       String eventStartDate   = dateFormat.format(randomDateInThePast);
     private static       String eventEndDate     = dateFormat.format(randomDateInTheFuture);
     private static final String eventCountry     = address.country();
     private static final String eventCity        = address.city();
     private static final String eventAddress     = address.streetAddress();
-    private static       String email            = person.email();
-    private static       String username         = person.username();
-    private static       String telephoneNumber  = person.telephoneNumber();
+    private static       String email            = internet.emailAddress();
+    // TODO: 31.05.16 replace with method .username() call
+    private static       String username         = StringUtils.join(new String[]{
+            name.firstName().replaceAll("'", "").toLowerCase(), ".",
+            name.lastName().replaceAll("'", "").toLowerCase()});
+    private static       String telephoneNumber  = phoneNumber.phoneNumber();
     private static       String fullName         = name.fullName();
     private static final String eventContacts    = telephoneNumber + "\n" +
                                                    fullName + "\n" +

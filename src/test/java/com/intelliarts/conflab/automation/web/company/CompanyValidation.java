@@ -1,9 +1,6 @@
 package com.intelliarts.conflab.automation.web.company;
 
 import com.intelliarts.conflab.automation.web.BasicTestCase;
-import io.codearte.jfairy.Fairy;
-import io.codearte.jfairy.producer.person.Person;
-import io.codearte.jfairy.producer.text.TextProducer;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;

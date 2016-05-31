@@ -23,7 +23,7 @@ public class ConfLabSpeech {
 
     public ConfLabSpeech() {
         Faker faker = new Faker();
-        this.title = faker.lorem().paragraph(4);
+        this.title = faker.lorem().paragraph(2);
     }
 
     public String getTitle() {

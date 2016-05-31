@@ -4,16 +4,14 @@ import com.codeborne.selenide.Selectors;
 import com.intelliarts.conflab.automation.web.BasicTestCase;
 import com.intelliarts.conflab.utils.ConfLabEvent;
 import io.codearte.jfairy.Fairy;
-import io.codearte.jfairy.producer.DateProducer;
-import io.codearte.jfairy.producer.person.Address;
 import io.codearte.jfairy.producer.person.Person;
-import io.codearte.jfairy.producer.text.TextProducer;
-import org.joda.time.DateTime;
-import org.joda.time.format.DateTimeFormat;
-import org.joda.time.format.DateTimeFormatter;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
@@ -30,26 +28,22 @@ import static com.intelliarts.conflab.utils.ElementLocatorData.FORM_EDIT_BUTTON;
 import static com.intelliarts.conflab.utils.ElementLocatorData.INFO_FORM;
 
 public class SingleEventViewInfoTab extends BasicTestCase {
-    private static final TextProducer textProducer = Fairy.create().textProducer();
+    private static final SimpleDateFormat dateFormat            = new SimpleDateFormat("dd-MMM-yyyy");
+    private static       Date             randomDateInThePast   = dateAndTime.future(100, TimeUnit.DAYS);
+    private static       Date             randomDateInTheFuture = dateAndTime.past(100, TimeUnit.DAYS);
 
-    private static final DateProducer      dateProducer          = Fairy.create().dateProducer();
-    private static final DateTimeFormatter formatter             = DateTimeFormat.forPattern("dd-MMM-yyyy");
-    private static       DateTime          randomDateInThePast   = dateProducer.randomDateInThePast(1);
-    private static       DateTime          randomDateInTheFuture = dateProducer.randomDateInTheFuture(1);
+    private static final Person person = Fairy.create().person();
 
-    private static final Person  person  = Fairy.create().person();
-    private static final Address address = person.getAddress();
-
-    private static final String eventDescription = textProducer.paragraph(3);
-    private static final String eventStartDate   = randomDateInThePast.toString(formatter);
-    private static final String eventEndDate     = randomDateInTheFuture.toString(formatter);
-    private static final String eventCountry     = "Switzerland";
-    private static final String eventCity        = address.getCity();
-    private static final String eventAddress     = address.street() + " " + address.streetNumber();
+    private static final String eventDescription = lorem.paragraph(3);
+    private static       String eventStartDate   = dateFormat.format(randomDateInThePast);
+    private static       String eventEndDate     = dateFormat.format(randomDateInTheFuture);
+    private static final String eventCountry     = address.country();
+    private static final String eventCity        = address.city();
+    private static final String eventAddress     = address.streetAddress();
     private static       String email            = person.email();
     private static       String username         = person.username();
     private static       String telephoneNumber  = person.telephoneNumber();
-    private static       String fullName         = person.fullName();
+    private static       String fullName         = name.fullName();
     private static final String eventContacts    = telephoneNumber + "\n" +
                                                    fullName + "\n" +
                                                    "skype:  " + username + "\n" +

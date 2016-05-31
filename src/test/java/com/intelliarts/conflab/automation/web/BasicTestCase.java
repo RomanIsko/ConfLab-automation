@@ -7,6 +7,7 @@ import com.github.javafaker.Company;
 import com.github.javafaker.DateAndTime;
 import com.github.javafaker.Faker;
 import com.github.javafaker.Lorem;
+import com.github.javafaker.Name;
 import com.intelliarts.conflab.utils.ConfLabCompany;
 import com.intelliarts.conflab.utils.ConfLabEvent;
 import com.intelliarts.conflab.utils.ConfLabSpeaker;
@@ -35,6 +36,8 @@ public class BasicTestCase {
     protected        Company     company     = faker.company();
     protected static DateAndTime dateAndTime = faker.date();
     protected static Address     address     = faker.address();
+    protected static Name        name        = faker.name();
+
 
     protected static void basicSetUp() {
         Configuration.baseUrl = DEPLOYMENT_URL;

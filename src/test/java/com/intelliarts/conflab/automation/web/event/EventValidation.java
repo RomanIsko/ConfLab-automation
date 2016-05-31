@@ -1,8 +1,6 @@
 package com.intelliarts.conflab.automation.web.event;
 
 import com.intelliarts.conflab.automation.web.BasicTestCase;
-import io.codearte.jfairy.Fairy;
-import io.codearte.jfairy.producer.text.TextProducer;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -33,13 +31,11 @@ public class EventValidation extends BasicTestCase {
     private final String LONGER_NAME_REQUIRED  = "Name must be at least 3 characters";
     private final String SHORTER_NAME_REQUIRED = "Name must be at most 40 characters";
 
-    private final TextProducer textProducer = Fairy.create().textProducer();
-
-    private final String SHORT_NAME       = textProducer.randomString(2);
-    private final String THREE_CHAR_NAME  = textProducer.randomString(3);
-    private final String POSSIBLE_NAME    = textProducer.randomString(20);
-    private final String LONG_NAME        = textProducer.randomString(50);
-    private final String FORTY_CHARS_NAME = textProducer.randomString(40);
+    private final String SHORT_NAME       = lorem.characters(2);
+    private final String THREE_CHAR_NAME  = lorem.characters(3);
+    private final String POSSIBLE_NAME    = lorem.characters(20);
+    private final String LONG_NAME        = lorem.characters(50);
+    private final String FORTY_CHARS_NAME = lorem.characters(40);
 
     @BeforeClass
     public static void setUp() throws Exception {

@@ -1,6 +1,5 @@
 package com.intelliarts.conflab.automation.web.speaker;
 
-import com.codeborne.selenide.Configuration;
 import com.intelliarts.conflab.automation.web.BasicTestCase;
 import com.intelliarts.conflab.utils.ConfLabSpeaker;
 import org.junit.AfterClass;
@@ -33,27 +32,17 @@ public class SpeakerValidation extends BasicTestCase {
     private final String VALID_EMAIL_REQUIRED = "Email must be a valid email";
     private final String EMAIL_REQUIRED       = "Email is required";
 
-    private final String SHORT_NAME          = "Q";
-    private final String TWO_CHAR_NAME       = "Li";
+    private       String SHORT_NAME          = lorem.characters(1);
+    private       String TWO_CHAR_NAME       = lorem.characters(2);
     private final String POSSIBLE_NAME       = "John Smith";
     private final String LONG_NAME           = "John Smith, James Johnson, Robert Williams, Michael Jones";
     private final String FORTY_CHARS_NAME    = "John Smith James Johnson Robert Williams";
     private final String SHORT_INVALID_EMAIL = SHORT_NAME;
     private final String INVALID_EMAIL       = "some@invalid@email@address";
     private final String VALID_EMAIL         = "valid.email-100500@address.com";
-    private final String POSSIBLE_COMPANY    = "Super Awesome inc.";
+    private       String POSSIBLE_COMPANY    = company.name();
     private final String POSSIBLE_POSITION   = "Chief Executive Officer";
-    private final String POSSIBLE_ABOUT      =
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget pretium nulla. Etiam eu risus ut " +
-            "felis laoreet fermentum id a arcu. Donec lectus ex, gravida eget luctus non, molestie et nisi. Fusce " +
-            "faucibus sodales nisl lobortis facilisis. Etiam ut diam a nibh tempus ultricies. Donec nec velit non " +
-            "justo blandit imperdiet. Aenean consectetur, est id vestibulum luctus, lorem felis tristique sapien, id " +
-            "maximus felis nibh eu orci. Praesent rutrum leo at facilisis laoreet. Sed sed ligula vitae dolor " +
-            "fermentum tempus. Phasellus mattis, sem a rutrum dignissim, magna libero consectetur turpis, non " +
-            "facilisis metus enim quis odio. Nulla nunc libero, dignissim placerat commodo eget, accumsan ac est. " +
-            "Nullam ac feugiat lectus, vitae tempor quam. Sed non diam sodales, pretium est at, efficitur diam. Fusce" +
-            " cursus tortor sed venenatis cursus. Nullam ullamcorper nunc porttitor, eleifend tortor eu, sagittis " +
-            "sapien.";
+    private       String POSSIBLE_ABOUT      = lorem.paragraph(5);
 
     @BeforeClass
     public static void setUp() throws Exception {

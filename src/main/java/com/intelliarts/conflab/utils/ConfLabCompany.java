@@ -1,8 +1,6 @@
 package com.intelliarts.conflab.utils;
 
-import io.codearte.jfairy.Fairy;
-import io.codearte.jfairy.producer.company.Company;
-import io.codearte.jfairy.producer.person.Person;
+import com.github.javafaker.Faker;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
@@ -18,10 +16,10 @@ public class ConfLabCompany {
     private String url;
 
     public ConfLabCompany() {
-        Person person = Fairy.create().person();
-        Company company = person.getCompany();
-        this.name = company.name();
-        this.url = company.url();
+        Faker faker = new Faker();
+        this.name = faker.company().name();
+        //// TODO: 30.05.2016 implement method that returns with protocol
+        this.url = "http://" + faker.internet().url();
     }
 
     public ConfLabCompany(String name) {

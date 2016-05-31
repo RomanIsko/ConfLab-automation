@@ -1,6 +1,6 @@
 package com.intelliarts.conflab.utils;
 
-import io.codearte.jfairy.Fairy;
+import com.github.javafaker.Faker;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
@@ -22,8 +22,8 @@ public class ConfLabSpeech {
     }
 
     public ConfLabSpeech() {
-        Fairy fairy = Fairy.create();
-        this.title = fairy.textProducer().latinSentence(4);
+        Faker faker = new Faker();
+        this.title = faker.lorem().paragraph(4);
     }
 
     public String getTitle() {

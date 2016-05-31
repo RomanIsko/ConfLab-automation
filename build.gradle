@@ -21,8 +21,8 @@ idea {
 dependencies {
     compile 'junit:junit:4.12'
     compile 'com.codeborne:selenide:3.5.1'
-    compile 'io.codearte.jfairy:jfairy:0.5.3'
     compile 'org.slf4j:slf4j-simple:1.7.21'
+    compile group: 'com.github.javafaker', name: 'javafaker', version: '0.10'
 }
 
 test {

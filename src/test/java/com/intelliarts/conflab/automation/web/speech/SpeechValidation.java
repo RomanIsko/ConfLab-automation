@@ -1,8 +1,6 @@
 package com.intelliarts.conflab.automation.web.speech;
 
 import com.intelliarts.conflab.automation.web.BasicTestCase;
-import io.codearte.jfairy.Fairy;
-import io.codearte.jfairy.producer.text.TextProducer;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -24,12 +22,11 @@ import static com.intelliarts.conflab.utils.ElementLocatorData.SPEECH_TITLE;
 import static com.intelliarts.conflab.utils.ElementLocatorData.SPEECH_TITLE_VALIDATION_MESSAGE;
 
 public class SpeechValidation extends BasicTestCase {
-    private static final TextProducer textProducer = Fairy.create().textProducer();
 
     public static final String POSSIBLE_LANGUAGE    = "English";
     private final       String TITLE_REQUIRED       = "Title is required";
-    private final       String POSSIBLE_TITLE       = textProducer.sentence(4);
-    private final       String POSSIBLE_DESCRIPTION = textProducer.paragraph(10);
+    private             String POSSIBLE_TITLE       = lorem.sentence(4);
+    private             String POSSIBLE_DESCRIPTION = lorem.paragraph(10);
 
     @BeforeClass
     public static void setUp() throws Exception {

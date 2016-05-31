@@ -2,6 +2,14 @@ package com.intelliarts.conflab.automation.web;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.junit.ScreenShooter;
+import com.github.javafaker.Address;
+import com.github.javafaker.Company;
+import com.github.javafaker.DateAndTime;
+import com.github.javafaker.Faker;
+import com.github.javafaker.Internet;
+import com.github.javafaker.Lorem;
+import com.github.javafaker.Name;
+import com.github.javafaker.PhoneNumber;
 import com.intelliarts.conflab.utils.ConfLabCompany;
 import com.intelliarts.conflab.utils.ConfLabEvent;
 import com.intelliarts.conflab.utils.ConfLabSpeaker;
@@ -25,9 +33,19 @@ public class BasicTestCase {
     @Rule
     public ScreenShooter makeScreenshotOnFailure = ScreenShooter.failedTests();
 
+    private static   Faker       faker       = new Faker();
+    protected static Lorem       lorem       = faker.lorem();
+    protected        Company     company     = faker.company();
+    protected static DateAndTime dateAndTime = faker.date();
+    protected static Address     address     = faker.address();
+    protected static Name        name        = faker.name();
+    protected static PhoneNumber phoneNumber = faker.phoneNumber();
+    protected static Internet    internet    = faker.internet();
+
+
     protected static void basicSetUp() {
         Configuration.baseUrl = DEPLOYMENT_URL;
-//        Configuration.clickViaJs = true;
+        //        Configuration.clickViaJs = true;
         Configuration.browserSize = "1920x1080";
         open("/");
     }

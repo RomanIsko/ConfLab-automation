@@ -3,14 +3,13 @@ package com.intelliarts.conflab.automation.web.event;
 import com.codeborne.selenide.Selectors;
 import com.intelliarts.conflab.automation.web.BasicTestCase;
 import com.intelliarts.conflab.utils.ConfLabEvent;
-import io.codearte.jfairy.Fairy;
-import io.codearte.jfairy.producer.DateProducer;
-import org.joda.time.DateTime;
-import org.joda.time.format.DateTimeFormat;
-import org.joda.time.format.DateTimeFormatter;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
@@ -20,19 +19,18 @@ import static com.intelliarts.conflab.utils.ElementLocatorData.ADD_NEW_BUTTON;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_TABS;
 
 public class SingleEventViewSpeechesTab extends BasicTestCase {
-    private static final DateProducer      dateProducer          = Fairy.create().dateProducer();
-    private static final DateTimeFormatter formatter             = DateTimeFormat.forPattern("dd-MMM-yyyy");
-    private static       DateTime          randomDateInThePast   = dateProducer.randomDateInThePast(1);
-    private static       DateTime          randomDateInTheFuture = dateProducer.randomDateInTheFuture(1);
+    private static final SimpleDateFormat dateFormat            = new SimpleDateFormat("dd-MMM-yyyy");
+    private static       Date             randomDateInThePast   = dateAndTime.future(100, TimeUnit.DAYS);
+    private static       Date             randomDateInTheFuture = dateAndTime.past(100, TimeUnit.DAYS);
 
-    protected static String eventDescription = "This is the description for \n";
-    protected static String eventStartDate   = randomDateInThePast.toString(formatter);
-    protected static String eventEndDate     = randomDateInTheFuture.toString(formatter);
-    protected static String eventCountry     = "Switzerland";
-    protected static String eventCity        = "Zürich";
-    protected static String eventAddress     = "Neugasse 57-63, 8005";
+    protected static String eventDescription = lorem.paragraph(3);
+    protected static String eventStartDate   = dateFormat.format(randomDateInThePast);
+    protected static String eventEndDate     = dateFormat.format(randomDateInTheFuture);
+    protected static String eventCountry     = address.country();
+    protected static String eventCity        = address.city();
+    protected static String eventAddress     = address.streetAddress();
     protected static String eventContacts    = "+41 44 444 44 44\n" +
-                                               "John Smith\n" +
+                                               name.fullName() + "\n" +
                                                "skype:  john.smith\n" +
                                                "mailto: john-100.smith-500@email.com";
 

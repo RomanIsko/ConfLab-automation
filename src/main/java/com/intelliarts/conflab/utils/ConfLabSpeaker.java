@@ -1,8 +1,7 @@
 package com.intelliarts.conflab.utils;
 
 import com.codeborne.selenide.Configuration;
-import io.codearte.jfairy.Fairy;
-import io.codearte.jfairy.producer.person.Person;
+import com.github.javafaker.Faker;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
@@ -31,10 +30,9 @@ public class ConfLabSpeaker {
     }
 
     public ConfLabSpeaker() {
-        Fairy fairy = Fairy.create();
-        Person person = fairy.person();
-        this.name = person.fullName();
-        this.email = person.email();
+        Faker faker = new Faker();
+        this.name = faker.name().fullName();
+        this.email = faker.internet().emailAddress();
     }
 
     public String getEmail() {

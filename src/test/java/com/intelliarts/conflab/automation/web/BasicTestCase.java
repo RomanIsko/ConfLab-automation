@@ -47,7 +47,6 @@ public class BasicTestCase {
         Configuration.baseUrl = DEPLOYMENT_URL;
         //        Configuration.clickViaJs = true;
         Configuration.browserSize = "1920x1080";
-        Configuration.timeout = 8000;
         open("/");
     }
 

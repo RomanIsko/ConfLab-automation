@@ -14,7 +14,6 @@ import java.util.concurrent.TimeUnit;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.refresh;
-import static com.codeborne.selenide.Selenide.sleep;
 import static com.intelliarts.conflab.utils.ElementLocatorData.ADD_FROM_LIST_DROPDOWN;
 import static com.intelliarts.conflab.utils.ElementLocatorData.ADD_NEW_BUTTON;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_TABS;
@@ -49,7 +48,6 @@ public class SingleEventViewPartnersTab extends BasicTestCase {
         confLabEvent.setContacts(eventContacts);
         confLabEvent.addViaWeb();
         refresh();
-        sleep(1000);
         $(Selectors.withText(confLabEvent.getName())).click();
         $(EVENT_TABS).find(Selectors.byText("Speeches")).click();
     }

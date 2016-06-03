@@ -50,7 +50,7 @@ public class SingleEventViewSpeechesTab extends BasicTestCase {
         confLabEvent.setContacts(eventContacts);
         confLabEvent.addViaWeb();
         refresh();
-        sleep(1000);
+        sleep(2000);
         $(Selectors.withText(confLabEvent.getName())).click();
         $(EVENT_TABS).find(Selectors.byText("Speeches")).click();
     }

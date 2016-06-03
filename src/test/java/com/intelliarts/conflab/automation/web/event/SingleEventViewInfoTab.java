@@ -1,6 +1,5 @@
 package com.intelliarts.conflab.automation.web.event;
 
-import com.codeborne.selenide.Selectors;
 import com.intelliarts.conflab.automation.web.BasicTestCase;
 import com.intelliarts.conflab.utils.ConfLabEvent;
 import org.apache.commons.lang.StringUtils;
@@ -14,8 +13,10 @@ import java.util.concurrent.TimeUnit;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.refresh;
+import static com.intelliarts.conflab.utils.ElementLocatorData.EVENTS_LIST;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_ADDRESS;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_CITY;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_CONTACTS;
@@ -63,7 +64,7 @@ public class SingleEventViewInfoTab extends BasicTestCase {
         confLabEvent.setContacts(eventContacts);
         confLabEvent.addViaWeb();
         refresh();
-        $(Selectors.withText(confLabEvent.getName())).click();
+        $(EVENTS_LIST).find(withText(confLabEvent.getName())).click();
     }
 
     @AfterClass

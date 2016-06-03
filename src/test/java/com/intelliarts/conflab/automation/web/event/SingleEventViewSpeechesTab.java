@@ -1,6 +1,5 @@
 package com.intelliarts.conflab.automation.web.event;
 
-import com.codeborne.selenide.Selectors;
 import com.intelliarts.conflab.automation.web.BasicTestCase;
 import com.intelliarts.conflab.utils.ConfLabEvent;
 import org.junit.AfterClass;
@@ -12,11 +11,13 @@ import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Selectors.byText;
+import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.refresh;
-import static com.codeborne.selenide.Selenide.sleep;
 import static com.intelliarts.conflab.utils.ElementLocatorData.ADD_FROM_LIST_DROPDOWN;
 import static com.intelliarts.conflab.utils.ElementLocatorData.ADD_NEW_BUTTON;
+import static com.intelliarts.conflab.utils.ElementLocatorData.EVENTS_LIST;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_TABS;
 
 public class SingleEventViewSpeechesTab extends BasicTestCase {
@@ -50,8 +51,8 @@ public class SingleEventViewSpeechesTab extends BasicTestCase {
         confLabEvent.setContacts(eventContacts);
         confLabEvent.addViaWeb();
         refresh();
-        $(Selectors.withText(confLabEvent.getName())).click();
-        $(EVENT_TABS).find(Selectors.byText("Speeches")).click();
+        $(EVENTS_LIST).find(withText(confLabEvent.getName())).click();
+        $(EVENT_TABS).find(byText("Speeches")).click();
     }
 
     @AfterClass

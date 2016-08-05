@@ -58,12 +58,16 @@ public class EventValidation extends BasicTestCase {
     @Test
     public void validationMessageIsNotShownOnPageOpen() throws Exception {
         $(EVENT_NAME_VALIDATION_MESSAGE).shouldBe(hidden);
+        $(EVENT_START_DATE_VALIDATION_MESSAGE).shouldBe(hidden);
+        $(EVENT_END_DATE_VALIDATION_MESSAGE).shouldBe(hidden);
     }
 
     @Test
     public void submitEmptyNameField() throws Exception {
         $(OK_BUTTON).click();
         $(EVENT_NAME_VALIDATION_MESSAGE).shouldBe(visible);
+        $(EVENT_START_DATE_VALIDATION_MESSAGE).shouldBe(visible);
+        $(EVENT_END_DATE_VALIDATION_MESSAGE).shouldBe(visible);
     }
 
     @Test
@@ -84,7 +88,6 @@ public class EventValidation extends BasicTestCase {
         $(EVENT_NAME).val(THREE_CHAR_NAME);
         $(OK_BUTTON).click();
         $(EVENT_NAME_VALIDATION_MESSAGE).shouldBe(hidden);
-        $(EVENT_EDIT_REGION).shouldBe(hidden);
     }
 
     @Test
@@ -92,7 +95,6 @@ public class EventValidation extends BasicTestCase {
         $(EVENT_NAME).val(POSSIBLE_NAME);
         $(OK_BUTTON).click();
         $(EVENT_NAME_VALIDATION_MESSAGE).shouldBe(hidden);
-        $(EVENT_EDIT_REGION).shouldBe(hidden);
     }
 
     @Test
@@ -111,7 +113,7 @@ public class EventValidation extends BasicTestCase {
     }
 
     @Test
-    public void validationMessageHiddenForDescriptionOnEmptyNameSubmit() throws Exception {
+    public void noValidationMessageForDescription() throws Exception {
         $(OK_BUTTON).click();
         $(EVENT_DESCRIPTION_VALIDATION_MESSAGE).shouldBe(hidden);
     }
@@ -129,25 +131,25 @@ public class EventValidation extends BasicTestCase {
     }
 
     @Test
-    public void validationMessageHiddenForCountryOnEmptyNameSubmit() throws Exception {
+    public void noValidationMessageForCountry() throws Exception {
         $(OK_BUTTON).click();
         $(EVENT_COUNTRY_VALIDATION_MESSAGE).shouldBe(hidden);
     }
 
     @Test
-    public void validationMessageHiddenForCityOnEmptyNameSubmit() throws Exception {
+    public void noValidationMessageForCity() throws Exception {
         $(OK_BUTTON).click();
         $(EVENT_CITY_VALIDATION_MESSAGE).shouldBe(hidden);
     }
 
     @Test
-    public void validationMessageHiddenForAddressOnEmptyNameSubmit() throws Exception {
+    public void noValidationMessageForAddress() throws Exception {
         $(OK_BUTTON).click();
         $(EVENT_ADDRESS_VALIDATION_MESSAGE).shouldBe(hidden);
     }
 
     @Test
-    public void validationMessageHiddenForContactsOnEmptyNameSubmit() throws Exception {
+    public void noValidationMessageForContacts() throws Exception {
         $(OK_BUTTON).click();
         $(EVENT_CONTACTS_VALIDATION_MESSAGE).shouldBe(hidden);
     }

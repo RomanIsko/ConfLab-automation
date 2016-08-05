@@ -6,6 +6,10 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.concurrent.TimeUnit;
+
 import static com.codeborne.selenide.Condition.hidden;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
@@ -18,9 +22,11 @@ import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_CITY_VALIDA
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_CONTACTS_VALIDATION_MESSAGE;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_COUNTRY_VALIDATION_MESSAGE;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_DESCRIPTION_VALIDATION_MESSAGE;
+import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_END_DATE;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_END_DATE_VALIDATION_MESSAGE;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_NAME;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_NAME_VALIDATION_MESSAGE;
+import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_START_DATE;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_START_DATE_VALIDATION_MESSAGE;
 import static com.intelliarts.conflab.utils.ElementLocatorData.OK_BUTTON;
 
@@ -35,6 +41,13 @@ public class EventValidation extends BasicTestCase {
     private final String POSSIBLE_NAME    = lorem.characters(20);
     private final String LONG_NAME        = lorem.characters(50);
     private final String FORTY_CHARS_NAME = lorem.characters(40);
+
+    private static final SimpleDateFormat dateFormat            = new SimpleDateFormat("dd-MMM-yyyy");
+    private static       Date             randomDateInThePast   = dateAndTime.past(10, TimeUnit.DAYS);
+    private static       Date             randomDateInTheFuture = dateAndTime.future(10, TimeUnit.DAYS);
+
+    private static String eventStartDate = dateFormat.format(randomDateInThePast);
+    private static String eventEndDate   = dateFormat.format(randomDateInTheFuture);
 
     @BeforeClass
     public static void setUp() throws Exception {
@@ -117,13 +130,27 @@ public class EventValidation extends BasicTestCase {
     }
 
     @Test
-    public void noValidationMessageForStartDate() throws Exception {
+    public void submitEmptyStartDateField() throws Exception {
+        $(OK_BUTTON).click();
+        $(EVENT_START_DATE_VALIDATION_MESSAGE).shouldBe(visible);
+    }
+
+    @Test
+    public void noValidationMessageOnCorrectStartDateSubmit() throws Exception {
+        $(EVENT_START_DATE).val(eventStartDate);
         $(OK_BUTTON).click();
         $(EVENT_START_DATE_VALIDATION_MESSAGE).shouldBe(hidden);
     }
 
     @Test
-    public void noValidationMessageForEndDate() throws Exception {
+    public void submitEmptyEndDateField() throws Exception {
+        $(OK_BUTTON).click();
+        $(EVENT_END_DATE_VALIDATION_MESSAGE).shouldBe(visible);
+    }
+
+    @Test
+    public void noValidationMessageOnCorrectEndDateSubmit() throws Exception {
+        $(EVENT_END_DATE).val(eventEndDate);
         $(OK_BUTTON).click();
         $(EVENT_END_DATE_VALIDATION_MESSAGE).shouldBe(hidden);
     }

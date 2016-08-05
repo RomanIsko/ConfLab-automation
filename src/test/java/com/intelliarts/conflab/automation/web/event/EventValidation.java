@@ -18,7 +18,6 @@ import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_CITY_VALIDA
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_CONTACTS_VALIDATION_MESSAGE;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_COUNTRY_VALIDATION_MESSAGE;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_DESCRIPTION_VALIDATION_MESSAGE;
-import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_EDIT_REGION;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_END_DATE_VALIDATION_MESSAGE;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_NAME;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENT_NAME_VALIDATION_MESSAGE;
@@ -109,7 +108,6 @@ public class EventValidation extends BasicTestCase {
         $(EVENT_NAME).val(FORTY_CHARS_NAME);
         $(OK_BUTTON).click();
         $(EVENT_NAME_VALIDATION_MESSAGE).shouldBe(hidden);
-        $(EVENT_EDIT_REGION).shouldBe(hidden);
     }
 
     @Test
@@ -119,13 +117,13 @@ public class EventValidation extends BasicTestCase {
     }
 
     @Test
-    public void validationMessageHiddenForStartDateOnEmptyNameSubmit() throws Exception {
+    public void noValidationMessageForStartDate() throws Exception {
         $(OK_BUTTON).click();
         $(EVENT_START_DATE_VALIDATION_MESSAGE).shouldBe(hidden);
     }
 
     @Test
-    public void validationMessageHiddenForEndDateOnEmptyNameSubmit() throws Exception {
+    public void noValidationMessageForEndDate() throws Exception {
         $(OK_BUTTON).click();
         $(EVENT_END_DATE_VALIDATION_MESSAGE).shouldBe(hidden);
     }

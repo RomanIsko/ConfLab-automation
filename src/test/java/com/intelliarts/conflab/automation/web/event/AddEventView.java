@@ -74,7 +74,7 @@ public class AddEventView extends BasicTestCase {
 
     @Test
     public void startDateLabelHasNotRequiredClass() throws Exception {
-        $(EVENT_START_DATE_LABEL).shouldNotHave(cssClass(required));
+        $(EVENT_START_DATE_LABEL).shouldHave(cssClass(required));
     }
 
     @Test
@@ -84,7 +84,7 @@ public class AddEventView extends BasicTestCase {
 
     @Test
     public void endDateLabelHasNotRequiredClass() throws Exception {
-        $(EVENT_END_DATE_LABEL).shouldNotHave(cssClass(required));
+        $(EVENT_END_DATE_LABEL).shouldHave(cssClass(required));
     }
 
     @Test

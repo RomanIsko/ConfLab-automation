@@ -1,6 +1,11 @@
 package com.intelliarts.conflab.utils;
 
+import com.github.javafaker.DateAndTime;
 import com.github.javafaker.Faker;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
@@ -36,6 +41,14 @@ public class ConfLabEvent {
     public ConfLabEvent() {
         Faker faker = new Faker();
         this.name = faker.lorem().fixedString(24);
+
+        DateAndTime dateAndTime = faker.date();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MMM-yyyy");
+        Date randomDateInThePast = dateAndTime.past(10, TimeUnit.DAYS);
+        Date randomDateInTheFuture = dateAndTime.future(10, TimeUnit.DAYS);
+
+        this.startDate = dateFormat.format(randomDateInThePast);
+        this.endDate = dateFormat.format(randomDateInTheFuture);
     }
 
     public String getDescription() {

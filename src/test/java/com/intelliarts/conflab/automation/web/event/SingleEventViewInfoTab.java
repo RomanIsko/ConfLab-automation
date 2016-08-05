@@ -29,8 +29,8 @@ import static com.intelliarts.conflab.utils.ElementLocatorData.INFO_FORM;
 
 public class SingleEventViewInfoTab extends BasicTestCase {
     private static final SimpleDateFormat dateFormat            = new SimpleDateFormat("dd-MMM-yyyy");
-    private static       Date             randomDateInThePast   = dateAndTime.future(100, TimeUnit.DAYS);
-    private static       Date             randomDateInTheFuture = dateAndTime.past(100, TimeUnit.DAYS);
+    private static       Date             randomDateInThePast   = dateAndTime.past(100, TimeUnit.DAYS);
+    private static       Date             randomDateInTheFuture = dateAndTime.future(100, TimeUnit.DAYS);
 
     private static final String eventDescription = lorem.paragraph(3);
     private static       String eventStartDate   = dateFormat.format(randomDateInThePast);

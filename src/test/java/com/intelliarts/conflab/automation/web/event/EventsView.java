@@ -11,6 +11,7 @@ import org.openqa.selenium.By;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.sleep;
 import static com.intelliarts.conflab.utils.ElementLocatorData.ADD_BUTTON;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENTS_LINK;
 import static com.intelliarts.conflab.utils.ElementLocatorData.EVENTS_LIST;
@@ -52,6 +53,7 @@ public class EventsView extends BasicTestCase {
         confLabEvent.addViaWeb();
         String eventName = confLabEvent.getName();
         ElementsCollection eventsList = $(EVENTS_LIST).findAll(".list-group-item");
-        eventsList.contains($(By.linkText(eventName)));
+        sleep(1);
+        eventsList.contains($(By.partialLinkText(eventName)));
     }
 }

@@ -20,7 +20,7 @@ idea {
 
 dependencies {
     compile 'junit:junit:4.12'
-    compile 'com.codeborne:selenide:3.7'
+    compile 'com.codeborne:selenide:3.10'
     compile 'org.slf4j:slf4j-simple:1.7.21'
     compile group: 'com.github.javafaker', name: 'javafaker', version: '0.10'
 }

@@ -11,6 +11,31 @@ repositories {
     mavenCentral()
 }
 
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'de.undercouch:gradle-download-task:3.0.0'
+    }
+}
+
+apply plugin: 'de.undercouch.download'
+
+import de.undercouch.gradle.tasks.download.Download
+
+task downloadGeckoDriver(type: Download) {
+    src 'https://github.com/mozilla/geckodriver/releases/download/v0.10.0/geckodriver-v0.10.0-linux64.tar.gz'
+    dest buildDir
+    acceptAnyCertificate true
+    quiet true
+}
+
+task untarGeckoDriver(type: Copy, dependsOn: downloadGeckoDriver) {
+    from tarTree('build/geckodriver-v0.10.0-linux64.tar.gz')
+    into buildDir
+}
+
 idea {
     module {
         sourceDirs += file('src/main')
@@ -21,11 +46,13 @@ idea {
 dependencies {
     compile 'junit:junit:4.12'
     compile 'com.codeborne:selenide:3.10'
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.0.0-beta4'
     compile 'org.slf4j:slf4j-simple:1.7.21'
     compile group: 'com.github.javafaker', name: 'javafaker', version: '0.10'
 }
 
 test {
+    dependsOn untarGeckoDriver
     systemProperties['BUILD_URL'] = System.getenv()['BUILD_URL']
     beforeTest { descriptor ->
         logger.lifecycle("Running test: " + descriptor)

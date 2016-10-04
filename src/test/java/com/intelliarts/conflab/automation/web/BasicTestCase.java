@@ -1,6 +1,7 @@
 package com.intelliarts.conflab.automation.web;
 
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.WebDriverRunner;
 import com.codeborne.selenide.junit.ScreenShooter;
 import com.github.javafaker.Address;
 import com.github.javafaker.Company;
@@ -15,6 +16,9 @@ import com.intelliarts.conflab.utils.ConfLabEvent;
 import com.intelliarts.conflab.utils.ConfLabSpeaker;
 import com.intelliarts.conflab.utils.ConfLabSpeech;
 import org.junit.Rule;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.close;
@@ -45,8 +49,12 @@ public class BasicTestCase {
 
     protected static void basicSetUp() {
         Configuration.baseUrl = DEPLOYMENT_URL;
-        //        Configuration.clickViaJs = true;
         Configuration.browserSize = "1920x1080";
+        System.setProperty("webdriver.gecko.driver", "build/geckodriver");
+        DesiredCapabilities capabilities = DesiredCapabilities.firefox();
+        capabilities.setCapability("marionette", true);
+        WebDriver driver = new FirefoxDriver(capabilities);
+        WebDriverRunner.setWebDriver(driver);
         open("/");
     }
 
